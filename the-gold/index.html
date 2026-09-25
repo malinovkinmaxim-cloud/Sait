@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>THE GOLD — Fine Dining Restaurant in Moscow</title>
+  <meta name="description" content="THE GOLD is a fine dining restaurant in Moscow: contemporary haute cuisine, an intimate interior and impeccable service. Explore the menu and reserve a table.">
+  <meta name="theme-color" content="#0b0a09">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="restaurant">
+  <meta property="og:site_name" content="THE GOLD">
+  <meta property="og:title" content="THE GOLD — The Art of Dining">
+  <meta property="og:description" content="Fine dining. Exceptional moments. Contemporary haute cuisine in Moscow.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&h=630&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "THE GOLD",
+    "slogan": "The Art of Dining",
+    "description": "Fine dining restaurant with contemporary haute cuisine, an intimate interior and impeccable service.",
+    "servesCuisine": ["Contemporary", "European", "Fine Dining"],
+    "priceRange": "€€€€",
+    "acceptsReservations": true,
+    "telephone": "+7 495 000-00-00",
+    "email": "hello@thegold.example",
+    "menu": "#menu",
+    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "25 Golden Avenue",
+      "addressLocality": "Moscow",
+      "addressCountry": "RU"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "18:00", "closes": "00:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday"], "opens": "18:00", "closes": "02:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "18:00", "closes": "23:00" }
+    ],
+    "sameAs": ["https://www.instagram.com/", "https://t.me/", "https://www.facebook.com/"]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Intro curtain -->
+  <div class="loader" aria-hidden="true">
+    <span class="loader__logo">THE GOLD</span>
+    <span class="loader__line"></span>
+  </div>
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="logo" href="#home" aria-label="THE GOLD — home">THE GOLD</a>
+
+      <nav class="nav" aria-label="Main">
+        <ul>
+          <li><a class="nav__link" href="#home" data-nav>Home</a></li>
+          <li><a class="nav__link" href="#menu" data-nav>Menu</a></li>
+          <li><a class="nav__link" href="#experience" data-nav>Experience</a></li>
+          <li><a class="nav__link" href="#about" data-nav>About</a></li>
+          <li><a class="nav__link" href="#gallery" data-nav>Gallery</a></li>
+          <li><a class="nav__link" href="#contact" data-nav>Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a class="btn btn--gold btn--sm header__reserve" href="#reserve">Reserve</a>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="menu-panel" aria-label="Open menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="drawer" id="menu-panel" inert>
+    <div class="drawer__inner">
+      <nav aria-label="Mobile">
+        <ol class="drawer__list">
+          <li><a class="drawer__link" href="#home" style="--i:0"><span>01</span>Home</a></li>
+          <li><a class="drawer__link" href="#menu" style="--i:1"><span>02</span>Menu</a></li>
+          <li><a class="drawer__link" href="#experience" style="--i:2"><span>03</span>Experience</a></li>
+          <li><a class="drawer__link" href="#about" style="--i:3"><span>04</span>About</a></li>
+          <li><a class="drawer__link" href="#gallery" style="--i:4"><span>05</span>Gallery</a></li>
+          <li><a class="drawer__link" href="#contact" style="--i:5"><span>06</span>Contact</a></li>
+        </ol>
+      </nav>
+      <div class="drawer__foot">
+        <a class="btn btn--gold" href="#reserve">Reserve a table</a>
+        <a class="drawer__phone" href="tel:+74950000000">+7 (495) 000-00-00</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero__media media">
+        <img
+          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80"
+          srcset="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=75 800w,
+                  https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80 1400w,
+                  https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2200&q=80 2200w"
+          sizes="100vw" alt="The candlelit dining room of THE GOLD" fetchpriority="high" decoding="async">
+      </div>
+      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="hero__frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+      <div class="hero__content">
+        <span class="ornament hero__ornament" data-intro style="--delay:.3s" aria-hidden="true"></span>
+        <h1 class="hero__title" id="hero-title">
+          <span class="mask"><span data-intro-line style="--delay:.45s">THE GOLD</span></span>
+          <span class="sr-only"> — fine dining restaurant in Moscow</span>
+        </h1>
+        <p class="hero__subtitle" data-intro style="--delay:.9s">The Art of Dining</p>
+        <p class="hero__tagline" data-intro style="--delay:1.05s">Fine dining. Exceptional moments.</p>
+        <div class="hero__actions" data-intro style="--delay:1.2s">
+          <a class="btn btn--gold" href="#reserve">Reserve a table</a>
+          <a class="btn btn--ghost" href="#menu">Explore menu</a>
+        </div>
+      </div>
+
+      <p class="hero__corner hero__corner--left" data-intro style="--delay:1.6s">25 Golden Avenue · Moscow</p>
+      <p class="hero__corner hero__corner--right" data-intro style="--delay:1.6s" id="tonight">Open daily from 18:00</p>
+
+      <a class="hero__scroll" href="#intro" aria-label="Scroll to the next section" data-intro style="--delay:1.6s">
+        <span>Scroll</span><i></i>
+      </a>
+    </section>
+
+    <!-- ============================ INTRO ============================ -->
+    <section class="intro section" id="intro" aria-labelledby="intro-title">
+      <div class="container intro__inner">
+        <span class="intro__rule" aria-hidden="true" data-reveal></span>
+        <p class="eyebrow" data-reveal>A Taste of Excellence</p>
+        <h2 class="title intro__title" id="intro-title" data-reveal="lines">
+          <span class="mask"><span>More than</span></span>
+          <span class="mask"><span>a <em>restaurant</em></span></span>
+        </h2>
+        <span class="gold-line" aria-hidden="true" data-reveal></span>
+        <blockquote class="intro__quote" data-reveal>
+          <p>“The Gold is a celebration of taste, craftsmanship and unforgettable moments.”</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============================ MENU ============================ -->
+    <section class="menu section" id="menu" aria-labelledby="menu-title">
+      <div class="container">
+        <header class="section-head section-head--center">
+          <p class="eyebrow" data-reveal>Carte</p>
+          <h2 class="title" id="menu-title" data-reveal="lines"><span class="mask"><span>Our <em>Menu</em></span></span></h2>
+          <p class="section-head__lead" data-reveal>A composition of taste, texture and imagination.</p>
+        </header>
+
+        <div class="tabs" data-reveal>
+          <div class="tabs__list" role="tablist" aria-label="Menu categories">
+            <button class="tabs__tab" role="tab" id="tab-signature" aria-controls="panel-signature" aria-selected="true">Signature</button>
+            <button class="tabs__tab" role="tab" id="tab-starters" aria-controls="panel-starters" aria-selected="false" tabindex="-1">Starters</button>
+            <button class="tabs__tab" role="tab" id="tab-mains" aria-controls="panel-mains" aria-selected="false" tabindex="-1">Main Courses</button>
+            <button class="tabs__tab" role="tab" id="tab-desserts" aria-controls="panel-desserts" aria-selected="false" tabindex="-1">Desserts</button>
+            <button class="tabs__tab" role="tab" id="tab-wine" aria-controls="panel-wine" aria-selected="false" tabindex="-1">Wine</button>
+            <span class="tabs__indicator" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <div class="menu__panels">
+          <div class="menu__panel is-active" role="tabpanel" id="panel-signature" aria-labelledby="tab-signature" tabindex="0">
+            <ul class="dishes">
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Golden Caviar</h3><span class="dish__leader"></span><span class="dish__price">€120</span></div><p class="dish__desc">Oscietra caviar, crème fraîche, brioche</p></li>
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Wagyu A5</h3><span class="dish__leader"></span><span class="dish__price">€180</span></div><p class="dish__desc">Japanese A5 Wagyu, black garlic, truffle jus</p></li>
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Truffle Risotto</h3><span class="dish__leader"></span><span class="dish__price">€75</span></div><p class="dish__desc">Carnaroli rice, black truffle, aged parmesan</p></li>
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Gold Leaf Dessert</h3><span class="dish__leader"></span><span class="dish__price">€45</span></div><p class="dish__desc">Dark chocolate, vanilla, edible gold</p></li>
+            </ul>
+          </div>
+
+          <div class="menu__panel" role="tabpanel" id="panel-starters" aria-labelledby="tab-starters" tabindex="0" hidden>
+            <ul class="dishes">
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Scallop Carpaccio</h3><span class="dish__leader"></span><span class="dish__price">€48</span></div><p class="dish__desc">Hokkaido scallop, yuzu, green apple, caviar</p></li>
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Foie Gras Terrine</h3><span class="dish__leader"></span><span class="dish__price">€42</span></div><p class="dish__desc">Toasted brioche, black fig, Sauternes gel</p></li>
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Langoustine Tartare</h3><span class="dish__leader"></span><span class="dish__price">€56</span></div><p class="dish__desc">Citrus, shaved fennel, Oscietra caviar</p></li>
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Heirloom Tomato</h3><span class="dish__leader"></span><span class="dish__price">€32</span></div><p class="dish__desc">Burrata, basil oil, twenty-year balsamic</p></li>
+            </ul>
+          </div>
+
+          <div class="menu__panel" role="tabpanel" id="panel-mains" aria-labelledby="tab-mains" tabindex="0" hidden>
+            <ul class="dishes">
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Wagyu A5</h3><span class="dish__leader"></span><span class="dish__price">€180</span></div><p class="dish__desc">Japanese A5 Wagyu, black garlic, truffle jus</p></li>
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Turbot à la Plancha</h3><span class="dish__leader"></span><span class="dish__price">€92</span></div><p class="dish__desc">Champagne beurre blanc, sea herbs</p></li>
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Lobster Thermidor</h3><span class="dish__leader"></span><span class="dish__price">€110</span></div><p class="dish__desc">Brittany lobster, cognac, aged gruyère</p></li>
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Duck Rossini</h3><span class="dish__leader"></span><span class="dish__price">€88</span></div><p class="dish__desc">Foie gras, Périgord truffle, Madeira jus</p></li>
+            </ul>
+          </div>
+
+          <div class="menu__panel" role="tabpanel" id="panel-desserts" aria-labelledby="tab-desserts" tabindex="0" hidden>
+            <ul class="dishes">
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Gold Leaf Dessert</h3><span class="dish__leader"></span><span class="dish__price">€45</span></div><p class="dish__desc">Dark chocolate, vanilla, edible gold</p></li>
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Chocolate Soufflé</h3><span class="dish__leader"></span><span class="dish__price">€34</span></div><p class="dish__desc">Grand cru chocolate, salted caramel, vanilla ice cream</p></li>
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Poire Belle Hélène</h3><span class="dish__leader"></span><span class="dish__price">€30</span></div><p class="dish__desc">Poached pear, Champagne sabayon, almond</p></li>
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Crème Brûlée</h3><span class="dish__leader"></span><span class="dish__price">€28</span></div><p class="dish__desc">Tahitian vanilla, caramelised sugar</p></li>
+            </ul>
+          </div>
+
+          <div class="menu__panel" role="tabpanel" id="panel-wine" aria-labelledby="tab-wine" tabindex="0" hidden>
+            <ul class="dishes">
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Champagne Prestige Cuvée</h3><span class="dish__leader"></span><span class="dish__price">€480</span></div><p class="dish__desc">Champagne, France · bottle</p></li>
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Grand Cru Bordeaux</h3><span class="dish__leader"></span><span class="dish__price">€1,450</span></div><p class="dish__desc">Margaux, France · bottle</p></li>
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Burgundy Premier Cru</h3><span class="dish__leader"></span><span class="dish__price">€340</span></div><p class="dish__desc">Côte de Beaune, France · bottle</p></li>
+              <li class="dish"><div class="dish__head"><h3 class="dish__name">Sommelier’s Selection</h3><span class="dish__leader"></span><span class="dish__price">€24</span></div><p class="dish__desc">A rotating wine by the glass</p></li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="menu__note" data-reveal>Prices are shown for concept purposes. Please let us know about any allergies.</p>
+      </div>
+    </section>
+
+    <!-- ============================ SIGNATURE ============================ -->
+    <section class="signature section" id="signature" aria-labelledby="signature-title">
+      <div class="container signature__grid">
+        <figure class="signature__media">
+          <div class="media media--frame reveal-image" data-reveal="image">
+            <div class="media__inner" data-parallax="0.06">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80"
+                   srcset="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=75 800w,
+                           https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80 1400w"
+                   sizes="(max-width: 900px) 100vw, 55vw"
+                   alt="The Golden Experience — a plated signature course" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </figure>
+
+        <div class="signature__content">
+          <p class="eyebrow" data-reveal>The Signature</p>
+          <h2 class="title" id="signature-title" data-reveal="lines">
+            <span class="mask"><span>The Golden</span></span>
+            <span class="mask"><span><em>Experience</em></span></span>
+          </h2>
+          <p class="signature__text" data-reveal>A signature composition created exclusively for The Gold.</p>
+          <dl class="signature__meta" data-reveal>
+            <div><dt>Courses</dt><dd>Seven</dd></div>
+            <div><dt>Per guest</dt><dd>€240</dd></div>
+          </dl>
+          <div data-reveal>
+            <a class="btn btn--ghost" href="#menu" data-open-tab="signature">
+              Discover
+              <svg class="icon" viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ EXPERIENCE ============================ -->
+    <section class="experience section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow" data-reveal>Beyond the plate</p>
+          <h2 class="title" id="experience-title" data-reveal="lines"><span class="mask"><span>The <em>Experience</em></span></span></h2>
+        </header>
+
+        <div class="experience__grid">
+          <article class="pillar" data-reveal>
+            <div class="media pillar__media">
+              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80" alt="A precisely plated course from the kitchen of THE GOLD" loading="lazy" decoding="async">
+            </div>
+            <span class="pillar__num">I</span>
+            <h3 class="pillar__title">The Cuisine</h3>
+            <p class="pillar__text">Contemporary fine dining created with precision.</p>
+          </article>
+          <article class="pillar" data-reveal style="--d:1">
+            <div class="media pillar__media">
+              <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=80" alt="The intimate evening dining room" loading="lazy" decoding="async">
+            </div>
+            <span class="pillar__num">II</span>
+            <h3 class="pillar__title">The Space</h3>
+            <p class="pillar__text">An intimate atmosphere designed for unforgettable evenings.</p>
+          </article>
+          <article class="pillar" data-reveal style="--d:2">
+            <div class="media pillar__media">
+              <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=900&q=80" alt="Wine being served at the table" loading="lazy" decoding="async">
+            </div>
+            <span class="pillar__num">III</span>
+            <h3 class="pillar__title">The Service</h3>
+            <p class="pillar__text">Discreet, personal and impeccable.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ ABOUT ============================ -->
+    <section class="about section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__head">
+            <p class="eyebrow" data-reveal>Our story</p>
+            <h2 class="title" id="about-title" data-reveal="lines">
+              <span class="mask"><span>A New</span></span>
+              <span class="mask"><span>Standard</span></span>
+              <span class="mask"><span>of <em>Dining</em></span></span>
+            </h2>
+          </div>
+          <div class="about__body">
+            <p class="about__lead" data-reveal>The Gold brings together modern gastronomy, architecture, art and impeccable service.</p>
+            <p class="about__text" data-reveal>Every evening is composed with the same care as a single plate: light that flatters, music that never interrupts, a table that feels entirely your own. We believe true luxury is quiet — it lives in the details you feel before you notice them.</p>
+            <p class="about__sign" data-reveal>— The Gold</p>
+          </div>
+        </div>
+
+        <figure class="about__wide media reveal-image" data-reveal="image">
+          <div class="media__inner" data-parallax="0.08">
+            <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?auto=format&fit=crop&w=2000&q=80"
+                 srcset="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?auto=format&fit=crop&w=900&q=75 900w,
+                         https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?auto=format&fit=crop&w=2000&q=80 2000w"
+                 sizes="100vw" alt="Dining room of THE GOLD prepared for the evening" loading="lazy" decoding="async">
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================ GALLERY ============================ -->
+    <section class="gallery section" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <header class="section-head section-head--split">
+          <div>
+            <p class="eyebrow" data-reveal>Moments</p>
+            <h2 class="title" id="gallery-title" data-reveal="lines"><span class="mask"><span>The <em>Gallery</em></span></span></h2>
+          </div>
+          <p class="section-head__lead" data-reveal>Interior, cuisine and the quiet details of an evening at The Gold.</p>
+        </header>
+
+        <ul class="gallery__grid">
+          <li class="gallery__item gallery__item--hero" data-reveal>
+            <button class="gallery__btn media" type="button" data-full="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=2000&q=80" data-caption="Interior">
+              <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80" alt="The main dining room" loading="lazy" decoding="async">
+              <span class="gallery__label">Interior</span>
+            </button>
+          </li>
+          <li class="gallery__item" data-reveal style="--d:1">
+            <button class="gallery__btn media" type="button" data-full="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=2000&q=80" data-caption="Cuisine">
+              <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80" alt="A plated fish course" loading="lazy" decoding="async">
+              <span class="gallery__label">Cuisine</span>
+            </button>
+          </li>
+          <li class="gallery__item gallery__item--tall" data-reveal style="--d:2">
+            <button class="gallery__btn media" type="button" data-full="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=2000&q=80" data-caption="Bar">
+              <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80" alt="The bar at night" loading="lazy" decoding="async">
+              <span class="gallery__label">Bar</span>
+            </button>
+          </li>
+          <li class="gallery__item" data-reveal>
+            <button class="gallery__btn media" type="button" data-full="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=2000&q=80" data-caption="Details">
+              <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=800&q=80" alt="Cocktails on the bar counter" loading="lazy" decoding="async">
+              <span class="gallery__label">Details</span>
+            </button>
+          </li>
+          <li class="gallery__item" data-reveal style="--d:1">
+            <button class="gallery__btn media" type="button" data-full="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=2000&q=80" data-caption="Table setting">
+              <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=800&q=80" alt="A table set for dinner" loading="lazy" decoding="async">
+              <span class="gallery__label">Table setting</span>
+            </button>
+          </li>
+          <li class="gallery__item gallery__item--wide" data-reveal style="--d:2">
+            <button class="gallery__btn media" type="button" data-full="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=2000&q=80" data-caption="Evening">
+              <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=80" alt="The restaurant in evening light" loading="lazy" decoding="async">
+              <span class="gallery__label">Evening</span>
+            </button>
+          </li>
+          <li class="gallery__item" data-reveal style="--d:3">
+            <button class="gallery__btn media" type="button" data-full="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=2000&q=80" data-caption="Kitchen">
+              <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" alt="A course finished in the kitchen" loading="lazy" decoding="async">
+              <span class="gallery__label">Kitchen</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================ RESERVATION ============================ -->
+    <section class="reserve section" id="reserve" aria-labelledby="reserve-title">
+      <div class="reserve__bg media" aria-hidden="true">
+        <div class="media__inner" data-parallax="0.1">
+          <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1800&q=70" alt="" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <div class="container reserve__grid">
+        <div class="reserve__intro">
+          <p class="eyebrow" data-reveal>Reservations</p>
+          <h2 class="title" id="reserve-title" data-reveal="lines">
+            <span class="mask"><span>Reserve</span></span>
+            <span class="mask"><span>your <em>table</em></span></span>
+          </h2>
+          <p class="reserve__text" data-reveal>An evening worth remembering begins here.</p>
+          <p class="reserve__alt" data-reveal>Or call us: <a class="link" href="tel:+74950000000">+7 (495) 000-00-00</a></p>
+        </div>
+
+        <div class="reserve__panel" data-reveal>
+          <form class="form" id="reserve-form" novalidate>
+            <div class="form__grid">
+              <div class="field">
+                <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" placeholder=" " required minlength="2" aria-describedby="f-name-error">
+                <label class="field__label" for="f-name">Name</label>
+                <p class="field__error" id="f-name-error" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <input class="field__input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder=" " required aria-describedby="f-phone-error">
+                <label class="field__label" for="f-phone">Phone</label>
+                <p class="field__error" id="f-phone-error" aria-live="polite"></p>
+              </div>
+              <div class="field field--static field--third">
+                <input class="field__input" id="f-date" name="date" type="date" required aria-describedby="f-date-error">
+                <label class="field__label" for="f-date">Date</label>
+                <p class="field__error" id="f-date-error" aria-live="polite"></p>
+              </div>
+              <div class="field field--static field--third">
+                <select class="field__input" id="f-time" name="time" required aria-describedby="f-time-error">
+                  <option value="">Select time</option>
+                </select>
+                <label class="field__label" for="f-time">Time</label>
+                <p class="field__error" id="f-time-error" aria-live="polite"></p>
+              </div>
+              <div class="field field--static field--third">
+                <select class="field__input" id="f-guests" name="guests" required aria-describedby="f-guests-error">
+                  <option value="">Select</option>
+                  <option value="1">1 guest</option>
+                  <option value="2">2 guests</option>
+                  <option value="3">3 guests</option>
+                  <option value="4">4 guests</option>
+                  <option value="5">5 guests</option>
+                  <option value="6">6 guests</option>
+                  <option value="7">7 guests</option>
+                  <option value="8">8 guests</option>
+                  <option value="9+">9+ · private dining</option>
+                </select>
+                <label class="field__label" for="f-guests">Guests</label>
+                <p class="field__error" id="f-guests-error" aria-live="polite"></p>
+              </div>
+              <div class="field field--full">
+                <textarea class="field__input" id="f-request" name="request" rows="3" placeholder=" " maxlength="500"></textarea>
+                <label class="field__label" for="f-request">Special request <span class="field__optional">(optional)</span></label>
+              </div>
+            </div>
+
+            <button class="btn btn--gold form__submit" type="submit">
+              <span class="form__submit-text">Request a reservation</span>
+              <span class="form__progress" aria-hidden="true"></span>
+            </button>
+            <p class="form__status sr-only" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="success" id="reserve-success" hidden tabindex="-1">
+            <span class="ornament" aria-hidden="true"></span>
+            <p class="success__title">Thank you.</p>
+            <p class="success__text">Your reservation request has been received.</p>
+            <p class="success__note">We will call you to confirm the details.</p>
+            <button class="link success__again" type="button">Make another request</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACT ============================ -->
+    <section class="contact section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact__grid">
+        <div class="contact__info">
+          <p class="eyebrow" data-reveal>Visit</p>
+          <h2 class="title" id="contact-title" data-reveal="lines"><span class="mask"><span>Find <em>us</em></span></span></h2>
+
+          <div class="contact__cols">
+            <div class="contact__block" data-reveal>
+              <h3 class="contact__label">Address</h3>
+              <address>25 Golden Avenue<br>Moscow, Russia</address>
+            </div>
+            <div class="contact__block" data-reveal style="--d:1">
+              <h3 class="contact__label">Reservations</h3>
+              <p><a class="link" href="tel:+74950000000">+7 (495) 000-00-00</a></p>
+              <p><a class="link" href="mailto:hello@thegold.example">hello@thegold.example</a></p>
+            </div>
+            <div class="contact__block contact__block--hours" data-reveal style="--d:2">
+              <h3 class="contact__label">Hours</h3>
+              <dl class="hours">
+                <div><dt>Mon–Thu</dt><dd>18:00–00:00</dd></div>
+                <div><dt>Fri–Sat</dt><dd>18:00–02:00</dd></div>
+                <div><dt>Sun</dt><dd>18:00–23:00</dd></div>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <figure class="map" data-reveal aria-label="Stylised map: THE GOLD, 25 Golden Avenue">
+          <svg class="map__svg" viewBox="0 0 600 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <path class="map__river" d="M-20 380 C 90 330, 150 420, 260 370 S 430 250, 620 300"/>
+            <g class="map__roads">
+              <path d="M0 120 L600 70"/><path d="M0 250 L600 210"/><path d="M40 0 L110 480"/>
+              <path d="M210 0 L250 480"/><path d="M390 0 L360 480"/><path d="M520 0 L560 480"/>
+              <path d="M0 40 L300 480" class="map__road--thin"/><path d="M600 20 L330 480" class="map__road--thin"/>
+            </g>
+            <path class="map__avenue" d="M0 170 L600 130"/>
+            <g class="map__blocks">
+              <rect x="120" y="140" width="80" height="60"/><rect x="260" y="80" width="95" height="55"/>
+              <rect x="410" y="150" width="90" height="50"/><rect x="60" y="270" width="120" height="70"/>
+              <rect x="270" y="230" width="70" height="80"/><rect x="420" y="230" width="100" height="45"/>
+            </g>
+          </svg>
+          <div class="map__pin" style="left:52%;top:31%"><i></i></div>
+          <figcaption class="map__caption"><span>THE GOLD</span>25 Golden Avenue</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <p class="footer__logo" aria-label="THE GOLD">THE GOLD</p>
+        <p class="footer__tagline">The Art of Dining</p>
+      </div>
+
+      <div class="footer__row">
+        <ul class="footer__social" aria-label="Social media">
+          <li><a class="link" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a class="link" href="https://t.me/" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a class="link" href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+        <ul class="footer__legal">
+          <li><button class="link" type="button" data-dialog="privacy">Privacy Policy</button></li>
+          <li><button class="link" type="button" data-dialog="terms">Terms &amp; Conditions</button></li>
+        </ul>
+      </div>
+
+      <p class="footer__copy">© <span data-year>2026</span> THE GOLD. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============================ LIGHTBOX ============================ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image" inert>
+    <button class="lightbox__close" type="button" aria-label="Close gallery"><span></span></button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous image">
+      <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M24 6H2M7 1 2 6l5 5"/></svg>
+    </button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" alt="">
+      <figcaption class="lightbox__caption"><span class="lightbox__label"></span><span class="lightbox__count"></span></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next image">
+      <svg viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+    </button>
+  </div>
+
+  <!-- ============================ LEGAL DIALOGS ============================ -->
+  <dialog class="modal" id="dialog-privacy" aria-labelledby="privacy-title">
+    <h2 class="modal__title" id="privacy-title">Privacy Policy</h2>
+    <p>This is a concept website. Reservation requests entered here are not sent or stored anywhere — the form works entirely in your browser.</p>
+    <p>For a live restaurant this page would describe which personal data is collected, why, how long it is kept and how guests can request its deletion.</p>
+    <form method="dialog"><button class="btn btn--ghost btn--sm">Close</button></form>
+  </dialog>
+
+  <dialog class="modal" id="dialog-terms" aria-labelledby="terms-title">
+    <h2 class="modal__title" id="terms-title">Terms &amp; Conditions</h2>
+    <p>This is a concept website. Menu items and prices are shown for demonstration purposes only.</p>
+    <p>For a live restaurant this page would cover reservation and cancellation rules, deposits for private dining and the dress code.</p>
+    <form method="dialog"><button class="btn btn--ghost btn--sm">Close</button></form>
+  </dialog>
+
+  <div class="cursor" aria-hidden="true"><span>View</span></div>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

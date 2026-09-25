@@ -1745,12 +1745,33 @@
         category: { ru: 'Сайт ресторана', en: 'Restaurant website' },
         summary: { ru: 'Сайт ресторана высокой кухни.', en: 'Website for a fine dining restaurant.' },
         description: {
-          ru: ['THE GOLD — современный ресторан высокой кухни с изысканными блюдами, премиальной атмосферой и стильным интерьером.'],
-          en: ['THE GOLD is a modern fine dining restaurant with exquisite dishes, a premium atmosphere and a stylish interior.']
+          ru: [
+            'THE GOLD — современный ресторан высокой кухни с изысканными блюдами, премиальной атмосферой и стильным интерьером.',
+            'Сайт передаёт ощущение роскоши и приватности: сдержанная палитра чёрного, графита и приглушённого золота, редакционная типографика и медленные, уверенные анимации.'
+          ],
+          en: [
+            'THE GOLD is a modern fine dining restaurant with exquisite dishes, a premium atmosphere and a stylish interior.',
+            'The website conveys luxury and privacy: a restrained palette of black, graphite and muted gold, editorial typography and slow, confident motion.'
+          ]
         },
-        technologies: [],
-        features: { ru: [], en: [] },
-        link: '',
+        technologies: ['HTML5', 'CSS3', 'JavaScript'],
+        features: {
+          ru: [
+            'Полноэкранный hero с медленной анимацией фона',
+            'Меню с переключением категорий без перезагрузки страницы',
+            'Галерея с полноэкранным просмотром и управлением с клавиатуры',
+            'Форма бронирования с валидацией и анимацией отправки',
+            'Адаптивная вёрстка от 375 до 1920 px, SEO и доступность'
+          ],
+          en: [
+            'Full-screen hero with a slow background animation',
+            'Menu with categories that switch without a page reload',
+            'Gallery with a fullscreen, keyboard-friendly lightbox',
+            'Reservation form with validation and a sending animation',
+            'Responsive layout from 375 to 1920 px, SEO and accessibility'
+          ]
+        },
+        link: 'the-gold/index.html',
         image: '',
         theme: 'gold'
       },
@@ -1924,9 +1945,9 @@
       </article>`;
     }
 
-    function hostname(url) {
-      try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return url; }
-    }
+    // Readable label for a project link: the domain for external URLs, the title for local ones
+    const linkLabel = p => (external(p.link) ? new URL(p.link).hostname.replace(/^www\./, '') : p.title);
+    const linkAttrs = url => (external(url) ? ' target="_blank" rel="noopener"' : '');
 
     // Index of the next project that has content, or -1
     function nextReady(i) {
@@ -1973,7 +1994,7 @@
             <dl>
               ${category ? `<div><dt class="eyebrow">${esc(t('ui.category'))}</dt><dd>${esc(category)}</dd></div>` : ''}
               ${tech.length ? `<div><dt class="eyebrow">${esc(t('ui.technologies'))}</dt><dd><ul class="chips">${tech.map(x => `<li>${esc(x)}</li>`).join('')}</ul></dd></div>` : ''}
-              ${p.link ? `<div><dt class="eyebrow">${esc(t('ui.website'))}</dt><dd><a class="link" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(hostname(p.link))}</a></dd></div>` : ''}
+              ${p.link ? `<div><dt class="eyebrow">${esc(t('ui.website'))}</dt><dd><a class="link" href="${esc(p.link)}"${linkAttrs(p.link)}>${esc(linkLabel(p))}</a></dd></div>` : ''}
             </dl>
           </aside>
 
@@ -1982,7 +2003,7 @@
               <div class="case__text">${description.map(x => `<p>${esc(x)}</p>`).join('')}</div></section>` : ''}
             ${features.length ? `<section class="case__block">${heading('ui.features')}
               <ol class="features">${features.map((f, n) => `<li><span class="features__num">${pad(n + 1)}</span><span>${esc(f)}</span></li>`).join('')}</ol></section>` : ''}
-            ${p.link ? `<div class="case__cta"><a class="btn btn--primary btn--lg" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(t('ui.visit'))} ${ICON_OUT}</a></div>` : ''}
+            ${p.link ? `<div class="case__cta"><a class="btn btn--primary btn--lg" href="${esc(p.link)}"${linkAttrs(p.link)}>${esc(t('ui.visit'))} ${ICON_OUT}</a></div>` : ''}
           </div>
         </div>
 
