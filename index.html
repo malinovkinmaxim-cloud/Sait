@@ -1046,15 +1046,16 @@
 
     .mock--light .mock__row i { border-radius: .4cqw; background: #dad7d0; }
 
-    /* MATTO — white with a deep blue accent */
-    .stage--blue { background: radial-gradient(110% 80% at 50% 0%, #2a2f38 0%, #16181c 50%, #0e0f11 100%); }
-    .mock--blue { color: #0d1117; background: #ffffff; }
-    .mock--blue strong { font-family: var(--sans); font-weight: 700; font-size: 5cqw; letter-spacing: -.02em; }
-    .mock--blue strong::after { content: '.'; color: #1646d9; }
-    .mock--blue .mock__cta { border-radius: 0; background: #1646d9; }
-    .mock--blue .mock__visual { border-radius: 0; background: linear-gradient(150deg, #3a404b, #12151a); }
-    .mock--blue .mock__visual::after { border-color: #1646d9; border-radius: 0; }
-    .mock--blue .mock__row i { border-radius: 0; background: #eceef2; }
+    /* MATTO — dark with a deep blue accent */
+    .stage--blue { background: radial-gradient(110% 80% at 50% 0%, #1c2a52 0%, #111522 50%, #0b0d12 100%); }
+    .mock--blue { color: #eef1f5; background: #0a0c0f; }
+    .mock--blue strong { font-family: var(--sans); font-weight: 800; font-size: 5cqw; letter-spacing: .02em; }
+    .mock--blue strong::after { content: '.'; color: #2f5cff; }
+    .mock--blue .mock__lines i { opacity: .22; }
+    .mock--blue .mock__cta { border-radius: 0; background: #2f5cff; }
+    .mock--blue .mock__visual { border-radius: 0; background: linear-gradient(150deg, #2a303a, #13161b); }
+    .mock--blue .mock__visual::after { border-color: #2f5cff; border-radius: 0; }
+    .mock--blue .mock__row i { border-radius: 0; background: #151920; }
 
     /* Dark bento placeholder */
     .mock--grid { color: #ecebe6; background: #111; }
@@ -1789,32 +1790,32 @@
         slug: 'matto',
         title: 'MATTO',
         category: { ru: 'Сайт барбершопа', en: 'Barbershop website' },
-        summary: { ru: 'Сайт премиального барбершопа.', en: 'Website for a premium barbershop.' },
+        summary: { ru: 'Сайт барбершопа MATTO в Москве.', en: 'Website for MATTO, a barbershop in Moscow.' },
         description: {
           ru: [
-            'MATTO — концепт сайта современного премиального барбершопа.',
-            'Светлый, чистый и воздушный дизайн: белый фон, глубокий синий акцент и выразительная типографика. Услуги, цены и барберы задаются в одном месте кода, а форма записи и список услуг обновляются автоматически.'
+            'MATTO — барбершоп в ЖК «Михайловский Парк» в Москве с рейтингом 5,0 на Яндекс Картах.',
+            'Тёмная тема с глубоким синим акцентом и выразительной типографикой. На сайте реальный прайс из 15 услуг, контакты, адрес и удобства барбершопа. Услуги и цены задаются в одном месте кода, а прайс и форма записи обновляются автоматически.'
           ],
           en: [
-            'MATTO is a concept website for a modern premium barbershop.',
-            'A light, clean and airy design: a white base, a deep blue accent and expressive typography. Services, prices and barbers live in one place in the code, and the booking form and service list update automatically.'
+            'MATTO is a barbershop in the Mikhailovsky Park residential complex in Moscow, rated 5.0 on Yandex Maps.',
+            'A dark theme with a deep blue accent and expressive typography. The site shows the real price list of 15 services, contacts, address and amenities. Services and prices live in one place in the code, and the price list and booking form update automatically.'
           ]
         },
         technologies: ['HTML5', 'CSS3', 'JavaScript'],
         features: {
           ru: [
-            'Список услуг с ценами — клик по услуге сразу открывает запись',
-            'Команда барберов с быстрым выбором мастера',
-            'Асимметричная галерея с полноэкранным просмотром',
-            'Форма записи с валидацией, выходными днями и свободным временем',
-            'Адаптивная вёрстка от 375 до 1920 px'
+            'Прайс из 15 услуг с вкладками по категориям',
+            'Клик по услуге или мастеру сразу заполняет форму записи',
+            'Форма записи с валидацией и свободными слотами времени',
+            'Быстрая связь: звонок, WhatsApp, Telegram и маршрут в Яндекс Картах',
+            'Тёмная тема и адаптивная вёрстка от 320 до 1920 px'
           ],
           en: [
-            'Service list with prices — clicking a service opens the booking',
-            'Barber team with quick barber selection',
-            'Asymmetric gallery with a fullscreen lightbox',
-            'Booking form with validation, closed days and available time slots',
-            'Responsive layout from 375 to 1920 px'
+            'Price list of 15 services with category tabs',
+            'Clicking a service or barber fills in the booking form',
+            'Booking form with validation and available time slots',
+            'Quick contact: call, WhatsApp, Telegram and a Yandex Maps route',
+            'Dark theme and responsive layout from 320 to 1920 px'
           ]
         },
         link: 'matto/index.html',
