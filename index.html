@@ -1046,6 +1046,16 @@
 
     .mock--light .mock__row i { border-radius: .4cqw; background: #dad7d0; }
 
+    /* MATTO — white with a deep blue accent */
+    .stage--blue { background: radial-gradient(110% 80% at 50% 0%, #2a2f38 0%, #16181c 50%, #0e0f11 100%); }
+    .mock--blue { color: #0d1117; background: #ffffff; }
+    .mock--blue strong { font-family: var(--sans); font-weight: 700; font-size: 5cqw; letter-spacing: -.02em; }
+    .mock--blue strong::after { content: '.'; color: #1646d9; }
+    .mock--blue .mock__cta { border-radius: 0; background: #1646d9; }
+    .mock--blue .mock__visual { border-radius: 0; background: linear-gradient(150deg, #3a404b, #12151a); }
+    .mock--blue .mock__visual::after { border-color: #1646d9; border-radius: 0; }
+    .mock--blue .mock__row i { border-radius: 0; background: #eceef2; }
+
     /* Dark bento placeholder */
     .mock--grid { color: #ecebe6; background: #111; }
 
@@ -1776,16 +1786,40 @@
         theme: 'gold'
       },
       {
-        slug: 'project-02',
-        title: 'PROJECT 02',
-        category: { ru: '', en: '' },
-        summary: { ru: '', en: '' },
-        description: { ru: [], en: [] },
-        technologies: [],
-        features: { ru: [], en: [] },
-        link: '',
+        slug: 'matto',
+        title: 'MATTO',
+        category: { ru: 'Сайт барбершопа', en: 'Barbershop website' },
+        summary: { ru: 'Сайт премиального барбершопа.', en: 'Website for a premium barbershop.' },
+        description: {
+          ru: [
+            'MATTO — концепт сайта современного премиального барбершопа.',
+            'Светлый, чистый и воздушный дизайн: белый фон, глубокий синий акцент и выразительная типографика. Услуги, цены и барберы задаются в одном месте кода, а форма записи и список услуг обновляются автоматически.'
+          ],
+          en: [
+            'MATTO is a concept website for a modern premium barbershop.',
+            'A light, clean and airy design: a white base, a deep blue accent and expressive typography. Services, prices and barbers live in one place in the code, and the booking form and service list update automatically.'
+          ]
+        },
+        technologies: ['HTML5', 'CSS3', 'JavaScript'],
+        features: {
+          ru: [
+            'Список услуг с ценами — клик по услуге сразу открывает запись',
+            'Команда барберов с быстрым выбором мастера',
+            'Асимметричная галерея с полноэкранным просмотром',
+            'Форма записи с валидацией, выходными днями и свободным временем',
+            'Адаптивная вёрстка от 375 до 1920 px'
+          ],
+          en: [
+            'Service list with prices — clicking a service opens the booking',
+            'Barber team with quick barber selection',
+            'Asymmetric gallery with a fullscreen lightbox',
+            'Booking form with validation, closed days and available time slots',
+            'Responsive layout from 375 to 1920 px'
+          ]
+        },
+        link: 'matto/index.html',
         image: '',
-        theme: 'light'
+        theme: 'blue'
       },
       {
         slug: 'project-03',
@@ -1895,7 +1929,8 @@
             <div class="mock__hero"><small>Fine dining</small><strong>${title}</strong><i class="mock__rule"></i><i class="mock__cta"></i></div>
             <div class="mock__tiles"><i></i><i></i><i></i></div></div>`;
         case 'light':
-          return `<div class="mock mock--light">${nav}
+        case 'blue':
+          return `<div class="mock mock--light${p.theme === 'blue' ? ' mock--blue' : ''}">${nav}
             <div class="mock__split"><div><strong>${title}</strong>${lines}<i class="mock__cta"></i></div><div class="mock__visual"></div></div>
             <div class="mock__row"><i></i><i></i><i></i><i></i></div></div>`;
         default:

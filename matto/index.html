@@ -1,0 +1,1709 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MATTO — Premium Barbershop in Moscow</title>
+  <meta name="description" content="MATTO is a premium barbershop in Moscow: precision haircuts, skin fades, beard trims and royal shaves. Book your chair online.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MATTO Barbershop">
+  <meta property="og:title" content="MATTO — Your Style. Your Standard.">
+  <meta property="og:description" content="Modern grooming with precision, character and attention to detail.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&h=630&q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231646d9'/%3E%3Cpath d='M16 46V18h6l10 16 10-16h6v28h-6V29l-8 13h-4l-8-13v17z' fill='%23fff'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarberShop",
+    "name": "MATTO Barbershop",
+    "slogan": "Your style. Your standard.",
+    "telephone": "+7 495 000-00-00",
+    "priceRange": "₽₽₽",
+    "address": { "@type": "PostalAddress", "streetAddress": "25 White Street", "addressLocality": "Moscow", "addressCountry": "RU" },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "10:00", "closes": "22:00"
+    }],
+    "sameAs": ["https://www.instagram.com/", "https://t.me/"]
+  }
+  </script>
+
+  <style>
+    /* ==========================================================================
+       MATTO — styles
+       1 Tokens · 2 Base · 3 Type · 4 Buttons · 5 Header · 6 Hero · 7 About
+       8 Services · 9 Team · 10 Gallery · 11 Experience · 12 Booking
+       13 Location · 14 Footer · 15 Motion
+       ========================================================================== */
+
+    /* 1. Tokens */
+    :root {
+      --white: #ffffff;
+      --soft: #f5f6f8;
+      --soft-2: #eceef2;
+      --ink: #0d1117;
+      --ink-2: #3a414c;
+      --muted: #666d78;
+      --line: #e3e6eb;
+      --blue: #1646d9;
+      --blue-dark: #0e33a8;
+      --blue-tint: #edf2fe;
+
+      --font: 'Archivo', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+      --ease-io: cubic-bezier(.7, 0, .2, 1);
+
+      --gutter: clamp(20px, 4.5vw, 72px);
+      --header-h: 88px;
+      --section: clamp(6rem, 11vw, 10.5rem);
+    }
+
+    @media (max-width: 1024px) { :root { --header-h: 76px; } }
+    @media (max-width: 600px)  { :root { --header-h: 66px; } }
+
+    /* 2. Base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      scroll-behavior: smooth;
+      scroll-padding-top: 64px;
+      background: var(--white);
+    }
+
+    html.is-locked { overflow: hidden; }
+
+    body {
+      min-height: 100vh;
+      background: var(--white);
+      color: var(--ink-2);
+      font-family: var(--font);
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.7;
+      overflow-x: hidden;
+      overflow-x: clip;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    [hidden] { display: none !important; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; color: inherit; }
+    button { background: none; border: 0; cursor: pointer; }
+    ul, ol { list-style: none; }
+    address { font-style: normal; }
+
+    ::selection { background: var(--blue); color: var(--white); }
+    :focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+    main:focus { outline: none; }
+
+    .container { width: 100%; max-width: 1440px; margin-inline: auto; padding-inline: var(--gutter); }
+    .section { position: relative; padding-block: var(--section); }
+    .section--soft { background: var(--soft); }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+    }
+
+    .skip-link {
+      position: fixed; top: 1rem; left: 1rem; z-index: 500;
+      padding: .8rem 1.3rem; background: var(--blue); color: var(--white); font-weight: 600;
+      transform: translateY(-250%); transition: transform .3s;
+    }
+    .skip-link:focus { transform: none; }
+
+    /* 3. Type */
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      font-size: .74rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .label::before { content: ''; width: 8px; height: 8px; background: var(--blue); }
+    .label--plain::before { display: none; }
+
+    .heading {
+      font-size: clamp(2.5rem, 5.4vw, 5.6rem);
+      font-weight: 750;
+      font-stretch: 115%;
+      line-height: .95;
+      letter-spacing: -.02em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .heading .accent { color: var(--blue); }
+
+    .mask { display: block; overflow: hidden; padding-block: .04em .08em; margin-block: -.04em -.08em; }
+    .mask > span { display: block; }
+
+    .section-head {
+      display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap;
+      gap: 1.5rem 4rem;
+      margin-bottom: clamp(3rem, 6vw, 5.5rem);
+    }
+
+    .section-head .label { margin-bottom: 1.5rem; }
+    .section-head__lead { max-width: 26rem; font-size: 1.05rem; color: var(--muted); }
+
+    .lead { font-size: clamp(1.05rem, 1.35vw, 1.22rem); font-weight: 300; line-height: 1.7; color: var(--ink-2); }
+
+    /* 4. Buttons & links */
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .85rem;
+      min-height: 56px;
+      padding: 0 1.8rem;
+      border: 1px solid var(--ink);
+      font-size: .76rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: var(--ink);
+      overflow: hidden;
+      isolation: isolate;
+      transition: color .5s var(--ease), border-color .5s var(--ease);
+    }
+
+    .btn::before {
+      content: ''; position: absolute; inset: 0; z-index: -1;
+      background: var(--blue);
+      transform: scaleX(0); transform-origin: right;
+      transition: transform .6s var(--ease);
+    }
+
+    .btn:hover::before, .btn:focus-visible::before { transform: scaleX(1); transform-origin: left; }
+    .btn:hover, .btn:focus-visible { color: var(--white); border-color: var(--blue); }
+
+    .btn--primary { background: var(--blue); border-color: var(--blue); color: var(--white); }
+    .btn--primary::before { background: var(--blue-dark); }
+    .btn--primary:hover, .btn--primary:focus-visible { border-color: var(--blue-dark); }
+
+    .btn--sm { min-height: 44px; padding: 0 1.3rem; font-size: .7rem; }
+
+    .btn__arrow { width: 18px; height: 10px; fill: none; stroke: currentColor; stroke-width: 1.5; transition: transform .6s var(--ease); }
+    .btn:hover .btn__arrow { transform: translateX(4px); }
+
+    .link {
+      background: linear-gradient(var(--blue), var(--blue)) 0 100% / 0 1.5px no-repeat;
+      transition: color .3s, background-size .5s var(--ease);
+    }
+    .link:hover, .link:focus-visible { color: var(--blue); background-size: 100% 1.5px; }
+
+    /* Image frame; shows a clean placeholder if a photo is unavailable */
+    .media {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, var(--soft-2), var(--soft));
+    }
+
+    .media::before {
+      content: 'MATTO';
+      position: absolute; inset: 0;
+      display: grid; place-items: center;
+      font-weight: 700; font-stretch: 125%; font-size: .85rem; letter-spacing: .4em;
+      color: #c9ced6;
+    }
+
+    .media img { position: relative; width: 100%; height: 100%; object-fit: cover; filter: saturate(.86) contrast(1.02); transition: transform 1.4s var(--ease); }
+    .media img.is-missing { visibility: hidden; }
+
+    /* 5. Header */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255, 255, 255, 0);
+      border-bottom: 1px solid transparent;
+      transition: background-color .5s ease, border-color .5s ease, box-shadow .5s ease;
+    }
+
+    .header.is-scrolled {
+      background: rgba(255, 255, 255, .9);
+      -webkit-backdrop-filter: blur(14px) saturate(160%);
+      backdrop-filter: blur(14px) saturate(160%);
+      border-bottom-color: var(--line);
+      box-shadow: 0 10px 30px -24px rgba(13, 17, 23, .35);
+    }
+
+    .header__inner {
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+      height: var(--header-h);
+      transition: height .5s var(--ease);
+    }
+
+    .header.is-scrolled .header__inner { height: 68px; }
+
+    .logo {
+      display: inline-flex; align-items: baseline; gap: .12rem;
+      font-size: 1.3rem; font-weight: 800; font-stretch: 125%; letter-spacing: .08em;
+      color: var(--ink);
+    }
+    .logo i { width: 7px; height: 7px; background: var(--blue); transition: transform .5s var(--ease); }
+    .logo:hover i { transform: rotate(45deg); }
+
+    .header__right { display: flex; align-items: center; gap: clamp(1.5rem, 3vw, 3rem); }
+
+    .nav ul { display: flex; gap: clamp(1.2rem, 2.2vw, 2.4rem); }
+
+    .nav__link {
+      position: relative;
+      padding-block: .5rem;
+      font-size: .74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--ink-2);
+      transition: color .3s;
+    }
+
+    .nav__link::after {
+      content: ''; position: absolute; left: 0; bottom: .15rem; width: 100%; height: 2px;
+      background: var(--blue);
+      transform: scaleX(0); transform-origin: right;
+      transition: transform .5s var(--ease);
+    }
+
+    .nav__link:hover, .nav__link.is-active { color: var(--blue); }
+    .nav__link:hover::after, .nav__link.is-active::after { transform: scaleX(1); transform-origin: left; }
+
+    .burger {
+      display: none;
+      position: relative;
+      width: 48px; height: 48px; margin-right: -10px;
+    }
+
+    .burger span {
+      position: absolute; left: 12px; width: 24px; height: 2px; background: var(--ink);
+      transition: transform .5s var(--ease), top .5s var(--ease), width .5s var(--ease);
+    }
+    .burger span:first-child { top: 19px; }
+    .burger span:last-child { top: 27px; width: 16px; }
+    .burger[aria-expanded="true"] span:first-child { top: 23px; transform: rotate(45deg); }
+    .burger[aria-expanded="true"] span:last-child { top: 23px; width: 24px; transform: rotate(-45deg); }
+
+    @media (max-width: 1024px) {
+      .nav { display: none; }
+      .burger { display: block; }
+    }
+
+    @media (max-width: 480px) {
+      .header__book { display: none; }
+    }
+
+    .drawer {
+      position: fixed; inset: 0; z-index: 90;
+      overflow-y: auto;
+      background: var(--white);
+      visibility: hidden;
+      clip-path: inset(0 0 100% 0);
+      transition: clip-path .9s var(--ease-io), visibility 0s linear .9s;
+    }
+
+    .drawer.is-open { visibility: visible; clip-path: inset(0); transition: clip-path .9s var(--ease-io), visibility 0s; }
+
+    .drawer__inner {
+      display: flex; flex-direction: column; justify-content: space-between; gap: 2.5rem;
+      min-height: 100%;
+      padding: calc(var(--header-h) + 3vh) var(--gutter) max(2rem, env(safe-area-inset-bottom));
+    }
+
+    .drawer__list li { overflow: hidden; border-bottom: 1px solid var(--line); }
+
+    .drawer__link {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 0;
+      font-size: clamp(2rem, 9vw, 3.6rem); font-weight: 750; font-stretch: 118%; line-height: 1; text-transform: uppercase;
+      color: var(--ink);
+      transform: translateY(105%);
+      transition: transform .45s var(--ease), color .3s;
+    }
+
+    .drawer__link span { font-size: .72rem; font-weight: 600; font-stretch: 100%; letter-spacing: .14em; color: var(--blue); }
+    .drawer__link:hover { color: var(--blue); }
+    .drawer.is-open .drawer__link { transform: none; transition: transform 1s var(--ease) calc(.3s + var(--i) * .06s), color .3s; }
+
+    .drawer__foot { display: grid; gap: 1.25rem; opacity: 0; transition: opacity .3s; }
+    .drawer.is-open .drawer__foot { opacity: 1; transition: opacity .8s ease .75s; }
+    .drawer__foot .btn { width: 100%; }
+    .drawer__meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem 1.5rem; font-size: .9rem; color: var(--muted); }
+
+    /* 6. Hero */
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+      min-height: 100vh;
+      min-height: 100svh;
+      padding-top: var(--header-h);
+    }
+
+    .hero__text {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: clamp(3rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem) clamp(4rem, 7vw, 6rem) max(var(--gutter), calc((100vw - 1440px) / 2 + var(--gutter)));
+    }
+
+    .hero__brand { margin-bottom: clamp(2rem, 3.5vw, 3rem); }
+    .hero__brand b { font-weight: 800; font-stretch: 125%; color: var(--ink); }
+    .hero__brand span { color: var(--muted); }
+
+    .hero__title {
+      font-size: clamp(2.7rem, 5.9vw, 6.6rem);
+      font-weight: 780;
+      font-stretch: 112%;
+      line-height: .93;
+      letter-spacing: -.025em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .hero__title .accent { color: var(--blue); }
+
+    .hero__rule { width: 72px; height: 2px; margin: clamp(2rem, 3.5vw, 2.75rem) 0; background: var(--blue); transform-origin: left; }
+
+    .hero__sub { max-width: 30rem; }
+
+    .hero__actions { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: clamp(2.25rem, 4vw, 3rem); }
+
+    .hero__visual { position: relative; padding: clamp(1.25rem, 2.5vw, 2.5rem) 0 clamp(1.25rem, 2.5vw, 2.5rem); }
+
+    .hero__media { position: relative; z-index: 1; height: 100%; min-height: 520px; }
+    .hero__media .media__inner { position: absolute; inset: 0; }
+    .hero__media img { animation: hero-zoom 18s var(--ease) both; }
+    @keyframes hero-zoom { from { transform: scale(1.12); } to { transform: scale(1); } }
+
+    .hero__frame {
+      position: absolute; top: clamp(2.5rem, 4.5vw, 4.5rem); bottom: clamp(.25rem, 1vw, 1rem);
+      left: calc(clamp(1.25rem, 2.5vw, 2.5rem) * -1); width: 42%;
+      border: 1.5px solid var(--blue);
+      pointer-events: none;
+    }
+
+    .hero__card {
+      position: absolute; left: calc(clamp(1.25rem, 2.5vw, 2.5rem) * -1); bottom: clamp(3rem, 6vw, 5rem); z-index: 2;
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1.1rem 1.4rem;
+      background: var(--white);
+      box-shadow: 0 20px 50px -28px rgba(13, 17, 23, .45);
+    }
+
+    .hero__status { width: 9px; height: 9px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 5px var(--blue-tint); }
+    .hero__card b { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+    .hero__card span { display: block; font-size: .88rem; color: var(--muted); }
+
+    .hero__scroll {
+      position: absolute; left: max(var(--gutter), calc((100vw - 1440px) / 2 + var(--gutter))); bottom: 2rem;
+      display: flex; align-items: center; gap: .9rem;
+      font-size: .68rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--muted);
+    }
+    .hero__scroll i { position: relative; width: 48px; height: 1px; overflow: hidden; background: var(--line); }
+    .hero__scroll i::after { content: ''; position: absolute; inset: 0; width: 40%; background: var(--blue); animation: scroll-x 2.4s var(--ease-io) infinite; }
+    @keyframes scroll-x { from { transform: translateX(-100%); } to { transform: translateX(260%); } }
+
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; min-height: 0; }
+      .hero__text { padding: clamp(2.5rem, 7vw, 4rem) var(--gutter) clamp(2.5rem, 6vw, 3.5rem); }
+      .hero__visual { padding: 0 var(--gutter) 0 calc(var(--gutter) + 1.25rem); }
+      .hero__media { min-height: 0; aspect-ratio: 4 / 3.4; }
+      .hero__scroll { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .hero__visual { padding: 0 0 0 calc(var(--gutter) + .5rem); }
+      .hero__media { aspect-ratio: 4 / 4.6; }
+      .hero__frame { left: -.9rem; width: 55%; top: 2rem; }
+      .hero__card { left: -.9rem; bottom: 1.75rem; padding: .9rem 1.1rem; }
+      .hero__actions { flex-direction: column; }
+      .hero__actions .btn { width: 100%; justify-content: space-between; }
+    }
+
+    /* Marquee band */
+    .band { overflow: hidden; border-block: 1px solid var(--line); padding-block: clamp(1.25rem, 2.5vw, 2rem); }
+
+    .band__track { display: flex; width: max-content; animation: marquee 48s linear infinite; }
+
+    .band__item {
+      display: flex; align-items: center; gap: clamp(1.5rem, 3vw, 3rem);
+      padding-right: clamp(1.5rem, 3vw, 3rem);
+      font-size: clamp(1.6rem, 3.6vw, 3.4rem); font-weight: 750; font-stretch: 122%; text-transform: uppercase; line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 1px #b9bfc9;
+      white-space: nowrap;
+    }
+
+    .band__item i { width: 10px; height: 10px; background: var(--blue); flex: none; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    /* 7. About */
+    .about__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(3rem, 7vw, 8rem); align-items: center; }
+
+    .about__visual { position: relative; padding-bottom: clamp(4rem, 8vw, 7rem); }
+    .about__main { aspect-ratio: 5 / 4; }
+
+    .about__small {
+      position: absolute; right: calc(clamp(1rem, 3vw, 3rem) * -1); bottom: 0;
+      width: 42%; aspect-ratio: 3 / 4;
+      border: clamp(6px, .8vw, 12px) solid var(--white);
+    }
+
+    .about__visual:hover .about__main img { transform: scale(1.04); }
+
+    .about__text .heading { margin: 1.5rem 0 2rem; font-size: clamp(2.4rem, 4.2vw, 4.4rem); }
+    .about__text .lead + .lead { margin-top: 1.25rem; }
+
+    .about__points { display: grid; gap: 0; margin-top: 2.5rem; border-top: 1px solid var(--line); }
+    .about__points li {
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      padding: 1rem 0; border-bottom: 1px solid var(--line);
+      font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink);
+    }
+    .about__points li span { color: var(--blue); font-size: .72rem; }
+
+    @media (max-width: 900px) {
+      .about__grid { grid-template-columns: 1fr; }
+      .about__small { right: 0; }
+      .about__visual { margin-right: clamp(0px, 3vw, 1rem); }
+    }
+
+    /* 8. Services */
+    .services__list { border-top: 1px solid var(--ink); }
+
+    .service {
+      position: relative;
+      width: 100%;
+      text-align: left;
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr) 120px 150px 56px;
+      align-items: center;
+      gap: 1.5rem;
+      padding: clamp(1.5rem, 2.4vw, 2.1rem) clamp(.5rem, 1.5vw, 1.5rem);
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+      isolation: isolate;
+      transition: color .4s;
+    }
+
+    .service::before {
+      content: ''; position: absolute; inset: 0; z-index: -1;
+      background: var(--white);
+      transform: scaleY(0); transform-origin: bottom;
+      transition: transform .6s var(--ease);
+    }
+
+    .service::after {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+      background: var(--blue);
+      transform: scaleY(0); transform-origin: top;
+      transition: transform .6s var(--ease);
+    }
+
+    .service:hover::before, .service:focus-visible::before { transform: scaleY(1); }
+    .service:hover::after, .service:focus-visible::after { transform: scaleY(1); }
+    .service:focus-visible { outline-offset: -2px; }
+
+    .service__num { font-size: .78rem; font-weight: 600; letter-spacing: .1em; color: var(--blue); }
+
+    .service__main, .service__name, .service__desc { display: block; }
+    .service__name {
+      font-size: clamp(1.3rem, 2.2vw, 2rem); font-weight: 720; font-stretch: 112%; line-height: 1.1; text-transform: uppercase;
+      color: var(--ink);
+      transition: color .4s, transform .6s var(--ease);
+    }
+
+    .service__desc { margin-top: .35rem; color: var(--muted); }
+    .service__time { font-size: .85rem; color: var(--muted); letter-spacing: .04em; }
+    .service__price { font-size: clamp(1.15rem, 1.6vw, 1.4rem); font-weight: 650; font-stretch: 105%; color: var(--ink); text-align: right; white-space: nowrap; }
+
+    .service__go {
+      display: grid; place-items: center; width: 48px; height: 48px; justify-self: end;
+      border: 1px solid var(--line); color: var(--ink);
+      transition: background-color .4s, border-color .4s, color .4s, transform .6s var(--ease);
+    }
+    .service__go svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+
+    .service:hover .service__name { color: var(--blue); transform: translateX(6px); }
+    .service:hover .service__go { background: var(--blue); border-color: var(--blue); color: var(--white); transform: rotate(-45deg); }
+
+    .services__note { margin-top: 2rem; font-size: .85rem; color: var(--muted); }
+
+    @media (max-width: 900px) {
+      .service { grid-template-columns: 44px minmax(0, 1fr) auto; grid-template-areas: "num name price" "num time go"; gap: .6rem 1rem; }
+      .service__num { grid-area: num; align-self: start; padding-top: .35rem; }
+      .service__main { grid-area: name; }
+      .service__time { grid-area: time; }
+      .service__price { grid-area: price; align-self: start; }
+      .service__go { grid-area: go; width: 40px; height: 40px; }
+    }
+
+    @media (max-width: 480px) {
+      .service { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "num num" "name name" "time price"; padding-inline: 0; }
+      .service__go { display: none; }
+      .service__price { align-self: center; }
+      .service::after { left: -.75rem; }
+    }
+
+    /* 9. Team */
+    .team__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); }
+
+    .barber__media { aspect-ratio: 3 / 4; }
+    .barber__media img { filter: grayscale(1) contrast(1.05); transition: transform 1.4s var(--ease), filter .8s ease; }
+    .barber:hover .barber__media img { filter: grayscale(0) saturate(.9); transform: scale(1.04); }
+
+    .barber__media::after {
+      content: ''; position: absolute; inset: 0;
+      border: 2px solid var(--blue);
+      opacity: 0; transition: opacity .5s ease;
+    }
+    .barber:hover .barber__media::after { opacity: 1; }
+
+    .barber__info { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-top: 1.25rem; }
+    .barber__name { font-size: 1.15rem; font-weight: 700; font-stretch: 110%; text-transform: uppercase; color: var(--ink); line-height: 1.2; }
+    .barber__role { margin-top: .25rem; font-size: .9rem; color: var(--blue); }
+
+    .barber__book {
+      flex: none; margin-top: .1rem;
+      font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink);
+    }
+
+    .team__note { margin-top: 2.5rem; font-size: .82rem; color: var(--muted); }
+
+    @media (max-width: 1024px) { .team__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 3rem; } }
+
+    @media (max-width: 600px) {
+      .team__grid {
+        display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory;
+        margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter);
+        scrollbar-width: none;
+      }
+      .team__grid::-webkit-scrollbar { display: none; }
+      .barber { flex: 0 0 76%; scroll-snap-align: start; }
+    }
+
+    /* 10. Gallery */
+    .gallery__grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      grid-auto-rows: clamp(150px, 16vw, 270px);
+      grid-template-areas:
+        "a a a a b b"
+        "a a a a c c"
+        "d d e e e f"
+        "d d e e e f";
+      gap: clamp(10px, 1.2vw, 18px);
+    }
+
+    .gallery__item:nth-child(1) { grid-area: a; }
+    .gallery__item:nth-child(2) { grid-area: b; }
+    .gallery__item:nth-child(3) { grid-area: c; }
+    .gallery__item:nth-child(4) { grid-area: d; }
+    .gallery__item:nth-child(5) { grid-area: e; }
+    .gallery__item:nth-child(6) { grid-area: f; }
+
+    .gallery__btn { display: block; width: 100%; height: 100%; text-align: left; }
+
+    .gallery__btn::after {
+      content: ''; position: absolute; inset: 0;
+      border: 3px solid var(--blue);
+      opacity: 0; transition: opacity .5s ease;
+      pointer-events: none;
+    }
+
+    .gallery__tag {
+      position: absolute; left: 1rem; bottom: 1rem;
+      padding: .5rem .8rem;
+      background: var(--white);
+      font-size: .66rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--ink);
+      opacity: 0; transform: translateY(8px);
+      transition: opacity .5s var(--ease), transform .5s var(--ease);
+    }
+
+    .gallery__btn:hover img, .gallery__btn:focus-visible img { transform: scale(1.06); }
+    .gallery__btn:hover::after, .gallery__btn:focus-visible::after,
+    .gallery__btn:hover .gallery__tag, .gallery__btn:focus-visible .gallery__tag { opacity: 1; transform: none; }
+    .gallery__btn:focus-visible { outline: none; }
+
+    @media (hover: none) { .gallery__tag { opacity: 1; transform: none; } }
+
+    @media (max-width: 760px) {
+      .gallery__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 42vw;
+        grid-template-areas: "a a" "a a" "b c" "e e" "d f";
+      }
+      .gallery__tag { left: .6rem; bottom: .6rem; padding: .4rem .6rem; font-size: .58rem; }
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 200;
+      display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 1.25rem;
+      padding: clamp(1rem, 4vw, 3rem);
+      background: rgba(255, 255, 255, .97);
+      opacity: 0; visibility: hidden;
+      transition: opacity .5s var(--ease), visibility 0s linear .5s;
+    }
+    .lightbox.is-open { opacity: 1; visibility: visible; transition: opacity .5s var(--ease), visibility 0s; }
+
+    .lightbox__figure { display: flex; flex-direction: column; align-items: center; gap: 1rem; min-width: 0; }
+    .lightbox__img {
+      max-width: 100%; max-height: 80vh; max-height: 80svh; object-fit: contain;
+      box-shadow: 0 30px 80px -40px rgba(13, 17, 23, .5);
+      opacity: 0; transform: scale(.97);
+      transition: opacity .6s var(--ease), transform .8s var(--ease);
+    }
+    .lightbox.is-open .lightbox__img.is-loaded { opacity: 1; transform: none; }
+
+    .lightbox__caption { display: flex; gap: 1.5rem; font-size: .72rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink); }
+    .lightbox__count { color: var(--blue); }
+
+    .lightbox__nav, .lightbox__close {
+      display: grid; place-items: center; width: 52px; height: 52px;
+      border: 1px solid var(--line); background: var(--white); color: var(--ink);
+      transition: background-color .3s, border-color .3s, color .3s;
+    }
+    .lightbox__nav:hover, .lightbox__close:hover { background: var(--blue); border-color: var(--blue); color: var(--white); }
+    .lightbox__nav svg, .lightbox__close svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+    .lightbox__close { position: absolute; top: clamp(1rem, 3vw, 2rem); right: clamp(1rem, 3vw, 2rem); }
+
+    @media (max-width: 760px) {
+      .lightbox { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr auto; padding: 5rem 1rem 1.5rem; }
+      .lightbox__figure { grid-column: 1 / -1; grid-row: 1; }
+      .lightbox__nav--prev { grid-row: 2; justify-self: end; }
+      .lightbox__nav--next { grid-row: 2; justify-self: start; }
+    }
+
+    /* 11. Experience */
+    .experience__head { text-align: center; margin-bottom: clamp(3.5rem, 7vw, 6rem); }
+    .experience__head .label { justify-content: center; margin-bottom: 1.5rem; }
+
+    .pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+
+    .pillar {
+      position: relative;
+      padding: clamp(2.5rem, 4vw, 3.5rem) clamp(1.5rem, 3vw, 3rem) clamp(1rem, 2vw, 2rem);
+    }
+    .pillar + .pillar { border-left: 1px solid var(--line); }
+
+    .pillar::before {
+      content: ''; position: absolute; top: -1px; left: 0; height: 2px; width: 100%;
+      background: var(--blue);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform .8s var(--ease);
+    }
+    .pillar:hover::before { transform: scaleX(1); }
+
+    .pillar__num { font-size: .78rem; font-weight: 600; letter-spacing: .1em; color: var(--blue); }
+    .pillar__title { margin-top: clamp(2.5rem, 5vw, 4.5rem); font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 780; font-stretch: 118%; line-height: 1; text-transform: uppercase; color: var(--ink); }
+    .pillar__text { margin-top: 1rem; max-width: 18rem; color: var(--muted); }
+
+    @media (max-width: 760px) {
+      .pillars { grid-template-columns: 1fr; }
+      .pillar { padding-inline: 0; }
+      .pillar + .pillar { border-left: 0; border-top: 1px solid var(--line); }
+      .pillar__title { margin-top: 1.25rem; }
+    }
+
+    /* 12. Booking */
+    .booking__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(3rem, 6vw, 7rem); align-items: start; }
+
+    .booking__intro .heading { margin: 1.5rem 0 1.5rem; }
+
+    .booking__info { margin-top: 2.5rem; display: grid; gap: .5rem; font-size: .95rem; }
+    .booking__info b { font-weight: 600; color: var(--ink); }
+
+    .booking__card {
+      position: relative;
+      padding: clamp(1.75rem, 4vw, 3.5rem);
+      background: var(--white);
+      box-shadow: 0 40px 80px -60px rgba(13, 17, 23, .4);
+    }
+
+    .booking__card::before { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 3px; background: var(--blue); }
+
+    .form__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem 1.25rem; }
+
+    .field { display: flex; flex-direction: column; gap: .5rem; min-width: 0; }
+
+    .field__label { font-size: .7rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+
+    .field__input {
+      width: 100%; height: 56px;
+      padding: 0 1rem;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: var(--soft);
+      font-size: 1rem;
+      color: var(--ink);
+      outline: none;
+      transition: border-color .3s, background-color .3s, box-shadow .3s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .field__input::placeholder { color: #9aa0aa; }
+    .field__input:hover { border-color: #c9ced6; }
+    .field__input:focus { border-color: var(--blue); background: var(--white); box-shadow: 0 0 0 4px var(--blue-tint); }
+
+    select.field__input {
+      padding-right: 2.5rem; cursor: pointer;
+      background: var(--soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%231646d9' stroke-width='1.6'/%3E%3C/svg%3E") right 1rem center no-repeat;
+    }
+    select.field__input:focus { background-color: var(--white); }
+    select.field__input:disabled { cursor: not-allowed; color: #9aa0aa; }
+
+    .field__input[aria-invalid="true"] { border-color: var(--blue-dark); background-color: var(--blue-tint); }
+
+    .field__error { display: flex; gap: .45rem; align-items: center; min-height: 1.2rem; font-size: .8rem; font-weight: 500; color: var(--blue-dark); }
+    .field__error:not(:empty)::before {
+      content: '!'; display: grid; place-items: center; flex: none;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--blue-dark); color: var(--white); font-size: .68rem; font-weight: 700;
+    }
+
+    .form__submit { width: 100%; margin-top: 1.5rem; min-height: 60px; }
+    .form__submit:disabled { cursor: progress; }
+
+    .spinner { display: none; width: 18px; height: 18px; border: 2px solid rgba(255, 255, 255, .35); border-top-color: var(--white); border-radius: 50%; animation: spin .8s linear infinite; }
+    .form.is-sending .spinner { display: block; }
+    .form.is-sending .btn__arrow { display: none; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .form__legal { margin-top: 1rem; font-size: .78rem; color: var(--muted); text-align: center; }
+
+    .success { text-align: center; padding-block: clamp(1rem, 3vw, 2rem); animation: rise .8s var(--ease) both; }
+    .success:focus { outline: none; }
+    .success__icon { width: 72px; height: 72px; margin: 0 auto; }
+    .success__icon circle { fill: var(--blue); }
+    .success__icon path { fill: none; stroke: var(--white); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 40; stroke-dashoffset: 40; animation: draw .7s var(--ease) .35s forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } }
+
+    .success__title { margin-top: 1.75rem; font-size: clamp(1.6rem, 2.6vw, 2.2rem); font-weight: 750; font-stretch: 112%; text-transform: uppercase; color: var(--ink); line-height: 1.1; }
+    .success__text { margin-top: .75rem; color: var(--ink-2); }
+
+    .success__summary { display: grid; gap: 0; max-width: 360px; margin: 2rem auto 0; text-align: left; border-top: 1px solid var(--line); }
+    .success__summary div { display: flex; justify-content: space-between; gap: 1rem; padding: .7rem 0; border-bottom: 1px solid var(--line); font-size: .92rem; }
+    .success__summary dt { color: var(--muted); }
+    .success__summary dd { font-weight: 600; color: var(--ink); text-align: right; }
+
+    .success__again { margin-top: 2rem; }
+
+    @media (max-width: 1024px) { .booking__grid { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) {
+      .form__grid { grid-template-columns: 1fr; gap: 1.1rem; }
+      .booking__card { margin-inline: calc(var(--gutter) * -1 + 8px); }
+    }
+
+    /* 13. Location */
+    .location__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(3rem, 6vw, 7rem); align-items: stretch; }
+
+    .location__list { margin-top: 2.5rem; border-top: 1px solid var(--line); }
+    .location__list div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
+    .location__list dt { font-size: .7rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--blue); padding-top: .2rem; }
+    .location__list dd { font-size: 1.05rem; color: var(--ink); }
+
+    .location__actions { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 2.5rem; }
+
+    .map { position: relative; min-height: 460px; overflow: hidden; background: #eef0f3; }
+    .map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .map__block { fill: #e3e6eb; }
+    .map__park { fill: #dfe7f7; }
+    .map__road { fill: none; stroke: #ffffff; stroke-width: 14; stroke-linecap: square; }
+    .map__road--sm { stroke-width: 7; }
+    .map__route { fill: none; stroke: var(--blue); stroke-width: 3; stroke-dasharray: 8 8; }
+
+    .map__dot { fill: var(--blue); stroke: var(--white); stroke-width: 4; }
+    .map__pulse { fill: rgba(22, 70, 217, .2); transform-box: fill-box; transform-origin: center; animation: pulse 2.6s var(--ease) infinite; }
+    @keyframes pulse { from { transform: scale(.35); opacity: 1; } to { transform: scale(1.4); opacity: 0; } }
+    .map__label rect { fill: var(--white); filter: drop-shadow(0 12px 18px rgba(13, 17, 23, .14)); }
+    .map__label-title { font-family: var(--font); font-size: 15px; font-weight: 800; font-stretch: 125%; letter-spacing: .08em; fill: var(--ink); }
+    .map__label-text { font-family: var(--font); font-size: 14px; fill: var(--muted); }
+
+    @media (max-width: 900px) {
+      .location__grid { grid-template-columns: 1fr; }
+      .map { min-height: 340px; }
+    }
+
+    /* 14. Footer */
+    .footer { background: var(--soft); padding: clamp(4rem, 8vw, 7rem) 0 2rem; }
+
+    .footer__logo {
+      font-size: clamp(4rem, 17vw, 16rem); font-weight: 800; font-stretch: 125%; line-height: .85; letter-spacing: -.02em;
+      color: var(--ink);
+    }
+    .footer__logo span { color: var(--blue); }
+
+    .footer__row {
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.25rem 2rem;
+      margin-top: clamp(3rem, 6vw, 5rem); padding-top: 1.75rem; border-top: 1px solid var(--line);
+    }
+
+    .footer__links { display: flex; flex-wrap: wrap; gap: .75rem 2.25rem; }
+    .footer__links a { font-size: .74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+    .footer__copy { font-size: .74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+
+    /* 15. Motion */
+    .js [data-reveal=""] { opacity: 0; transform: translateY(28px); transition: opacity 1s var(--ease), transform 1.2s var(--ease); transition-delay: calc(var(--d, 0) * 90ms); }
+    .js [data-reveal="lines"] .mask > span { transform: translateY(105%); transition: transform 1.2s var(--ease); }
+    .js [data-reveal="lines"] .mask:nth-child(2) > span { transition-delay: .08s; }
+    .js [data-reveal="lines"] .mask:nth-child(3) > span { transition-delay: .16s; }
+    .js [data-reveal="image"] { clip-path: inset(0 0 100% 0); transition: clip-path 1.4s var(--ease-io); }
+    .js [data-reveal="image"] img { transform: scale(1.15); transition: transform 1.8s var(--ease); }
+
+    .js [data-reveal].is-visible { opacity: 1; transform: none; }
+    .js [data-reveal="lines"].is-visible .mask > span { transform: none; }
+    .js [data-reveal="image"].is-visible { clip-path: inset(0); }
+    .js [data-reveal="image"].is-visible img { transform: none; }
+    .js .about__visual:hover .about__main.is-visible img { transform: scale(1.04); }
+
+    /* Hero entrance */
+    .js [data-intro] { opacity: 0; transform: translateY(20px); }
+    .js .hero__title .mask > span { transform: translateY(105%); }
+    .js .hero__rule { transform: scaleX(0); }
+    .js .hero__media { clip-path: inset(0 0 0 100%); }
+    .js .hero__frame { opacity: 0; }
+
+    .is-ready [data-intro] { opacity: 1; transform: none; transition: opacity 1s var(--ease) var(--delay, 0s), transform 1.2s var(--ease) var(--delay, 0s); }
+    .is-ready .hero__title .mask > span { transform: none; transition: transform 1.2s var(--ease); }
+    .is-ready .hero__title .mask:nth-child(2) > span { transition-delay: .1s; }
+    .is-ready .hero__rule { transform: none; transition: transform 1s var(--ease) .5s; }
+    .is-ready .hero__media { clip-path: inset(0); transition: clip-path 1.5s var(--ease-io) .15s; }
+    .is-ready .hero__frame { opacity: 1; transition: opacity 1s ease 1.1s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+        transition-delay: 0s !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="logo" href="#home" aria-label="MATTO — home">MATTO<i aria-hidden="true"></i></a>
+
+      <div class="header__right">
+        <nav class="nav" aria-label="Main">
+          <ul>
+            <li><a class="nav__link" href="#home" data-nav>Home</a></li>
+            <li><a class="nav__link" href="#services" data-nav>Services</a></li>
+            <li><a class="nav__link" href="#about" data-nav>About</a></li>
+            <li><a class="nav__link" href="#barbers" data-nav>Barbers</a></li>
+            <li><a class="nav__link" href="#gallery" data-nav>Gallery</a></li>
+            <li><a class="nav__link" href="#contact" data-nav>Contact</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn--primary btn--sm header__book" href="#booking">Book now</a>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer" id="drawer" inert>
+    <div class="drawer__inner">
+      <nav aria-label="Mobile">
+        <ul class="drawer__list">
+          <li><a class="drawer__link" href="#home" style="--i:0">Home <span>01</span></a></li>
+          <li><a class="drawer__link" href="#services" style="--i:1">Services <span>02</span></a></li>
+          <li><a class="drawer__link" href="#about" style="--i:2">About <span>03</span></a></li>
+          <li><a class="drawer__link" href="#barbers" style="--i:3">Barbers <span>04</span></a></li>
+          <li><a class="drawer__link" href="#gallery" style="--i:4">Gallery <span>05</span></a></li>
+          <li><a class="drawer__link" href="#contact" style="--i:5">Contact <span>06</span></a></li>
+        </ul>
+      </nav>
+      <div class="drawer__foot">
+        <a class="btn btn--primary" href="#booking">Book an appointment</a>
+        <div class="drawer__meta">
+          <a href="tel:+74950000000">+7 (495) 000-00-00</a>
+          <span>Mon–Sat · 10:00–22:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero__text">
+        <p class="label hero__brand" data-intro style="--delay:.1s"><b>MATTO</b><span>Barbershop</span></p>
+
+        <h1 class="hero__title" id="hero-title">
+          <span class="mask"><span>Your style.</span></span>
+          <span class="mask"><span class="accent">Your standard.</span></span>
+          <span class="sr-only"> — MATTO, premium barbershop in Moscow</span>
+        </h1>
+
+        <span class="hero__rule" aria-hidden="true"></span>
+
+        <p class="lead hero__sub" data-intro style="--delay:.55s">Modern grooming with precision, character and attention to detail.</p>
+
+        <div class="hero__actions" data-intro style="--delay:.7s">
+          <a class="btn btn--primary" href="#booking">
+            Book an appointment
+            <svg class="btn__arrow" viewBox="0 0 18 10" aria-hidden="true"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
+          </a>
+          <a class="btn" href="#services">View services</a>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <span class="hero__frame" aria-hidden="true"></span>
+        <div class="hero__media media">
+          <div class="media__inner">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1400&q=80"
+                 srcset="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=75 800w,
+                         https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1400&q=80 1400w,
+                         https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=2000&q=80 2000w"
+                 sizes="(max-width: 1024px) 100vw, 48vw"
+                 alt="A barber finishing a client’s haircut at MATTO" fetchpriority="high" decoding="async">
+          </div>
+        </div>
+        <div class="hero__card" data-intro style="--delay:1.2s">
+          <span class="hero__status" aria-hidden="true"></span>
+          <p><b id="open-status">Open today</b><span id="open-hours">10:00 – 22:00</span></p>
+        </div>
+      </div>
+
+      <a class="hero__scroll" href="#about" data-intro style="--delay:1.4s">Scroll <i aria-hidden="true"></i></a>
+    </section>
+
+    <!-- Marquee -->
+    <div class="band" aria-hidden="true">
+      <div class="band__track">
+        <div class="band__item">Precision <i></i> Style <i></i> Craft <i></i> Matto Barbershop <i></i></div>
+        <div class="band__item">Precision <i></i> Style <i></i> Craft <i></i> Matto Barbershop <i></i></div>
+      </div>
+    </div>
+
+    <!-- ============================ ABOUT ============================ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container about__grid">
+        <div class="about__visual">
+          <figure class="about__main media" data-reveal="image">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1400&q=80"
+                 srcset="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=75 800w,
+                         https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1400&q=80 1400w"
+                 sizes="(max-width: 900px) 100vw, 55vw"
+                 alt="The MATTO barbershop interior with barber chairs" loading="lazy" decoding="async">
+          </figure>
+          <figure class="about__small media" data-reveal="image">
+            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=700&q=80"
+                 alt="A barber shaping a fade with clippers" loading="lazy" decoding="async">
+          </figure>
+        </div>
+
+        <div class="about__text">
+          <p class="label" data-reveal>About MATTO</p>
+          <h2 class="heading" id="about-title" data-reveal="lines">
+            <span class="mask"><span>More than</span></span>
+            <span class="mask"><span>a <span class="accent">haircut.</span></span></span>
+          </h2>
+          <p class="lead" data-reveal>MATTO is a modern barbershop built around precision, personal style and an exceptional grooming experience.</p>
+          <p class="lead" data-reveal>Every visit starts with a conversation and ends with a result that suits you — not a trend, not a template.</p>
+          <ul class="about__points" data-reveal>
+            <li>Precision <span>01</span></li>
+            <li>Personal style <span>02</span></li>
+            <li>Exceptional experience <span>03</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ SERVICES ============================ -->
+    <section class="section section--soft" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="label" data-reveal>Menu</p>
+            <h2 class="heading" id="services-title" data-reveal="lines"><span class="mask"><span>Our <span class="accent">services</span></span></span></h2>
+          </div>
+          <p class="section-head__lead" data-reveal>Choose a service to book it instantly. Every appointment includes a consultation and styling.</p>
+        </header>
+
+        <!-- Rendered from SERVICES in the script -->
+        <ul class="services__list" id="services-list"></ul>
+        <p class="services__note" data-reveal>Prices are shown in roubles and are for demonstration purposes.</p>
+      </div>
+    </section>
+
+    <!-- ============================ TEAM ============================ -->
+    <section class="section" id="barbers" aria-labelledby="team-title">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="label" data-reveal>Barbers</p>
+            <h2 class="heading" id="team-title" data-reveal="lines"><span class="mask"><span>The <span class="accent">team</span></span></span></h2>
+          </div>
+          <p class="section-head__lead" data-reveal>Four barbers, four signatures. Pick the one who fits your style — or let us match you.</p>
+        </header>
+
+        <!-- Rendered from BARBERS in the script -->
+        <ul class="team__grid" id="team-list"></ul>
+        <p class="team__note" data-reveal>Team profiles are fictional and shown for demonstration purposes.</p>
+      </div>
+    </section>
+
+    <!-- ============================ GALLERY ============================ -->
+    <section class="section section--soft" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="label" data-reveal>Gallery</p>
+            <h2 class="heading" id="gallery-title" data-reveal="lines"><span class="mask"><span>Inside <span class="accent">MATTO</span></span></span></h2>
+          </div>
+          <p class="section-head__lead" data-reveal>The space, the people and the craft behind every cut.</p>
+        </header>
+
+        <ul class="gallery__grid">
+          <li class="gallery__item" data-reveal>
+            <button class="gallery__btn media" type="button" data-caption="Interior" data-full="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=2000&q=80">
+              <img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=1200&q=80" alt="Barber chairs and mirrors in the MATTO interior" loading="lazy" decoding="async">
+              <span class="gallery__tag">Interior</span>
+            </button>
+          </li>
+          <li class="gallery__item" data-reveal style="--d:1">
+            <button class="gallery__btn media" type="button" data-caption="Barbers" data-full="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=2000&q=80">
+              <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80" alt="A barber at work" loading="lazy" decoding="async">
+              <span class="gallery__tag">Barbers</span>
+            </button>
+          </li>
+          <li class="gallery__item" data-reveal style="--d:2">
+            <button class="gallery__btn media" type="button" data-caption="Haircuts" data-full="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=2000&q=80">
+              <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80" alt="A finished men’s haircut" loading="lazy" decoding="async">
+              <span class="gallery__tag">Haircuts</span>
+            </button>
+          </li>
+          <li class="gallery__item" data-reveal>
+            <button class="gallery__btn media" type="button" data-caption="Tools" data-full="https://images.unsplash.com/photo-1590540179852-2110a54f813a?auto=format&fit=crop&w=2000&q=80">
+              <img src="https://images.unsplash.com/photo-1590540179852-2110a54f813a?auto=format&fit=crop&w=800&q=80" alt="Barber tools laid out on the counter" loading="lazy" decoding="async">
+              <span class="gallery__tag">Tools</span>
+            </button>
+          </li>
+          <li class="gallery__item" data-reveal style="--d:1">
+            <button class="gallery__btn media" type="button" data-caption="Atmosphere" data-full="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=2000&q=80">
+              <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=1000&q=80" alt="The atmosphere of the barbershop in the evening" loading="lazy" decoding="async">
+              <span class="gallery__tag">Atmosphere</span>
+            </button>
+          </li>
+          <li class="gallery__item" data-reveal style="--d:2">
+            <button class="gallery__btn media" type="button" data-caption="Details" data-full="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=2000&q=80">
+              <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=600&q=80" alt="Grooming products and details" loading="lazy" decoding="async">
+              <span class="gallery__tag">Details</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================ EXPERIENCE ============================ -->
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <header class="experience__head">
+          <p class="label" data-reveal>Why MATTO</p>
+          <h2 class="heading" id="experience-title" data-reveal="lines">
+            <span class="mask"><span>The MATTO</span></span>
+            <span class="mask"><span class="accent">experience</span></span>
+          </h2>
+        </header>
+
+        <ol class="pillars">
+          <li class="pillar" data-reveal>
+            <span class="pillar__num">01</span>
+            <h3 class="pillar__title">Precision</h3>
+            <p class="pillar__text">Every detail matters.</p>
+          </li>
+          <li class="pillar" data-reveal style="--d:1">
+            <span class="pillar__num">02</span>
+            <h3 class="pillar__title">Style</h3>
+            <p class="pillar__text">Your haircut should reflect your personality.</p>
+          </li>
+          <li class="pillar" data-reveal style="--d:2">
+            <span class="pillar__num">03</span>
+            <h3 class="pillar__title">Craft</h3>
+            <p class="pillar__text">Classic barbering combined with modern techniques.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================ BOOKING ============================ -->
+    <section class="section section--soft" id="booking" aria-labelledby="booking-title">
+      <div class="container booking__grid">
+        <div class="booking__intro">
+          <p class="label" data-reveal>Booking</p>
+          <h2 class="heading" id="booking-title" data-reveal="lines">
+            <span class="mask"><span>Book your</span></span>
+            <span class="mask"><span class="accent">chair</span></span>
+          </h2>
+          <p class="lead" data-reveal>Your next look starts here.</p>
+          <div class="booking__info" data-reveal>
+            <p><b>Mon–Sat</b> · 10:00–22:00</p>
+            <p>Prefer to call? <a class="link" href="tel:+74950000000">+7 (495) 000-00-00</a></p>
+          </div>
+        </div>
+
+        <div class="booking__card" data-reveal>
+          <form class="form" id="booking-form" novalidate>
+            <div class="form__grid">
+              <div class="field">
+                <label class="field__label" for="b-name">Name</label>
+                <input class="field__input" id="b-name" name="name" type="text" autocomplete="name" placeholder="Your name" required aria-describedby="b-name-error">
+                <p class="field__error" id="b-name-error" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="b-phone">Phone</label>
+                <input class="field__input" id="b-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" required aria-describedby="b-phone-error">
+                <p class="field__error" id="b-phone-error" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="b-service">Service</label>
+                <select class="field__input" id="b-service" name="service" required aria-describedby="b-service-error">
+                  <option value="">Choose a service</option>
+                </select>
+                <p class="field__error" id="b-service-error" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="b-barber">Barber</label>
+                <select class="field__input" id="b-barber" name="barber" required aria-describedby="b-barber-error">
+                  <option value="">Choose a barber</option>
+                  <option value="Any barber">Any available barber</option>
+                </select>
+                <p class="field__error" id="b-barber-error" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="b-date">Date</label>
+                <input class="field__input" id="b-date" name="date" type="date" required aria-describedby="b-date-error">
+                <p class="field__error" id="b-date-error" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="b-time">Time</label>
+                <select class="field__input" id="b-time" name="time" required disabled aria-describedby="b-time-error">
+                  <option value="">Select a date first</option>
+                </select>
+                <p class="field__error" id="b-time-error" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <button class="btn btn--primary form__submit" type="submit">
+              <span class="form__submit-text">Book appointment</span>
+              <span class="spinner" aria-hidden="true"></span>
+              <svg class="btn__arrow" viewBox="0 0 18 10" aria-hidden="true"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
+            </button>
+            <p class="form__legal">This is a demo form — no data is sent anywhere.</p>
+            <p class="sr-only" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="success" id="booking-success" tabindex="-1" hidden>
+            <svg class="success__icon" viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="36"/><path d="M23 37l9 9 17-19"/></svg>
+            <p class="success__title">Thank you</p>
+            <p class="success__text">Your booking request has been received.</p>
+            <dl class="success__summary" id="booking-summary"></dl>
+            <button class="btn success__again" type="button">Book another</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ LOCATION ============================ -->
+    <section class="section" id="contact" aria-labelledby="location-title">
+      <div class="container location__grid">
+        <div>
+          <p class="label" data-reveal>Location</p>
+          <h2 class="heading" id="location-title" data-reveal="lines" style="margin-top:1.5rem">
+            <span class="mask"><span>Find</span></span>
+            <span class="mask"><span class="accent">MATTO</span></span>
+          </h2>
+          <dl class="location__list" data-reveal>
+            <div><dt>Address</dt><dd><address>25 White Street<br>Moscow, Russia</address></dd></div>
+            <div><dt>Hours</dt><dd>Mon–Sat · 10:00–22:00</dd></div>
+            <div><dt>Phone</dt><dd><a class="link" href="tel:+74950000000">+7 (495) 000-00-00</a></dd></div>
+          </dl>
+          <div class="location__actions" data-reveal>
+            <a class="btn btn--primary" href="#booking">Book now</a>
+            <a class="btn" href="tel:+74950000000">Call us</a>
+          </div>
+        </div>
+
+        <figure class="map" data-reveal aria-label="Stylised map showing MATTO at 25 White Street">
+          <svg viewBox="0 0 700 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect class="map__park" x="40" y="300" width="190" height="150" rx="6"/>
+            <g>
+              <rect class="map__block" x="40" y="40" width="170" height="110"/>
+              <rect class="map__block" x="250" y="40" width="150" height="110"/>
+              <rect class="map__block" x="440" y="40" width="220" height="110"/>
+              <rect class="map__block" x="40" y="190" width="170" height="80"/>
+              <rect class="map__block" x="250" y="190" width="150" height="260"/>
+              <rect class="map__block" x="440" y="190" width="100" height="120"/>
+              <rect class="map__block" x="570" y="190" width="90" height="120"/>
+              <rect class="map__block" x="440" y="350" width="220" height="100"/>
+            </g>
+            <g>
+              <path class="map__road" d="M0 170 H700"/>
+              <path class="map__road" d="M230 0 V500"/>
+              <path class="map__road" d="M420 0 V500"/>
+              <path class="map__road map__road--sm" d="M0 285 H230"/>
+              <path class="map__road map__road--sm" d="M420 330 H700"/>
+              <path class="map__road map__road--sm" d="M555 170 V330"/>
+            </g>
+            <path class="map__route" d="M120 500 V420 H230 V330 H420 V252"/>
+            <g class="map__pin">
+              <circle class="map__pulse" cx="420" cy="238" r="26"/>
+              <circle class="map__dot" cx="420" cy="238" r="10"/>
+            </g>
+            <g class="map__label">
+              <rect x="331" y="146" width="178" height="62"/>
+              <text x="349" y="172" class="map__label-title">MATTO</text>
+              <text x="349" y="194" class="map__label-text">25 White Street</text>
+            </g>
+          </svg>
+          <figcaption class="sr-only">MATTO, 25 White Street, Moscow</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__logo" aria-label="MATTO">MATTO<span>.</span></p>
+      <div class="footer__row">
+        <ul class="footer__links">
+          <li><a class="link" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a class="link" href="https://t.me/" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a class="link" href="#contact">Contact</a></li>
+        </ul>
+        <p class="footer__copy">© <span data-year>2026</span> MATTO Barbershop</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================ LIGHTBOX ============================ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image" inert>
+    <button class="lightbox__close" type="button" aria-label="Close gallery">
+      <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M2 2l14 14M16 2 2 16"/></svg>
+    </button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous image">
+      <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M16 9H2M7 4 2 9l5 5"/></svg>
+    </button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" alt="">
+      <figcaption class="lightbox__caption"><span class="lightbox__label"></span><span class="lightbox__count"></span></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next image">
+      <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h14M11 4l5 5-5 5"/></svg>
+    </button>
+  </div>
+
+  <script>
+  (() => {
+    'use strict';
+
+    /* ==========================================================================
+       CONTENT — edit services, prices and barbers here.
+       Everything below (lists and booking form options) is generated from it.
+       ========================================================================== */
+    const CURRENCY = '₽';
+
+    const SERVICES = [
+      { name: 'Classic Haircut', description: 'Precision cut tailored to your style.',         duration: 60, price: 2500 },
+      { name: 'Skin Fade',       description: 'A clean, sharp fade with seamless transitions.', duration: 60, price: 2800 },
+      { name: 'Beard Trim',      description: 'Detailed beard shaping and finishing.',          duration: 30, price: 1500 },
+      { name: 'Hair & Beard',    description: 'Complete grooming session.',                     duration: 90, price: 3800 },
+      { name: 'Royal Shave',     description: 'Traditional hot towel shave and finishing.',     duration: 45, price: 2200 }
+    ];
+
+    // Demo profiles — not real people
+    const BARBERS = [
+      { name: 'Alex Morgan',  role: 'Master Barber',   photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700&q=80' },
+      { name: 'Daniel Stone', role: 'Fade Specialist', photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80' },
+      { name: 'Michael Reed', role: 'Classic Cuts',    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80' },
+      { name: 'Leo Grant',    role: 'Beard & Shave',   photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=700&q=80' }
+    ];
+
+    const HOURS = { open: 10 * 60, close: 22 * 60, lastStart: 21 * 60, closedDays: [0] }; // 0 = Sunday
+
+    /* ---------- Helpers ---------- */
+    const $ = (s, c = document) => c.querySelector(s);
+    const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
+    const root = document.documentElement;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    const pad = n => String(n).padStart(2, '0');
+    const money = n => `${n.toLocaleString('ru-RU').replace(/ /g, ' ')} ${CURRENCY}`;
+    const header = $('#header');
+    const main = $('#main');
+    const footer = $('.footer');
+
+    const locks = new Set();
+    const lock = (name, on) => { on ? locks.add(name) : locks.delete(name); root.classList.toggle('is-locked', locks.size > 0); };
+    const setPageInert = on => [header, main, footer].forEach(el => { el.inert = on; });
+
+    /* ---------- Render services & team ---------- */
+    const ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg>';
+
+    $('#services-list').innerHTML = SERVICES.map((s, i) => `
+      <li data-reveal style="--d:${i}">
+        <button class="service" type="button" data-service="${esc(s.name)}">
+          <span class="service__num">${pad(i + 1)}</span>
+          <span class="service__main">
+            <span class="service__name">${esc(s.name)}</span>
+            <span class="service__desc">${esc(s.description)}</span>
+          </span>
+          <span class="service__time">${s.duration} min</span>
+          <span class="service__price">${esc(money(s.price))}</span>
+          <span class="service__go" aria-hidden="true">${ARROW}</span>
+        </button>
+      </li>`).join('');
+
+    $('#team-list').innerHTML = BARBERS.map((b, i) => `
+      <li class="barber" data-reveal style="--d:${i}">
+        <div class="barber__media media">
+          <img src="${esc(b.photo)}" alt="${esc(b.name)}, ${esc(b.role)} (demo profile)" loading="lazy" decoding="async">
+        </div>
+        <div class="barber__info">
+          <div>
+            <h3 class="barber__name">${esc(b.name)}</h3>
+            <p class="barber__role">${esc(b.role)}</p>
+          </div>
+          <a class="barber__book link" href="#booking" data-barber="${esc(b.name)}">Book</a>
+        </div>
+      </li>`).join('');
+
+    const serviceSelect = $('#b-service');
+    const barberSelect = $('#b-barber');
+    serviceSelect.insertAdjacentHTML('beforeend', SERVICES.map(s => `<option value="${esc(s.name)}">${esc(s.name)} · ${esc(money(s.price))}</option>`).join(''));
+    barberSelect.insertAdjacentHTML('beforeend', BARBERS.map(b => `<option value="${esc(b.name)}">${esc(b.name)} — ${esc(b.role)}</option>`).join(''));
+
+    /* ---------- Images: clean placeholder if a photo fails ---------- */
+    $$('.media img').forEach(img => {
+      const fail = () => img.classList.add('is-missing');
+      if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) fail();
+      img.addEventListener('error', fail, { once: true });
+    });
+
+    /* ---------- Intro ---------- */
+    Promise.race([
+      document.fonts ? document.fonts.ready : Promise.resolve(),
+      new Promise(r => setTimeout(r, 1200))
+    ]).then(() => requestAnimationFrame(() => root.classList.add('is-ready')));
+
+    /* ---------- Opening status in the hero ---------- */
+    (() => {
+      const now = new Date();
+      const minutes = now.getHours() * 60 + now.getMinutes();
+      const closedToday = HOURS.closedDays.includes(now.getDay());
+      let status = 'Open today';
+      let hours = '10:00 – 22:00';
+      if (closedToday) { status = 'Closed today'; hours = 'Opens Monday at 10:00'; }
+      else if (minutes < HOURS.open) { status = 'Opens today'; hours = 'from 10:00 to 22:00'; }
+      else if (minutes >= HOURS.close) { status = 'Closed now'; hours = now.getDay() === 6 ? 'Opens Monday at 10:00' : 'Opens tomorrow at 10:00'; }
+      else { status = 'Open now'; hours = 'until 22:00'; }
+      $('#open-status').textContent = status;
+      $('#open-hours').textContent = hours;
+    })();
+
+    /* ---------- Header ---------- */
+    const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* ---------- Mobile menu ---------- */
+    const burger = $('.burger');
+    const drawer = $('#drawer');
+    let drawerOpen = false;
+
+    function setDrawer(open) {
+      drawerOpen = open;
+      drawer.classList.toggle('is-open', open);
+      drawer.inert = !open;
+      burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      main.inert = open;
+      footer.inert = open;
+      if (open) header.classList.add('is-scrolled'); else onScroll();
+      lock('drawer', open);
+    }
+
+    burger.addEventListener('click', () => setDrawer(!drawerOpen));
+    window.matchMedia('(min-width: 1025px)').addEventListener('change', e => { if (e.matches && drawerOpen) setDrawer(false); });
+
+    /* ---------- Smooth in-page navigation ---------- */
+    function goTo(id) {
+      const target = document.getElementById(id);
+      if (!target) return;
+      const top = id === 'home' ? 0 : target.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
+    }
+
+    document.addEventListener('click', e => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a || a.classList.contains('skip-link') || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      const id = a.getAttribute('href').slice(1);
+      if (!id || !document.getElementById(id)) return;
+      e.preventDefault();
+      if (drawerOpen) setDrawer(false);
+      if (a.dataset.barber) preselect(barberSelect, a.dataset.barber);
+      goTo(id);
+    });
+
+    // Active nav link
+    const navLinks = $$('[data-nav]');
+    if ('IntersectionObserver' in window) {
+      const spy = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id === 'experience' ? 'gallery' : entry.target.id === 'booking' ? 'contact' : entry.target.id;
+        navLinks.forEach(l => l.classList.toggle('is-active', l.getAttribute('href') === `#${id}`));
+      }), { rootMargin: '-45% 0px -50% 0px' });
+      $$('main > section[id]').forEach(s => spy.observe(s));
+    }
+
+    /* ---------- Reveal on scroll ---------- */
+    const revealEls = $$('[data-reveal]');
+    if ('IntersectionObserver' in window && !reduceMotion) {
+      const targets = new Map(); // clipped images are observed through their parent
+      const io = new IntersectionObserver((entries, obs) => entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        targets.get(entry.target).forEach(el => el.classList.add('is-visible'));
+        obs.unobserve(entry.target);
+      }), { rootMargin: '0px 0px -8% 0px', threshold: .1 });
+      revealEls.forEach(el => {
+        const t = el.dataset.reveal === 'image' ? el.parentElement : el;
+        if (!targets.has(t)) targets.set(t, []);
+        targets.get(t).push(el);
+        io.observe(t);
+      });
+    } else {
+      revealEls.forEach(el => el.classList.add('is-visible'));
+    }
+
+    /* ---------- Services: click a row to book it ---------- */
+    function preselect(select, value) {
+      select.value = value;
+      select.dispatchEvent(new Event('change'));
+    }
+
+    $$('.service').forEach(row => {
+      const pick = () => { preselect(serviceSelect, row.dataset.service); goTo('booking'); };
+      row.setAttribute('aria-label', `Book ${row.dataset.service}, ${$('.service__price', row).textContent}`);
+      row.addEventListener('click', pick);
+    });
+
+    /* ---------- Gallery lightbox ---------- */
+    const shots = $$('.gallery__btn');
+    const lightbox = $('#lightbox');
+    const lbImg = $('.lightbox__img', lightbox);
+    let lbIndex = -1;
+    let lbReturn = null;
+
+    function show(i) {
+      lbIndex = (i + shots.length) % shots.length;
+      const btn = shots[lbIndex];
+      const thumb = $('img', btn);
+      lbImg.classList.remove('is-loaded');
+      lbImg.onload = () => lbImg.classList.add('is-loaded');
+      lbImg.onerror = () => { lbImg.onerror = null; lbImg.src = thumb.currentSrc || thumb.src; };
+      lbImg.src = btn.dataset.full;
+      lbImg.alt = thumb.alt;
+      $('.lightbox__label', lightbox).textContent = btn.dataset.caption;
+      $('.lightbox__count', lightbox).textContent = `${pad(lbIndex + 1)} / ${pad(shots.length)}`;
+    }
+
+    function openLightbox(i) {
+      lbReturn = document.activeElement;
+      show(i);
+      lightbox.inert = false;
+      lightbox.classList.add('is-open');
+      setPageInert(true);
+      lock('lightbox', true);
+      $('.lightbox__close', lightbox).focus({ preventScroll: true });
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      lightbox.inert = true;
+      setPageInert(false);
+      lock('lightbox', false);
+      lbIndex = -1;
+      if (lbReturn) lbReturn.focus({ preventScroll: true });
+    }
+
+    shots.forEach((btn, i) => {
+      btn.setAttribute('aria-label', `Open image: ${btn.dataset.caption}`);
+      btn.addEventListener('click', () => openLightbox(i));
+    });
+    $('.lightbox__close', lightbox).addEventListener('click', closeLightbox);
+    $('.lightbox__nav--prev', lightbox).addEventListener('click', () => show(lbIndex - 1));
+    $('.lightbox__nav--next', lightbox).addEventListener('click', () => show(lbIndex + 1));
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+    let touchX = null;
+    lightbox.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+    lightbox.addEventListener('touchend', e => {
+      if (touchX === null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 50) show(lbIndex + (dx < 0 ? 1 : -1));
+      touchX = null;
+    });
+
+    document.addEventListener('keydown', e => {
+      if (lbIndex > -1) {
+        if (e.key === 'Escape') closeLightbox();
+        else if (e.key === 'ArrowRight') show(lbIndex + 1);
+        else if (e.key === 'ArrowLeft') show(lbIndex - 1);
+        else if (e.key === 'Tab') {
+          const f = $$('button', lightbox);
+          if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+          else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+        }
+        return;
+      }
+      if (e.key === 'Escape' && drawerOpen) { setDrawer(false); burger.focus(); }
+    });
+
+    /* ---------- Booking form ---------- */
+    const form = $('#booking-form');
+    const success = $('#booking-success');
+    const dateInput = $('#b-date');
+    const timeSelect = $('#b-time');
+    const status = $('#form-status');
+
+    const toISO = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+    const parseDate = v => { if (!v) return null; const [y, m, d] = v.split('-').map(Number); return new Date(y, m - 1, d); };
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const maxDate = new Date(today); maxDate.setDate(maxDate.getDate() + 60);
+    dateInput.min = toISO(today);
+    dateInput.max = toISO(maxDate);
+
+    function fillTimes() {
+      const date = parseDate(dateInput.value);
+      const previous = timeSelect.value;
+      if (!date || date < today || HOURS.closedDays.includes(date.getDay())) {
+        timeSelect.innerHTML = `<option value="">${date ? 'No slots on this day' : 'Select a date first'}</option>`;
+        timeSelect.disabled = true;
+        return;
+      }
+      const now = new Date();
+      const isToday = date.getTime() === today.getTime();
+      const earliest = isToday ? now.getHours() * 60 + now.getMinutes() + 30 : HOURS.open;
+      const slots = [];
+      for (let m = HOURS.open; m <= HOURS.lastStart; m += 30) if (m >= earliest) slots.push(`${pad(Math.floor(m / 60))}:${pad(m % 60)}`);
+      timeSelect.innerHTML = slots.length
+        ? '<option value="">Choose a time</option>' + slots.map(t => `<option value="${t}"${t === previous ? ' selected' : ''}>${t}</option>`).join('')
+        : '<option value="">No slots left today</option>';
+      timeSelect.disabled = !slots.length;
+    }
+
+    dateInput.addEventListener('change', fillTimes);
+
+    const rules = {
+      name: v => (v.trim().length >= 2 ? '' : 'Please enter your name.'),
+      phone: v => {
+        if (!v.trim()) return 'Please enter your phone number.';
+        const digits = v.replace(/\D/g, '').length;
+        return /^[+\d\s()\-]+$/.test(v) && digits >= 10 && digits <= 15 ? '' : 'Please enter a valid phone number.';
+      },
+      service: v => (v ? '' : 'Please choose a service.'),
+      barber: v => (v ? '' : 'Please choose a barber.'),
+      date: v => {
+        const d = parseDate(v);
+        if (!d) return 'Please choose a date.';
+        if (d < today) return 'Please choose a future date.';
+        if (d > maxDate) return 'Bookings are open 60 days ahead.';
+        if (HOURS.closedDays.includes(d.getDay())) return 'We are closed on Sundays.';
+        return '';
+      },
+      time: v => (v ? '' : 'Please choose a time.')
+    };
+
+    const fields = $$('[name]', form).filter(el => rules[el.name]);
+
+    function validate(el) {
+      const message = rules[el.name](el.value);
+      el.setAttribute('aria-invalid', String(Boolean(message)));
+      $(`#${el.id}-error`).textContent = message;
+      return !message;
+    }
+
+    fields.forEach(el => {
+      el.addEventListener('blur', () => { if (el.value) validate(el); });
+      el.addEventListener('input', () => { if (el.getAttribute('aria-invalid') === 'true') validate(el); });
+      el.addEventListener('change', () => { if (el.getAttribute('aria-invalid') === 'true' || el.tagName === 'SELECT') validate(el); });
+    });
+
+    // Date changes may invalidate the chosen time
+    dateInput.addEventListener('change', () => { if (timeSelect.getAttribute('aria-invalid')) validate(timeSelect); });
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      if (form.classList.contains('is-sending')) return;
+      const invalid = fields.filter(el => !validate(el));
+      if (invalid.length) {
+        (invalid[0].disabled ? dateInput : invalid[0]).focus();
+        status.textContent = 'Please check the highlighted fields.';
+        return;
+      }
+
+      // No backend: simulate a request, then confirm
+      const data = Object.fromEntries(new FormData(form));
+      const button = $('.form__submit', form);
+      form.classList.add('is-sending');
+      button.disabled = true;
+      $('.form__submit-text', form).textContent = 'Sending…';
+      status.textContent = 'Sending your booking request…';
+
+      setTimeout(() => {
+        const date = parseDate(data.date).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'long' });
+        $('#booking-summary').innerHTML = [
+          ['Service', data.service], ['Barber', data.barber], ['Date', date], ['Time', data.time]
+        ].map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('');
+        form.hidden = true;
+        success.hidden = false;
+        success.focus({ preventScroll: true });
+        status.textContent = 'Your booking request has been received.';
+      }, reduceMotion ? 200 : 1500);
+    });
+
+    $('.success__again', success).addEventListener('click', () => {
+      form.reset();
+      form.classList.remove('is-sending');
+      fields.forEach(el => { el.removeAttribute('aria-invalid'); $(`#${el.id}-error`).textContent = ''; });
+      $('.form__submit', form).disabled = false;
+      $('.form__submit-text', form).textContent = 'Book appointment';
+      fillTimes();
+      success.hidden = true;
+      form.hidden = false;
+      $('#b-name').focus();
+    });
+
+    $$('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
+  })();
+  </script>
+</body>
+</html>
