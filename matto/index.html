@@ -4,20 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>MATTO — барбершоп в Москве · ЖК «Михайловский Парк»</title>
-  <meta name="description" content="Барбершоп MATTO в ЖК «Михайловский Парк»: мужские и детские стрижки, борода, опасное бритьё, камуфляж. Рейтинг 5,0 на Яндекс Картах. Запись по телефону +7 (968) 777-69-97.">
+  <meta name="description" content="Барбершоп MATTO в ЖК «Михайловский Парк»: мужские и детские стрижки, борода, опасное бритьё, камуфляж. Ежедневно 10:00–22:00. Рейтинг 5,0 на Яндекс Картах. Запись по телефону +7 (968) 777-69-97.">
   <meta name="theme-color" content="#0a0c0f">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="MATTO Barbershop">
   <meta property="og:title" content="MATTO — барбершоп в Москве">
   <meta property="og:description" content="Your style. Your standard. Стрижки, борода и бритьё в ЖК «Михайловский Парк».">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&h=630&q=80">
+  <meta property="og:image" content="https://malinovkinmaxim-cloud.github.io/Sait/matto/images/hall.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0c0f'/%3E%3Cpath d='M16 46V18h6l10 16 10-16h6v28h-6V29l-8 13h-4l-8-13v17z' fill='%23fff'/%3E%3Crect x='46' y='40' width='6' height='6' fill='%232f5cff'/%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preload" as="image" href="images/hall.webp" type="image/webp">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Unbounded:wght@400;500;600;700&display=swap">
   <script>document.documentElement.classList.add('js');</script>
 
@@ -30,6 +30,12 @@
     "slogan": "Your style. Your standard.",
     "telephone": "+7 968 777-69-97",
     "priceRange": "300–1800 ₽",
+    "image": "https://malinovkinmaxim-cloud.github.io/Sait/matto/images/hall.webp",
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "10:00", "closes": "22:00"
+    }],
     "paymentAccepted": "Наличные, банковская карта, кредитная карта, перевод, СБП, QR-код",
     "address": {
       "@type": "PostalAddress",
@@ -213,7 +219,7 @@
     }
     .media img {
       position: relative; width: 100%; height: 100%; object-fit: cover;
-      filter: saturate(.8) contrast(1.05) brightness(.88);
+      filter: saturate(.92) contrast(1.03) brightness(.94);
       transition: transform 1.4s var(--ease), filter .8s ease;
     }
     .media img.is-missing { visibility: hidden; }
@@ -307,6 +313,7 @@
     .drawer.is-open .drawer__foot { opacity: 1; transition: opacity .8s ease .75s; }
     .drawer__foot .btn { width: 100%; }
     .drawer__social { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+    .drawer__hours { font-size: .88rem; color: var(--muted); text-align: center; }
 
     /* 6. Hero */
     .hero {
@@ -414,7 +421,7 @@
     /* 7. About */
     .about__grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(3rem, 7vw, 8rem); align-items: center; }
     .about__visual { position: relative; padding-bottom: clamp(4rem, 8vw, 7rem); }
-    .about__main { aspect-ratio: 5 / 4; }
+    .about__main { aspect-ratio: 4 / 4.6; }
     .about__small {
       position: absolute; right: calc(clamp(1rem, 3vw, 3rem) * -1); bottom: 0;
       width: 42%; aspect-ratio: 3 / 4;
@@ -495,37 +502,52 @@
     }
 
     /* 9. Team */
-    .team__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); }
-    .barber__media { aspect-ratio: 3 / 4; }
-    .barber__media img { filter: grayscale(1) contrast(1.05) brightness(.85); }
-    .barber:hover .barber__media img { filter: grayscale(0) saturate(.85) brightness(.9); transform: scale(1.04); }
-    .barber__media::after { content: ''; position: absolute; inset: 0; border: 2px solid var(--blue); opacity: 0; transition: opacity .5s; }
-    .barber:hover .barber__media::after { opacity: 1; }
-    .barber__info { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-top: 1.2rem; }
-    .barber__name { font-family: var(--display); font-size: 1rem; font-weight: 600; text-transform: uppercase; color: var(--text); line-height: 1.3; }
-    .barber__role { margin-top: .3rem; font-size: .9rem; color: var(--blue-hover); }
-    .barber__book { flex: none; font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--text); }
-    .team__note { margin-top: 2.5rem; font-size: .84rem; color: var(--muted); }
+    .team__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(.75rem, 1.6vw, 1.5rem); }
 
-    @media (max-width: 1024px) { .team__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 3rem; } }
-    @media (max-width: 600px) {
-      .team__grid { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); scrollbar-width: none; }
-      .team__grid::-webkit-scrollbar { display: none; }
-      .barber { flex: 0 0 76%; scroll-snap-align: start; }
+    .barber {
+      display: flex; flex-direction: column; align-items: center;
+      padding: clamp(1.75rem, 3vw, 2.5rem) clamp(1rem, 2vw, 1.75rem);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      text-align: center;
+      transition: border-color .5s var(--ease), transform .7s var(--ease), background-color .5s;
+    }
+    .barber:hover { border-color: rgba(47, 92, 255, .55); background: var(--surface-2); transform: translateY(-4px); }
+
+    .barber__photo {
+      width: clamp(96px, 9vw, 128px); aspect-ratio: 1;
+      border-radius: 50%; overflow: hidden;
+      box-shadow: 0 0 0 1px var(--line-2), 0 0 0 6px var(--surface);
+      transition: box-shadow .5s var(--ease);
+    }
+    .barber:hover .barber__photo { box-shadow: 0 0 0 2px var(--blue), 0 0 0 7px var(--surface-2); }
+    .barber__photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); transition: filter .6s ease, transform 1s var(--ease); }
+    .barber:hover .barber__photo img { filter: none; transform: scale(1.05); }
+
+    .barber__name { margin-top: 1.4rem; font-family: var(--display); font-size: clamp(1rem, 1.4vw, 1.2rem); font-weight: 600; text-transform: uppercase; line-height: 1.2; color: var(--text); }
+    .barber__role { margin-top: .3rem; font-size: .9rem; color: var(--muted); }
+    .barber__rating { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: .35rem; margin-top: .85rem; font-size: .88rem; color: var(--muted); }
+    .barber__rating svg { width: 15px; height: 15px; fill: var(--blue-hover); }
+    .barber__rating b { font-weight: 700; color: var(--text); }
+
+    .barber__book, .barber__status { width: 100%; margin-top: 1.5rem; }
+    .barber__status {
+      display: flex; align-items: center; justify-content: center; min-height: 44px;
+      border: 1px dashed var(--line-2);
+      font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+    }
+    .barber--away .barber__photo { opacity: .55; }
+
+    @media (max-width: 1024px) { .team__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 400px) {
+      .barber { padding-inline: .75rem; }
+      .barber__book { padding-inline: .5rem; letter-spacing: .06em; }
     }
 
     /* 10. Gallery */
-    .gallery__grid {
-      display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); grid-auto-rows: clamp(150px, 16vw, 270px);
-      grid-template-areas: "a a a a b b" "a a a a c c" "d d e e e f" "d d e e e f";
-      gap: clamp(10px, 1.2vw, 18px);
-    }
-    .gallery__item:nth-child(1) { grid-area: a; }
-    .gallery__item:nth-child(2) { grid-area: b; }
-    .gallery__item:nth-child(3) { grid-area: c; }
-    .gallery__item:nth-child(4) { grid-area: d; }
-    .gallery__item:nth-child(5) { grid-area: e; }
-    .gallery__item:nth-child(6) { grid-area: f; }
+    .gallery__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 1.2vw, 18px); align-items: start; }
+    .gallery__item { aspect-ratio: 4 / 5; }
+    .gallery__item:nth-child(3n + 2) { margin-top: clamp(2rem, 6vw, 6rem); }
 
     .gallery__btn { display: block; width: 100%; height: 100%; text-align: left; }
     .gallery__btn::after { content: ''; position: absolute; inset: 0; border: 3px solid var(--blue); opacity: 0; transition: opacity .5s; pointer-events: none; }
@@ -540,11 +562,12 @@
     .gallery__btn:hover::after, .gallery__btn:focus-visible::after,
     .gallery__btn:hover .gallery__tag, .gallery__btn:focus-visible .gallery__tag { opacity: 1; transform: none; }
     .gallery__btn:focus-visible { outline: none; }
-    .gallery__note { margin-top: 1.75rem; font-size: .84rem; color: var(--muted); }
-
+    
     @media (hover: none) { .gallery__tag { opacity: 1; transform: none; } }
     @media (max-width: 760px) {
-      .gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 42vw; grid-template-areas: "a a" "a a" "b c" "e e" "d f"; }
+      .gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .gallery__item:nth-child(n) { margin-top: 0; }
+      .gallery__item:nth-child(even) { margin-top: 2rem; }
       .gallery__tag { left: .6rem; bottom: .6rem; padding: .4rem .6rem; font-size: .58rem; }
     }
 
@@ -666,8 +689,13 @@
     .contact__list dd { font-size: 1.02rem; color: var(--text); }
     .contact__list small { display: block; margin-top: .2rem; font-size: .85rem; color: var(--muted); }
     .contact__actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2.25rem; }
+    .contact__visuals { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: clamp(10px, 1.2vw, 18px); min-height: 520px; }
+    .contact__photo { display: flex; flex-direction: column; }
+    .contact__photo .media { flex: 1; min-height: 0; }
+    .contact__photo img { object-position: 50% 12%; }
+    .contact__photo figcaption { margin-top: .75rem; font-size: .85rem; color: var(--muted); }
 
-    .map { position: relative; min-height: 460px; overflow: hidden; background: #11151b; border: 1px solid var(--line); }
+    .map { position: relative; min-height: 0; overflow: hidden; background: #11151b; border: 1px solid var(--line); }
     .map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
     .map__block { fill: #181d25; }
     .map__park { fill: #12203f; }
@@ -689,7 +717,12 @@
     .perk p { margin-top: .4rem; font-size: .88rem; line-height: 1.55; color: var(--muted); }
 
     @media (max-width: 1024px) { .perks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 900px) { .contact__grid { grid-template-columns: 1fr; } .map { min-height: 340px; } }
+    @media (max-width: 900px) {
+      .contact__grid { grid-template-columns: 1fr; }
+      .contact__visuals { min-height: 0; grid-template-columns: 1fr; }
+      .map { min-height: 340px; }
+      .contact__photo .media { flex: none; aspect-ratio: 4 / 3; }
+    }
     @media (max-width: 480px) {
       .perks { grid-template-columns: 1fr; }
       .contact__list > div { grid-template-columns: 1fr; gap: .35rem; }
@@ -774,6 +807,7 @@
       <div class="drawer__foot">
         <a class="btn btn--primary" href="#booking">Записаться</a>
         <a class="btn" href="tel:+79687776997">+7 (968) 777-69-97</a>
+        <p class="drawer__hours">Ежедневно · 10:00–22:00</p>
         <div class="drawer__social">
           <a class="btn btn--sm" href="https://t.me/+79687776997" target="_blank" rel="noopener">Telegram</a>
           <a class="btn btn--sm" href="https://wa.me/79687776997" target="_blank" rel="noopener">WhatsApp</a>
@@ -797,7 +831,7 @@
 
         <span class="hero__rule" aria-hidden="true"></span>
 
-        <p class="lead hero__sub" data-intro style="--delay:.55s">Современный барбершоп: точность, характер и внимание к деталям. Стрижём взрослых и детей в ЖК «Михайловский Парк».</p>
+        <p class="lead hero__sub" data-intro style="--delay:.55s">Современный барбершоп: точность, характер и внимание к деталям. Стрижём взрослых и детей в ЖК «Михайловский Парк» — ежедневно с&nbsp;10:00 до&nbsp;22:00.</p>
 
         <div class="hero__actions" data-intro style="--delay:.7s">
           <a class="btn btn--primary" href="#booking">
@@ -821,12 +855,9 @@
         <span class="hero__frame" aria-hidden="true"></span>
         <div class="hero__media media">
           <div class="media__inner">
-            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1400&q=80"
-                 srcset="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=75 800w,
-                         https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1400&q=80 1400w,
-                         https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=2000&q=80 2000w"
-                 sizes="(max-width: 1024px) 100vw, 50vw"
-                 alt="Барбер делает стрижку клиенту" fetchpriority="high" decoding="async">
+            <img src="images/hall.webp" srcset="images/hall-480.webp 480w, images/hall.webp 960w"
+                 sizes="(max-width: 1024px) 100vw, 50vw" width="960" height="1280"
+                 alt="Зал барбершопа MATTO: три кресла у бордовой стены под световыми рамами" fetchpriority="high" decoding="async">
           </div>
         </div>
         <div class="hero__card" data-intro style="--delay:1.2s">
@@ -849,15 +880,13 @@
       <div class="container about__grid">
         <div class="about__visual">
           <figure class="about__main media" data-reveal="image">
-            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1400&q=80"
-                 srcset="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=75 800w,
-                         https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1400&q=80 1400w"
-                 sizes="(max-width: 900px) 100vw, 55vw"
-                 alt="Интерьер барбершопа с креслами мастеров" loading="lazy" decoding="async">
+            <img src="images/lounge.webp" srcset="images/lounge-480.webp 480w, images/lounge.webp 960w"
+                 sizes="(max-width: 900px) 100vw, 50vw" width="960" height="1280"
+                 alt="Зона ожидания с кожаным диваном и мастер за работой в зале MATTO" loading="lazy" decoding="async">
           </figure>
           <figure class="about__small media" data-reveal="image">
-            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=700&q=80"
-                 alt="Мастер делает фейд машинкой" loading="lazy" decoding="async">
+            <img src="images/wash-480.webp" width="480" height="640"
+                 alt="Кресло с мойкой для головы у бордовой стены" loading="lazy" decoding="async">
           </figure>
         </div>
 
@@ -868,7 +897,7 @@
             <span class="mask"><span class="accent">стрижка.</span></span>
           </h2>
           <p class="lead" data-reveal>MATTO — современный барбершоп, где всё строится вокруг точности, личного стиля и сервиса высокого уровня.</p>
-          <p class="lead" data-reveal>Мужские стрижки, борода и бритьё, камуфляж седины и детские стрижки — от классики до фигурного выстрига.</p>
+          <p class="lead" data-reveal>Мужские стрижки, борода и бритьё, камуфляж и детские стрижки — от классики до фигурного выстрига. Тёплый зал с деревом и кожаным диваном в зоне ожидания.</p>
           <ul class="about__points" data-reveal>
             <li>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20V4h7a5 5 0 0 1 0 10H6"/></svg>
@@ -916,10 +945,9 @@
             <p class="label" data-reveal>Команда</p>
             <h2 class="heading" id="team-title" data-reveal="lines"><span class="mask"><span>Наши <span class="accent">мастера</span></span></span></h2>
           </div>
-          <p class="section-head__lead" data-reveal>Выберите мастера или доверьтесь нам — подберём того, кто подойдёт под ваш стиль.</p>
+          <p class="section-head__lead" data-reveal>У каждого мастера рейтинг 5,0 на Яндекс Картах. Нажмите «Записаться» — мастер сразу подставится в форму.</p>
         </header>
         <ul class="team__grid" id="team-list"></ul>
-        <p class="team__note" data-reveal>Профили мастеров демонстрационные и будут заменены на настоящие.</p>
       </div>
     </section>
 
@@ -936,43 +964,42 @@
 
         <ul class="gallery__grid">
           <li class="gallery__item" data-reveal>
-            <button class="gallery__btn media" type="button" data-caption="Интерьер" data-full="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=2000&q=80">
-              <img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=1200&q=80" alt="Кресла и зеркала в зале барбершопа" loading="lazy" decoding="async">
-              <span class="gallery__tag">Интерьер</span>
+            <button class="gallery__btn media" type="button" data-caption="Зал" data-full="images/hall.webp">
+              <img src="images/hall-480.webp" width="480" height="640" alt="Зал с тремя креслами, зеркалами в деревянных рамах и световыми рамами на потолке" loading="lazy" decoding="async">
+              <span class="gallery__tag">Зал</span>
             </button>
           </li>
           <li class="gallery__item" data-reveal style="--d:1">
-            <button class="gallery__btn media" type="button" data-caption="Мастера" data-full="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=2000&q=80">
-              <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80" alt="Мастер за работой" loading="lazy" decoding="async">
-              <span class="gallery__tag">Мастера</span>
+            <button class="gallery__btn media" type="button" data-caption="Зона ожидания" data-full="images/lounge.webp">
+              <img src="images/lounge-480.webp" width="480" height="640" alt="Кожаный диван, журнальный столик и мастер за работой" loading="lazy" decoding="async">
+              <span class="gallery__tag">Зона ожидания</span>
             </button>
           </li>
           <li class="gallery__item" data-reveal style="--d:2">
-            <button class="gallery__btn media" type="button" data-caption="Стрижки" data-full="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=2000&q=80">
-              <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80" alt="Готовая мужская стрижка" loading="lazy" decoding="async">
-              <span class="gallery__tag">Стрижки</span>
+            <button class="gallery__btn media" type="button" data-caption="Косметика" data-full="images/products.webp">
+              <img src="images/products-480.webp" width="480" height="600" alt="Полка-лодка с косметикой для волос и бороды, рядом диван и кресло барбера" loading="lazy" decoding="async">
+              <span class="gallery__tag">Косметика</span>
             </button>
           </li>
           <li class="gallery__item" data-reveal>
-            <button class="gallery__btn media" type="button" data-caption="Инструменты" data-full="https://images.unsplash.com/photo-1590540179852-2110a54f813a?auto=format&fit=crop&w=2000&q=80">
-              <img src="https://images.unsplash.com/photo-1590540179852-2110a54f813a?auto=format&fit=crop&w=800&q=80" alt="Инструменты барбера на столе" loading="lazy" decoding="async">
-              <span class="gallery__tag">Инструменты</span>
+            <button class="gallery__btn media" type="button" data-caption="Ресепшен" data-full="images/reception.webp">
+              <img src="images/reception-480.webp" width="480" height="640" alt="Стойка администратора на фоне стены из деревянной мозаики и лампы-груши" loading="lazy" decoding="async">
+              <span class="gallery__tag">Ресепшен</span>
+            </button>
+          </li>
+          <li class="gallery__item" data-reveal>
+            <button class="gallery__btn media" type="button" data-caption="Мойка" data-full="images/wash.webp">
+              <img src="images/wash-480.webp" width="480" height="640" alt="Кресло с мойкой для головы и полка с полотенцами" loading="lazy" decoding="async">
+              <span class="gallery__tag">Мойка</span>
             </button>
           </li>
           <li class="gallery__item" data-reveal style="--d:1">
-            <button class="gallery__btn media" type="button" data-caption="Атмосфера" data-full="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=2000&q=80">
-              <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=1000&q=80" alt="Атмосфера барбершопа вечером" loading="lazy" decoding="async">
-              <span class="gallery__tag">Атмосфера</span>
-            </button>
-          </li>
-          <li class="gallery__item" data-reveal style="--d:2">
-            <button class="gallery__btn media" type="button" data-caption="Детали" data-full="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=2000&q=80">
-              <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=600&q=80" alt="Средства для укладки и детали" loading="lazy" decoding="async">
-              <span class="gallery__tag">Детали</span>
+            <button class="gallery__btn media" type="button" data-caption="Вход" data-full="images/entrance.webp">
+              <img src="images/entrance-480.webp" width="480" height="640" alt="Вход в барбершоп с вывеской MATTO на кирпичном фасаде" loading="lazy" decoding="async">
+              <span class="gallery__tag">Вход</span>
             </button>
           </li>
         </ul>
-        <p class="gallery__note" data-reveal>Фотографии временные — будут заменены на снимки барбершопа.</p>
       </div>
     </section>
 
@@ -1003,7 +1030,7 @@
             <span class="mask"><span>Займите</span></span>
             <span class="mask"><span class="accent">кресло</span></span>
           </h2>
-          <p class="lead" data-reveal>Ваш новый образ начинается здесь.</p>
+          <p class="lead" data-reveal>Ваш новый образ начинается здесь. Работаем ежедневно с 10:00 до 22:00.</p>
           <div class="booking__quick" data-reveal>
             <a class="btn btn--primary" href="tel:+79687776997">
               Позвонить · +7 (968) 777-69-97
@@ -1094,7 +1121,7 @@
               </div>
               <div>
                 <dt>Часы</dt>
-                <dd>Открываемся в 10:00<small>Точный график уточняйте по телефону</small></dd>
+                <dd>Ежедневно, 10:00–22:00<small>Без выходных</small></dd>
               </div>
               <div>
                 <dt>Телефон</dt>
@@ -1107,6 +1134,7 @@
             </div>
           </div>
 
+          <div class="contact__visuals">
           <figure class="map" data-reveal aria-label="Схема расположения барбершопа MATTO">
             <svg viewBox="0 0 700 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
               <rect class="map__park" x="40" y="300" width="190" height="150" rx="6"/>
@@ -1140,6 +1168,14 @@
             <figcaption class="sr-only">MATTO: ЖК «Михайловский Парк», 5, Москва</figcaption>
             <a class="btn btn--primary btn--sm map__route-btn" href="https://yandex.ru/maps/?text=%D0%91%D0%B0%D1%80%D0%B1%D0%B5%D1%80%D1%88%D0%BE%D0%BF%20%D0%9C%D0%B0%D1%82%D1%82%D0%BE%2C%20%D0%96%D0%9A%20%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%9F%D0%B0%D1%80%D0%BA%2C%205%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0" target="_blank" rel="noopener">Открыть в Яндекс Картах</a>
           </figure>
+          <figure class="contact__photo" data-reveal>
+              <div class="media">
+                <img src="images/entrance-480.webp" srcset="images/entrance-480.webp 480w, images/entrance.webp 960w" sizes="(max-width: 900px) 100vw, 40vw" width="960" height="1280"
+                     alt="Вход в барбершоп MATTO: стеклянные двери и светящаяся вывеска на кирпичном фасаде" loading="lazy" decoding="async">
+              </div>
+              <figcaption>Ищите вывеску MATTO над стеклянными дверями</figcaption>
+            </figure>
+          </div>
         </div>
 
         <ul class="perks">
@@ -1228,15 +1264,15 @@
       ] }
     ];
 
-    // Демонстрационные профили — замените на настоящих мастеров
+    // Мастера и их рейтинг на Яндекс Картах. away: true — мастер в отпуске, запись к нему закрыта.
     const BARBERS = [
-      { name: 'Алекс Морган', role: 'Топ-барбер',              photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700&q=80' },
-      { name: 'Даниил Стоун', role: 'Фейды и машинка',         photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80' },
-      { name: 'Михаил Рид',   role: 'Классические стрижки',    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80' },
-      { name: 'Лев Грант',    role: 'Борода и опасное бритьё', photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=700&q=80' }
+      { name: 'Коля',     role: 'Барбер', rating: 5.0, votes: 122, photo: 'images/team-kolya.webp' },
+      { name: 'Азиз',     role: 'Барбер', rating: 5.0, votes: 37,  photo: 'images/team-aziz.webp' },
+      { name: 'Мухаммад', role: 'Барбер', rating: 5.0, votes: 80,  photo: 'images/team-muhammad.webp', away: true },
+      { name: 'Гайрат',   role: 'Барбер', rating: 5.0, votes: 16,  photo: 'images/team-gairat.webp' }
     ];
 
-    // Часы работы: по данным Яндекс Карт открытие в 10:00. Время закрытия и выходные уточните и поправьте здесь.
+    // Часы работы: ежедневно 10:00–22:00, без выходных. Последняя запись — в 21:00.
     const HOURS = { open: 10 * 60, close: 22 * 60, lastStart: 21 * 60, closedDays: [] }; // 0 = воскресенье
 
     /* ---------- Helpers ---------- */
@@ -1285,18 +1321,22 @@
         </ul>
       </section>`).join('');
 
+    const STAR = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>';
+    const rating = r => r.toFixed(1).replace('.', ',');
+
     $('#team-list').innerHTML = BARBERS.map((b, i) => `
-      <li class="barber" data-reveal style="--d:${i}">
-        <div class="barber__media media">
-          <img src="${esc(b.photo)}" alt="${esc(b.name)}, ${esc(b.role)} (демо-профиль)" loading="lazy" decoding="async">
+      <li class="barber${b.away ? ' barber--away' : ''}" data-reveal style="--d:${i}">
+        <div class="barber__photo">
+          <img src="${esc(b.photo)}" width="240" height="240" alt="${esc(b.name)}, ${esc(b.role.toLowerCase())} MATTO" loading="lazy" decoding="async">
         </div>
-        <div class="barber__info">
-          <div>
-            <h3 class="barber__name">${esc(b.name)}</h3>
-            <p class="barber__role">${esc(b.role)}</p>
-          </div>
-          <a class="barber__book link" href="#booking" data-barber="${esc(b.name)}">Записаться</a>
-        </div>
+        <h3 class="barber__name">${esc(b.name)}</h3>
+        <p class="barber__role">${esc(b.role)}</p>
+        <p class="barber__rating" aria-label="Рейтинг ${rating(b.rating)} из 5, ${b.votes} ${plural(b.votes, 'оценка', 'оценки', 'оценок')}">
+          ${STAR}<b>${rating(b.rating)}</b><span>· ${b.votes} ${plural(b.votes, 'оценка', 'оценки', 'оценок')}</span>
+        </p>
+        ${b.away
+          ? '<p class="barber__status">В отпуске</p>'
+          : `<a class="btn btn--sm barber__book" href="#booking" data-barber="${esc(b.name)}">Записаться</a>`}
       </li>`).join('');
 
     const serviceSelect = $('#b-service');
@@ -1304,7 +1344,9 @@
     serviceSelect.insertAdjacentHTML('beforeend', SERVICES.map(g =>
       `<optgroup label="${esc(g.group)}">${g.items.map(s => `<option value="${esc(s.name)}">${esc(s.name)} — ${esc(money(s.price))}</option>`).join('')}</optgroup>`
     ).join(''));
-    barberSelect.insertAdjacentHTML('beforeend', BARBERS.map(b => `<option value="${esc(b.name)}">${esc(b.name)} — ${esc(b.role)}</option>`).join(''));
+    barberSelect.insertAdjacentHTML('beforeend', BARBERS.map(b => b.away
+      ? `<option value="${esc(b.name)}" disabled>${esc(b.name)} — в отпуске</option>`
+      : `<option value="${esc(b.name)}">${esc(b.name)} — ${esc(b.role.toLowerCase())}, ★ ${rating(b.rating)}</option>`).join(''));
 
     /* ---------- Service tabs ---------- */
     const tabs = $$('.tab');
