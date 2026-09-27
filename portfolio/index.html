@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title data-i18n="meta.title">Mandarin — веб-разработчик: современные сайты для бизнеса</title>
+  <meta name="description" content="Mandarin — веб-разработчик, создающий современные сайты для бизнеса. Минималистичный дизайн, адаптивная вёрстка, анимации. Портфолио и контакты." data-i18n-attr="content:meta.description">
+  <meta name="theme-color" content="#f3f1ec">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mandarin — веб-разработчик">
+  <meta property="og:description" content="Современные сайты для бизнеса. Портфолио: ресторан, барбершоп, салон красоты.">
+  <meta property="og:image" content="assets/img/restaurant-desktop-ru.webp">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <script>
+    (function () {
+      var d = document.documentElement, l = null;
+      d.classList.add('js');
+      try { l = new URLSearchParams(location.search).get('lang') || localStorage.getItem('mandarin-lang'); } catch (e) {}
+      if (l === 'en') { d.lang = 'en'; d.classList.add('i18n-pending'); setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500); }
+    })();
+  </script>
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Перейти к содержимому</a>
+  <div class="progress" aria-hidden="true"><span data-progress></span></div>
+  <div class="cursor" aria-hidden="true" data-cursor><span data-cursor-label></span></div>
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="header" id="header">
+    <div class="container header__row">
+      <a class="logo" href="#top" aria-label="Mandarin — на главную" data-i18n-attr="aria-label:a11y.home">Mandarin<i></i></a>
+      <nav class="nav" aria-label="Основное меню" data-i18n-attr="aria-label:a11y.nav">
+        <a href="#about" data-i18n="nav.about">Обо мне</a>
+        <a href="#projects" data-i18n="nav.projects">Проекты</a>
+        <a href="#process" data-i18n="nav.process">Подход</a>
+        <a href="#contact" data-i18n="nav.contact">Контакты</a>
+      </nav>
+      <div class="header__tools">
+        <div class="lang" data-lang-switch role="group" aria-label="Язык / Language">
+          <button type="button" data-lang-set="ru">RU</button>
+          <button type="button" data-lang-set="en">EN</button>
+        </div>
+        <a class="btn btn--ink btn--sm header__cta" href="#contact"><span data-i18n="cta.talk">Обсудить проект</span></a>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Открыть меню" data-i18n-attr="aria-label:a11y.menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer" id="drawer" hidden>
+    <nav class="drawer__nav" aria-label="Мобильное меню" data-i18n-attr="aria-label:a11y.mnav">
+      <a href="#about"><span class="mono">01</span> <span data-i18n="nav.about">Обо мне</span></a>
+      <a href="#projects"><span class="mono">02</span> <span data-i18n="nav.projects">Проекты</span></a>
+      <a href="#process"><span class="mono">03</span> <span data-i18n="nav.process">Подход</span></a>
+      <a href="#contact"><span class="mono">04</span> <span data-i18n="nav.contact">Контакты</span></a>
+    </nav>
+    <div class="drawer__foot">
+      <a href="https://t.me/your_telegram" target="_blank" rel="noopener">Telegram · @your_telegram</a>
+      <a href="mailto:your@email.com">your@email.com</a>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" id="top">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="hero__status mono">
+            <span class="pulse" aria-hidden="true"></span>
+            <span data-i18n="hero.status">Открыт для новых проектов</span>
+            <span class="hero__clock" data-clock></span>
+          </p>
+          <h1 class="hero__title">
+            <span class="line"><span data-i18n="hero.t1">Создаю современные</span></span>
+            <span class="line line--dot"><span data-i18n="hero.t2">сайты для&nbsp;бизнеса</span></span>
+          </h1>
+          <div class="hero__bottom">
+            <p class="hero__lead" data-i18n="hero.lead">Привет! Я&nbsp;Mandarin — веб-разработчик. Проектирую и&nbsp;собираю быстрые адаптивные сайты с&nbsp;аккуратной типографикой, продуманными деталями и&nbsp;плавной анимацией.</p>
+            <div class="hero__cta">
+              <a class="btn btn--accent" href="#projects"><span data-i18n="cta.work">Смотреть проекты</span> <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M4 9l4 4 4-4"/></svg></a>
+              <a class="btn btn--line" href="#contact"><span data-i18n="cta.contact">Связаться</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__art" aria-hidden="true">
+          <div class="fruit" data-fruit>
+            <svg class="fruit__ring" viewBox="0 0 400 400">
+              <defs><path id="ring-path" d="M200 200m-180 0a180 180 0 1 1 360 0a180 180 0 1 1-360 0"/></defs>
+              <text><textPath href="#ring-path" data-i18n="hero.ring">MANDARIN · WEB DEVELOPER · САЙТЫ ДЛЯ БИЗНЕСА · RU / EN · </textPath></text>
+            </svg>
+            <svg class="fruit__body" viewBox="0 0 400 400">
+              <defs>
+                <radialGradient id="peel" cx="36%" cy="32%" r="78%">
+                  <stop offset="0" stop-color="#ffc07f"/>
+                  <stop offset=".38" stop-color="#ff7d24"/>
+                  <stop offset=".78" stop-color="#f05a0e"/>
+                  <stop offset="1" stop-color="#c2410c"/>
+                </radialGradient>
+                <radialGradient id="shine" cx="34%" cy="28%" r="30%">
+                  <stop offset="0" stop-color="#fff" stop-opacity=".75"/>
+                  <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+                </radialGradient>
+                <filter id="pores" x="0" y="0" width="100%" height="100%">
+                  <feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="1" seed="3"/>
+                  <feColorMatrix values="0 0 0 0 .55  0 0 0 0 .18  0 0 0 0 0  0 0 0 -2.4 1.5"/>
+                </filter>
+                <clipPath id="fruit-clip"><path d="M200 78c78 0 146 56 146 138 0 80-64 134-146 134S54 296 54 216c0-82 68-138 146-138z"/></clipPath>
+              </defs>
+              <ellipse class="fruit__shadow" cx="200" cy="368" rx="120" ry="14"/>
+              <g clip-path="url(#fruit-clip)">
+                <rect width="400" height="400" fill="url(#peel)"/>
+                <rect width="400" height="400" filter="url(#pores)" opacity=".35"/>
+                <rect width="400" height="400" fill="url(#shine)"/>
+              </g>
+              <path class="fruit__navel" d="M194 84c4-3 8-3 12 0"/>
+              <path class="fruit__stem" d="M200 84c-2-10 0-18 6-24"/>
+              <path class="fruit__leaf" d="M206 62c18-30 60-40 92-26-14 34-54 50-92 26z"/>
+              <path class="fruit__vein" d="M210 60c26-8 50-14 78-20"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="container hero__foot">
+        <p class="mono" data-i18n="hero.foot1">Mandarin — веб-разработка</p>
+        <p class="mono" data-i18n="hero.foot2">Дизайн · Вёрстка · Анимации · Запуск</p>
+        <a class="hero__scroll mono" href="#about"><span data-i18n="hero.scroll">Листайте</span> <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M4 9l4 4 4-4"/></svg></a>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track" data-ticker>
+        <span data-i18n="ticker">Лендинги <i></i> Сайты-визитки <i></i> Рестораны и кафе <i></i> Барбершопы <i></i> Салоны красоты <i></i> Онлайн-запись <i></i> Адаптивная вёрстка <i></i> Анимации <i></i> RU / EN <i></i></span>
+      </div>
+    </div>
+
+    <!-- ============================== ABOUT ============================== -->
+    <section class="section about" id="about">
+      <div class="container">
+        <p class="label mono" data-reveal><span>01</span> <span data-i18n="about.label">Обо мне</span></p>
+        <p class="about__statement" data-reveal data-split data-i18n="about.statement">Занимаюсь созданием сайтов, люблю минималистичный дизайн.</p>
+
+        <div class="about__grid">
+          <p class="about__text" data-reveal data-i18n="about.text">Для меня хороший сайт — это ясная структура, быстрая загрузка и&nbsp;ни одного лишнего элемента. Я&nbsp;собираю каждый проект вручную: от&nbsp;сетки и&nbsp;типографики до&nbsp;анимаций и&nbsp;адаптива под любой экран — чтобы бизнес выглядел в&nbsp;интернете так&nbsp;же достойно, как в&nbsp;жизни.</p>
+          <div class="about__cols">
+            <div class="about__col" data-reveal>
+              <h3 class="mono" data-i18n="about.c1">Что делаю</h3>
+              <ul>
+                <li data-i18n="about.c1a">Лендинги и сайты-визитки</li>
+                <li data-i18n="about.c1b">Сайты для кафе, салонов и сервисов</li>
+                <li data-i18n="about.c1c">Онлайн-запись и формы заявок</li>
+                <li data-i18n="about.c1d">Двуязычные сайты</li>
+              </ul>
+            </div>
+            <div class="about__col" data-reveal style="--d:1">
+              <h3 class="mono" data-i18n="about.c2">Принципы</h3>
+              <ul>
+                <li data-i18n="about.c2a">Минимализм без скуки</li>
+                <li data-i18n="about.c2b">Сначала мобильная версия</li>
+                <li data-i18n="about.c2c">Скорость и доступность</li>
+                <li data-i18n="about.c2d">Внимание к деталям</li>
+              </ul>
+            </div>
+            <div class="about__col" data-reveal style="--d:2">
+              <h3 class="mono" data-i18n="about.c3">Инструменты</h3>
+              <ul>
+                <li>HTML5 · CSS3</li>
+                <li>JavaScript</li>
+                <li data-i18n="about.c3c">SVG и CSS-анимации</li>
+                <li data-i18n="about.c3d">SEO-разметка Schema.org</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== PROJECTS ============================== -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <p class="label mono" data-reveal><span>02</span> <span data-i18n="projects.label">Проекты</span></p>
+          <h2 class="h2" data-reveal data-i18n="projects.title">Избранные работы</h2>
+          <p class="section-head__note" data-reveal data-i18n="projects.note">Три концепт-сайта для реальных заведений Москвы. Данные и&nbsp;фотографии — из&nbsp;открытых источников, каждый сайт полностью рабочий и&nbsp;двуязычный.</p>
+        </div>
+
+        <!-- Project 01 -->
+        <article class="case case--manul" data-reveal>
+          <a class="case__media" href="projects/restaurant/index.html" data-lang-link data-cursor-text="cursor.open" aria-label="Открыть сайт ресторана MANUL" data-i18n-attr="aria-label:case1.aria">
+            <div class="browser">
+              <div class="browser__bar"><i></i><i></i><i></i><span>manul · restaurant</span></div>
+              <img src="assets/img/restaurant-desktop-ru.webp" data-src-ru="assets/img/restaurant-desktop-ru.webp" data-src-en="assets/img/restaurant-desktop-en.webp" width="1440" height="900" loading="lazy" alt="Главный экран сайта ресторана MANUL" data-i18n-attr="alt:case1.alt">
+            </div>
+            <div class="phone"><img src="assets/img/restaurant-mobile-ru.webp" data-src-ru="assets/img/restaurant-mobile-ru.webp" data-src-en="assets/img/restaurant-mobile-en.webp" width="540" height="1168" loading="lazy" alt="Мобильная версия сайта MANUL" data-i18n-attr="alt:case1.altM"></div>
+          </a>
+          <div class="case__info">
+            <p class="case__meta mono"><span>Project 01</span><span data-i18n="case1.type">Ресторан</span><span>2026</span></p>
+            <h3 class="case__title">MANUL</h3>
+            <p class="case__desc" data-i18n="case1.desc">Ресторан авторской кухни народов Сибири на&nbsp;Охотном Ряду. Тёмная атмосфера тайги, горящие глаза манула на&nbsp;первом экране и&nbsp;меню, которое хочется читать.</p>
+            <ul class="case__tags">
+              <li data-i18n="case1.f1">Меню с вкладками</li>
+              <li data-i18n="case1.f2">Бронь стола</li>
+              <li data-i18n="case1.f3">«Открыто» по времени Москвы</li>
+              <li data-i18n="case1.f4">Схема проезда</li>
+              <li>RU / EN</li>
+            </ul>
+            <div class="case__foot">
+              <span class="swatches" aria-hidden="true"><i style="--c:#0d100e"></i><i style="--c:#ece5d8"></i><i style="--c:#e3a24a"></i></span>
+              <a class="btn btn--ink btn--sm" href="projects/restaurant/index.html" data-lang-link><span data-i18n="cta.visit">Открыть сайт</span> <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12L12 4M6 4h6v6"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 02 -->
+        <article class="case case--matto case--flip" data-reveal>
+          <a class="case__media" href="projects/barbershop/index.html" data-lang-link data-cursor-text="cursor.open" aria-label="Открыть сайт барбершопа MATTO" data-i18n-attr="aria-label:case2.aria">
+            <div class="browser">
+              <div class="browser__bar"><i></i><i></i><i></i><span>matto · barbershop</span></div>
+              <img src="assets/img/barbershop-desktop-ru.webp" data-src-ru="assets/img/barbershop-desktop-ru.webp" data-src-en="assets/img/barbershop-desktop-en.webp" width="1440" height="900" loading="lazy" alt="Главный экран сайта барбершопа MATTO" data-i18n-attr="alt:case2.alt">
+            </div>
+            <div class="phone"><img src="assets/img/barbershop-mobile-ru.webp" data-src-ru="assets/img/barbershop-mobile-ru.webp" data-src-en="assets/img/barbershop-mobile-en.webp" width="540" height="1168" loading="lazy" alt="Мобильная версия сайта MATTO" data-i18n-attr="alt:case2.altM"></div>
+          </a>
+          <div class="case__info">
+            <p class="case__meta mono"><span>Project 02</span><span data-i18n="case2.type">Барбершоп</span><span>2026</span></p>
+            <h3 class="case__title">MATTO</h3>
+            <p class="case__desc" data-i18n="case2.desc">Барбершоп в&nbsp;ЖК «Михайловский парк». Смелая типографика, настоящие фотографии зала и&nbsp;онлайн-запись в&nbsp;три шага — со&nbsp;сводкой заказа и&nbsp;ценой.</p>
+            <ul class="case__tags">
+              <li data-i18n="case2.f1">Прайс по категориям</li>
+              <li data-i18n="case2.f2">Запись к мастеру</li>
+              <li data-i18n="case2.f3">Галерея с лайтбоксом</li>
+              <li data-i18n="case2.f4">Рейтинги мастеров</li>
+              <li>RU / EN</li>
+            </ul>
+            <div class="case__foot">
+              <span class="swatches" aria-hidden="true"><i style="--c:#0f0f0f"></i><i style="--c:#f2ede6"></i><i style="--c:#d23b2f"></i></span>
+              <a class="btn btn--ink btn--sm" href="projects/barbershop/index.html" data-lang-link><span data-i18n="cta.visit">Открыть сайт</span> <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12L12 4M6 4h6v6"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 03 -->
+        <article class="case case--ayu" data-reveal>
+          <a class="case__media" href="projects/beauty-salon/index.html" data-lang-link data-cursor-text="cursor.open" aria-label="Открыть сайт студии красоты A&amp;Ю" data-i18n-attr="aria-label:case3.aria">
+            <div class="browser">
+              <div class="browser__bar"><i></i><i></i><i></i><span>a&amp;ю · beauty studio</span></div>
+              <img src="assets/img/beauty-salon-desktop-ru.webp" data-src-ru="assets/img/beauty-salon-desktop-ru.webp" data-src-en="assets/img/beauty-salon-desktop-en.webp" width="1440" height="900" loading="lazy" alt="Главный экран сайта студии красоты A&amp;Ю" data-i18n-attr="alt:case3.alt">
+            </div>
+            <div class="phone"><img src="assets/img/beauty-salon-mobile-ru.webp" data-src-ru="assets/img/beauty-salon-mobile-ru.webp" data-src-en="assets/img/beauty-salon-mobile-en.webp" width="540" height="1168" loading="lazy" alt="Мобильная версия сайта A&amp;Ю" data-i18n-attr="alt:case3.altM"></div>
+          </a>
+          <div class="case__info">
+            <p class="case__meta mono"><span>Project 03</span><span data-i18n="case3.type">Салон красоты</span><span>2026</span></p>
+            <h3 class="case__title">A&amp;Ю</h3>
+            <p class="case__desc" data-i18n="case3.desc">Студия красоты на&nbsp;Рязанском проспекте. Светлый спокойный дизайн, пять мастеров и&nbsp;полный прайс из&nbsp;153 услуг с&nbsp;мгновенным поиском.</p>
+            <ul class="case__tags">
+              <li data-i18n="case3.f1">Поиск по прайсу</li>
+              <li data-i18n="case3.f2">12 направлений</li>
+              <li data-i18n="case3.f3">Цены по длине волос</li>
+              <li data-i18n="case3.f4">Запись к мастеру</li>
+              <li>RU / EN</li>
+            </ul>
+            <div class="case__foot">
+              <span class="swatches" aria-hidden="true"><i style="--c:#f7f3ee"></i><i style="--c:#1d1a18"></i><i style="--c:#66755a"></i></span>
+              <a class="btn btn--ink btn--sm" href="projects/beauty-salon/index.html" data-lang-link><span data-i18n="cta.visit">Открыть сайт</span> <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12L12 4M6 4h6v6"/></svg></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================== PROCESS ============================== -->
+    <section class="section process" id="process">
+      <div class="container">
+        <div class="section-head">
+          <p class="label mono" data-reveal><span>03</span> <span data-i18n="process.label">Подход</span></p>
+          <h2 class="h2" data-reveal data-i18n="process.title">Как я работаю</h2>
+          <p class="section-head__note" data-reveal data-i18n="process.note">Прозрачный процесс в&nbsp;четыре шага — вы&nbsp;всегда знаете, на&nbsp;каком этапе проект.</p>
+        </div>
+        <ol class="steps">
+          <li class="step" data-reveal>
+            <span class="step__n mono">01</span>
+            <h3 data-i18n="process.s1">Знакомство</h3>
+            <p data-i18n="process.s1t">Обсуждаем задачу, аудиторию и&nbsp;цель сайта. Собираю материалы: тексты, фото, цены, контакты.</p>
+          </li>
+          <li class="step" data-reveal style="--d:1">
+            <span class="step__n mono">02</span>
+            <h3 data-i18n="process.s2">Структура и дизайн</h3>
+            <p data-i18n="process.s2t">Продумываю разделы, типографику и&nbsp;палитру. Показываю, как будет выглядеть сайт, до&nbsp;начала вёрстки.</p>
+          </li>
+          <li class="step" data-reveal style="--d:2">
+            <span class="step__n mono">03</span>
+            <h3 data-i18n="process.s3">Разработка</h3>
+            <p data-i18n="process.s3t">Адаптивная вёрстка, анимации, формы и&nbsp;переключение языков. Проверяю на&nbsp;телефонах и&nbsp;десктопе.</p>
+          </li>
+          <li class="step" data-reveal style="--d:3">
+            <span class="step__n mono">04</span>
+            <h3 data-i18n="process.s4">Запуск</h3>
+            <p data-i18n="process.s4t">Публикую сайт, подключаю домен, добавляю разметку для поисковиков и&nbsp;превью ссылок.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================== CONTACT ============================== -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <p class="label mono" data-reveal><span>04</span> <span data-i18n="contact.label">Контакты</span></p>
+        <h2 class="contact__title" data-reveal>
+          <span data-i18n="contact.t1">Есть идея?</span>
+          <span class="contact__accent" data-i18n="contact.t2">Давайте сделаем сайт.</span>
+        </h2>
+        <p class="contact__text" data-reveal data-i18n="contact.text">Напишите пару слов о&nbsp;проекте — отвечу и&nbsp;предложу, с&nbsp;чего начать.</p>
+
+        <!-- Контакты: замените @your_telegram и your@email.com на свои (в этом файле) -->
+        <div class="contact__cards">
+          <a class="ccard" href="https://t.me/your_telegram" target="_blank" rel="noopener" data-reveal data-cursor-text="cursor.write">
+            <span class="ccard__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21.5 3.5L2.8 10.7c-.9.4-.9 1.6.1 1.9l4.6 1.4 1.8 5.6c.3.8 1.3 1 1.9.4l2.6-2.4 4.8 3.5c.7.5 1.7.1 1.9-.7l3.3-15.4c.2-1-.8-1.8-1.7-1.5zM9.4 14.2l8.4-7.5-10 6.4"/></svg></span>
+            <span class="ccard__label mono">Telegram</span>
+            <span class="ccard__value">@your_telegram</span>
+            <span class="ccard__arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 12L12 4M6 4h6v6"/></svg></span>
+          </a>
+          <div class="ccard ccard--mail" data-reveal style="--d:1">
+            <span class="ccard__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></span>
+            <span class="ccard__label mono">Email</span>
+            <a class="ccard__value" href="mailto:your@email.com" data-email>your@email.com</a>
+            <button class="ccard__copy mono" type="button" data-copy="your@email.com"><span data-i18n="contact.copy">Скопировать</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="footer">
+    <div class="container footer__row">
+      <p class="mono">© <span data-year>2026</span> Mandarin</p>
+      <p class="mono" data-i18n="footer.made">Сделано вручную: HTML, CSS, JavaScript</p>
+      <a class="mono footer__top" href="#top"><span data-i18n="footer.top">Наверх</span> ↑</a>
+    </div>
+  </footer>
+
+  <div class="toast mono" role="status" aria-live="polite" data-toast></div>
+
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

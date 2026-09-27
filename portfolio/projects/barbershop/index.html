@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title data-i18n="meta.title">MATTO — барбершоп в ЖК «Михайловский парк», Москва</title>
+  <meta name="description" content="Барбершоп MATTO: мужские и детские стрижки, борода, опасное бритьё, камуфляж. Ежедневно 10:00–22:00. ул. Михайлова, 30А к5. Запись +7 (968) 777-69-97." data-i18n-attr="content:meta.description">
+  <meta name="theme-color" content="#0f0f0f">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MATTO — барбершоп в Михайловском парке">
+  <meta property="og:image" content="images/hall.webp">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <script>
+    (function () {
+      var d = document.documentElement, l = null;
+      d.classList.add('js');
+      try { l = new URLSearchParams(location.search).get('lang') || localStorage.getItem('mandarin-lang'); } catch (e) {}
+      if (l === 'en') { d.lang = 'en'; d.classList.add('i18n-pending'); setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500); }
+    })();
+  </script>
+  <link rel="preload" as="image" href="images/hall.webp" imagesrcset="images/hall-480.webp 480w, images/hall.webp 960w" imagesizes="(max-width: 900px) 70vw, 34vw">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarberShop",
+    "name": "MATTO",
+    "telephone": "+7 968 777-69-97",
+    "image": "images/hall.webp",
+    "priceRange": "300–1800 ₽",
+    "address": { "@type": "PostalAddress", "streetAddress": "ул. Михайлова, 30А, корп. 5", "addressLocality": "Москва", "addressCountry": "RU" },
+    "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "10:00", "closes": "22:00" }],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "ratingCount": "676", "reviewCount": "338", "bestRating": "5" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Перейти к содержимому</a>
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="header" id="header">
+    <div class="container header__row">
+      <a class="logo" href="#top" aria-label="MATTO" data-i18n-attr="aria-label:a11y.home">MATTO<i>.</i></a>
+      <nav class="nav" aria-label="Основное меню" data-i18n-attr="aria-label:a11y.nav">
+        <a href="#about" data-i18n="nav.about">О нас</a>
+        <a href="#services" data-i18n="nav.services">Услуги</a>
+        <a href="#team" data-i18n="nav.team">Мастера</a>
+        <a href="#gallery" data-i18n="nav.gallery">Галерея</a>
+        <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
+      </nav>
+      <div class="header__tools">
+        <a class="header__phone" href="tel:+79687776997">+7 (968) 777-69-97</a>
+        <div class="lang" data-lang-switch role="group" aria-label="Язык / Language">
+          <button type="button" data-lang-set="ru">RU</button>
+          <button type="button" data-lang-set="en">EN</button>
+        </div>
+        <a class="btn btn--accent btn--sm header__cta" href="#booking" data-i18n="cta.book">Записаться</a>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Открыть меню" data-i18n-attr="aria-label:a11y.menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer" id="drawer" hidden>
+    <nav class="drawer__nav" aria-label="Мобильное меню" data-i18n-attr="aria-label:a11y.mnav">
+      <a href="#about" data-i18n="nav.about">О нас</a>
+      <a href="#services" data-i18n="nav.services">Услуги</a>
+      <a href="#team" data-i18n="nav.team">Мастера</a>
+      <a href="#gallery" data-i18n="nav.gallery">Галерея</a>
+      <a href="#booking" data-i18n="nav.booking">Запись</a>
+      <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
+    </nav>
+    <div class="drawer__foot">
+      <a href="tel:+79687776997">+7 (968) 777-69-97</a>
+      <p data-i18n="drawer.hours">Ежедневно 10:00–22:00</p>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" id="top">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow hero__eyebrow"><span class="pulse" aria-hidden="true"></span><span data-i18n="hero.eyebrow">Барбершоп · ЖК «Михайловский парк»</span></p>
+          <h1 class="hero__title">
+            <span class="line"><span data-i18n="hero.t1">Стрижка</span></span>
+            <span class="line"><span data-i18n="hero.t2">с характером</span></span>
+            <span class="line line--accent"><span data-i18n="hero.t3">и без спешки</span></span>
+          </h1>
+          <p class="hero__lead" data-i18n="hero.lead">Мужские и&nbsp;детские стрижки, борода, опасное бритьё и&nbsp;камуфляж седины. Тёплый зал, кожаный диван и&nbsp;мастера, которые слышат, что вы хотите.</p>
+          <div class="hero__cta">
+            <a class="btn btn--accent" href="#booking"><span data-i18n="cta.bookOnline">Записаться онлайн</span> <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
+            <a class="btn btn--ghost" href="#services" data-i18n="cta.prices">Услуги и цены</a>
+          </div>
+          <dl class="hero__facts">
+            <div><dt data-i18n="hero.f1">рейтинг на&nbsp;Яндекс Картах</dt><dd>5,0<span aria-hidden="true">★</span></dd></div>
+            <div><dt data-i18n="hero.f2">оценок</dt><dd>676</dd></div>
+            <div><dt data-i18n="hero.f3">отзывов</dt><dd>338</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero__media">
+          <figure class="hero__photo hero__photo--main" data-parallax="-0.06">
+            <img src="images/hall.webp" srcset="images/hall-480.webp 480w, images/hall.webp 960w" sizes="(max-width: 900px) 70vw, 34vw" width="960" height="1280" alt="Зал барбершопа MATTO: кресла, зеркала и световые рамки на потолке" data-i18n-attr="alt:img.hall">
+          </figure>
+          <figure class="hero__photo hero__photo--small" data-parallax="0.08">
+            <img src="images/lounge-480.webp" width="480" height="640" alt="Зона ожидания с кожаным диваном" data-i18n-attr="alt:img.lounge">
+          </figure>
+          <div class="badge" aria-hidden="true">
+            <svg viewBox="0 0 120 120"><defs><path id="badge-circle" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text><textPath href="#badge-circle">MATTO · BARBERSHOP · MOSCOW · 5.0 ★ ·</textPath></text></svg>
+            <span>✂</span>
+          </div>
+          <p class="hero__status status" data-status><span class="status__dot"></span><span data-status-text>—</span></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee">
+        <div class="marquee__track" data-marquee>
+          <span data-i18n="marquee">Стрижки <i></i> Борода <i></i> Опасное бритьё <i></i> Камуфляж седины <i></i> Детские стрижки <i></i> Уход <i></i></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================== ABOUT ============================== -->
+    <section class="section about" id="about">
+      <div class="container about__grid">
+        <figure class="about__photo" data-reveal>
+          <img src="images/reception.webp" srcset="images/reception-480.webp 480w, images/reception.webp 960w" sizes="(max-width: 900px) 90vw, 40vw" width="960" height="1280" loading="lazy" alt="Ресепшен барбершопа MATTO с деревянной стойкой" data-i18n-attr="alt:img.reception">
+          <figcaption data-i18n="about.caption">Ресепшен · ул. Михайлова, 30А к5</figcaption>
+        </figure>
+        <div class="about__body">
+          <p class="eyebrow" data-reveal><span class="idx">01</span> <span data-i18n="about.eyebrow">О барбершопе</span></p>
+          <h2 class="h2" data-reveal data-i18n="about.title">Больше, чем <span class="accent">стрижка</span></h2>
+          <p class="lead" data-reveal data-i18n="about.lead">MATTO — барбершоп у&nbsp;дома в&nbsp;ЖК&nbsp;«Михайловский парк». Здесь стригут точно, бреют опасной бритвой и&nbsp;не&nbsp;торопят.</p>
+          <p data-reveal data-i18n="about.text">Бордовые стены, дерево, лампы накаливания и&nbsp;кожаный диван в&nbsp;зоне ожидания — атмосфера мужского клуба без пафоса. Приходите со&nbsp;своей идеей или доверьтесь мастеру: от&nbsp;классики до&nbsp;фигурного выстрига для&nbsp;детей.</p>
+          <ul class="perks">
+            <li data-reveal>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 20V4h7a5 5 0 0 1 0 10H6"/></svg>
+              <b data-i18n="perk.parking">Парковка</b>
+              <span data-i18n="perk.parkingT">Есть места для людей с&nbsp;инвалидностью</span>
+            </li>
+            <li data-reveal style="--d:1">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5.5 12.5a10 10 0 0 1 13 0M9 16a5 5 0 0 1 6 0"/><circle cx="12" cy="19.5" r="1"/></svg>
+              <b>Wi-Fi</b>
+              <span data-i18n="perk.wifiT">Бесплатно для гостей</span>
+            </li>
+            <li data-reveal style="--d:2">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4.5" r="1.8"/><path d="M12 7v6h5l2 6M12 10h5M8.5 11.5A5.5 5.5 0 1 0 15 18"/></svg>
+              <b data-i18n="perk.access">Доступная среда</b>
+              <span data-i18n="perk.accessT">Вход без ступеней для&nbsp;колясок</span>
+            </li>
+            <li data-reveal style="--d:3">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="1.5"/><path d="M2.5 10h19M6 15h4"/></svg>
+              <b data-i18n="perk.pay">Любая оплата</b>
+              <span data-i18n="perk.payT">Карта, наличные, СБП, QR-код</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== SERVICES ============================== -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-reveal><span class="idx">02</span> <span data-i18n="svc.eyebrow">Услуги и цены</span></p>
+            <h2 class="h2" data-reveal data-i18n="svc.title">Прайс <span class="accent">без сюрпризов</span></h2>
+          </div>
+          <p class="section-head__note" data-reveal data-i18n="svc.note">Цена фиксированная и&nbsp;не&nbsp;зависит от&nbsp;мастера. Нажмите на&nbsp;услугу, чтобы сразу перейти к&nbsp;записи.</p>
+        </div>
+
+        <div class="services__layout">
+          <div class="svc-tabs" role="tablist" aria-label="Категории услуг" data-i18n-attr="aria-label:svc.tabs" data-svc-tabs></div>
+          <div class="svc-panel" data-svc-panel role="tabpanel" tabindex="0"></div>
+        </div>
+
+        <div class="combo" data-reveal>
+          <div>
+            <p class="combo__tag" data-i18n="combo.tag">Хит</p>
+            <h3 class="combo__title" data-i18n="combo.title">Стрижка + борода</h3>
+            <p data-i18n="combo.text">Полный образ за&nbsp;один визит: стрижка и&nbsp;моделирование бороды.</p>
+          </div>
+          <div class="combo__price"><b>1 800 ₽</b></div>
+          <button class="btn btn--accent" type="button" data-book-service="cut-beard" data-i18n="cta.book">Записаться</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== TEAM ============================== -->
+    <section class="section team" id="team">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-reveal><span class="idx">03</span> <span data-i18n="team.eyebrow">Мастера</span></p>
+            <h2 class="h2" data-reveal data-i18n="team.title">Команда <span class="accent">MATTO</span></h2>
+          </div>
+          <p class="section-head__note" data-reveal data-i18n="team.note">Рейтинг каждого мастера — по&nbsp;оценкам клиентов на&nbsp;Яндекс Картах.</p>
+        </div>
+        <ul class="team__grid" data-team></ul>
+      </div>
+    </section>
+
+    <!-- ============================== GALLERY ============================== -->
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-reveal><span class="idx">04</span> <span data-i18n="gal.eyebrow">Галерея</span></p>
+            <h2 class="h2" data-reveal data-i18n="gal.title">Загляните <span class="accent">внутрь</span></h2>
+          </div>
+          <p class="section-head__note" data-reveal data-i18n="gal.note">Настоящие фотографии барбершопа. Нажмите, чтобы открыть крупнее.</p>
+        </div>
+        <ul class="gallery__grid" data-gallery></ul>
+      </div>
+    </section>
+
+    <!-- ============================== BOOKING ============================== -->
+    <section class="section booking" id="booking">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-reveal><span class="idx">05</span> <span data-i18n="book.eyebrow">Онлайн-запись</span></p>
+            <h2 class="h2" data-reveal data-i18n="book.title">Запишитесь <span class="accent">за&nbsp;минуту</span></h2>
+          </div>
+          <p class="section-head__note" data-reveal data-i18n="book.note">Выберите услугу, мастера и&nbsp;время — администратор подтвердит запись звонком или в&nbsp;мессенджере.</p>
+        </div>
+
+        <div class="booking__grid">
+          <form class="form" id="booking-form" novalidate data-reveal>
+            <fieldset class="step">
+              <legend><span class="step__n">1</span> <span data-i18n="book.s1">Услуга и мастер</span></legend>
+              <div class="form__row">
+                <label class="field">
+                  <span class="field__label" data-i18n="form.service">Услуга</span>
+                  <select name="service" required data-service-select></select>
+                  <span class="field__error" aria-live="polite"></span>
+                </label>
+                <label class="field">
+                  <span class="field__label" data-i18n="form.barber">Мастер</span>
+                  <select name="barber" data-barber-select></select>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="step">
+              <legend><span class="step__n">2</span> <span data-i18n="book.s2">Дата и время</span></legend>
+              <div class="dates" role="radiogroup" aria-label="Дата" data-i18n-attr="aria-label:form.date" data-dates></div>
+              <div class="slots" role="radiogroup" aria-label="Время" data-i18n-attr="aria-label:form.time" data-slots></div>
+              <p class="field__error" data-slot-error aria-live="polite"></p>
+            </fieldset>
+
+            <fieldset class="step">
+              <legend><span class="step__n">3</span> <span data-i18n="book.s3">Контакты</span></legend>
+              <div class="form__row">
+                <label class="field">
+                  <span class="field__label" data-i18n="form.name">Имя</span>
+                  <input name="name" type="text" autocomplete="name" required maxlength="60" placeholder="Как к вам обращаться" data-i18n-attr="placeholder:form.nameP">
+                  <span class="field__error" aria-live="polite"></span>
+                </label>
+                <label class="field">
+                  <span class="field__label" data-i18n="form.phone">Телефон</span>
+                  <input name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+7 (___) ___-__-__">
+                  <span class="field__error" aria-live="polite"></span>
+                </label>
+              </div>
+            </fieldset>
+          </form>
+
+          <aside class="summary" data-reveal style="--d:1" aria-labelledby="summary-title">
+            <h3 class="summary__title" id="summary-title" data-i18n="sum.title">Ваша запись</h3>
+            <dl class="summary__list">
+              <div><dt data-i18n="form.service">Услуга</dt><dd data-sum="service">—</dd></div>
+              <div><dt data-i18n="form.barber">Мастер</dt><dd data-sum="barber">—</dd></div>
+              <div><dt data-i18n="sum.when">Когда</dt><dd data-sum="when">—</dd></div>
+            </dl>
+            <div class="summary__total"><span data-i18n="sum.total">К оплате</span><b data-sum="price">—</b></div>
+            <button class="btn btn--accent btn--wide" type="submit" form="booking-form"><span data-i18n="form.submit">Подтвердить запись</span></button>
+            <p class="summary__note" data-i18n="form.note">Концепт-сайт: заявка не&nbsp;отправляется. Записаться по-настоящему можно по&nbsp;телефону или в&nbsp;мессенджерах.</p>
+
+            <div class="summary__done" hidden tabindex="-1">
+              <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M15 24.5l6 6 12-13"/></svg>
+              <h3 data-i18n="form.doneTitle">Вы записаны!</h3>
+              <p data-done-text></p>
+              <button class="btn btn--ghost btn--sm" type="button" data-reset data-i18n="form.again">Записаться ещё</button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== CONTACTS ============================== -->
+    <section class="section contacts" id="contacts">
+      <div class="container contacts__grid">
+        <div class="contacts__body">
+          <p class="eyebrow" data-reveal><span class="idx">06</span> <span data-i18n="con.eyebrow">Контакты</span></p>
+          <h2 class="h2" data-reveal data-i18n="con.title">Ищите вывеску <span class="accent">MATTO</span></h2>
+          <dl class="contacts__list">
+            <div data-reveal><dt data-i18n="con.address">Адрес</dt><dd><address data-i18n="con.addressV">Москва, ул. Михайлова, 30А, корп. 5<br>ЖК «Михайловский парк», 1 этаж · м. Окская</address></dd></div>
+            <div data-reveal><dt data-i18n="con.hours">Часы работы</dt><dd data-i18n="con.hoursV">Ежедневно, 10:00–22:00</dd></div>
+            <div data-reveal><dt data-i18n="con.phone">Телефон</dt><dd><a class="link" href="tel:+79687776997">+7 (968) 777-69-97</a><small data-i18n="con.phoneNote">WhatsApp и Telegram — по этому же номеру</small></dd></div>
+          </dl>
+          <div class="contacts__actions" data-reveal>
+            <a class="btn btn--accent btn--sm" href="https://wa.me/79687776997" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn--ghost btn--sm" href="https://t.me/+79687776997" target="_blank" rel="noopener">Telegram</a>
+            <a class="btn btn--ghost btn--sm" href="https://yandex.ru/maps/?text=%D0%91%D0%B0%D1%80%D0%B1%D0%B5%D1%80%D1%88%D0%BE%D0%BF%20MATTO%2C%20%D1%83%D0%BB.%20%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B0%2C%2030%D0%90%20%D0%BA5%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0" target="_blank" rel="noopener" data-i18n="con.route">Маршрут</a>
+          </div>
+        </div>
+        <figure class="contacts__photo" data-reveal>
+          <img src="images/entrance.webp" srcset="images/entrance-480.webp 480w, images/entrance.webp 960w" sizes="(max-width: 900px) 90vw, 36vw" width="960" height="1280" loading="lazy" alt="Вход в барбершоп MATTO с вывеской на кирпичном фасаде" data-i18n-attr="alt:img.entrance">
+          <figcaption data-i18n="con.photo">Вход с улицы — вывеска MATTO на кирпичном фасаде</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__word" aria-hidden="true">MATTO<i>.</i></p>
+      <div class="footer__row">
+        <p data-i18n="footer.line">Барбершоп · ул. Михайлова, 30А к5 · Ежедневно 10:00–22:00</p>
+        <nav class="footer__links" aria-label="Соцсети и связь" data-i18n-attr="aria-label:a11y.social">
+          <a class="link" href="tel:+79687776997" data-i18n="footer.call">Позвонить</a>
+          <a class="link" href="https://wa.me/79687776997" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="link" href="https://t.me/+79687776997" target="_blank" rel="noopener">Telegram</a>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p data-i18n="footer.disclaimer">Концепт-сайт для портфолио. Не&nbsp;является официальным сайтом барбершопа; данные и&nbsp;фото взяты из&nbsp;открытых источников.</p>
+        <a class="footer__credit" href="../../index.html#projects" data-lang-link><span data-i18n="footer.credit">Дизайн и разработка —</span> <b>Mandarin</b> ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" data-lightbox hidden role="dialog" aria-modal="true" aria-label="Фотография" data-i18n-attr="aria-label:a11y.photo">
+    <button class="lightbox__close" type="button" data-lb-close aria-label="Закрыть" data-i18n-attr="aria-label:a11y.close">×</button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" data-lb-prev aria-label="Предыдущее фото" data-i18n-attr="aria-label:a11y.prev">←</button>
+    <figure class="lightbox__figure"><img src="images/hall-480.webp" alt="" loading="lazy" data-lb-img><figcaption data-lb-cap></figcaption></figure>
+    <button class="lightbox__nav lightbox__nav--next" type="button" data-lb-next aria-label="Следующее фото" data-i18n-attr="aria-label:a11y.next">→</button>
+  </div>
+
+  <a class="fab" href="#booking" data-fab><span data-i18n="cta.book">Записаться</span></a>
+
+  <script src="js/content.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

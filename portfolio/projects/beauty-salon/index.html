@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title data-i18n="meta.title">A&amp;Ю — студия красоты на Рязанском проспекте, Москва</title>
+  <meta name="description" content="Студия красоты A&amp;Ю: стрижки и окрашивание, уход за волосами, маникюр, педикюр, подология, брови, ресницы и перманентный макияж. Ежедневно 10:00–22:00. Рязанский проспект, 2/1к5Т." data-i18n-attr="content:meta.description">
+  <meta name="theme-color" content="#f7f3ee">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="A&amp;Ю — студия красоты">
+  <meta property="og:image" content="images/studio.webp">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <script>
+    (function () {
+      var d = document.documentElement, l = null;
+      d.classList.add('js');
+      try { l = new URLSearchParams(location.search).get('lang') || localStorage.getItem('mandarin-lang'); } catch (e) {}
+      if (l === 'en') { d.lang = 'en'; d.classList.add('i18n-pending'); setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500); }
+    })();
+  </script>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "A&Ю",
+    "telephone": "+7 929 542-24-34",
+    "url": "https://aystu.ru",
+    "image": "images/studio.webp",
+    "address": { "@type": "PostalAddress", "streetAddress": "Рязанский проспект, 2/1к5Т", "addressLocality": "Москва", "addressCountry": "RU" },
+    "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "10:00", "closes": "22:00" }],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "ratingCount": "530", "reviewCount": "355", "bestRating": "5" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Перейти к содержимому</a>
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="header" id="header">
+    <div class="container header__row">
+      <a class="logo" href="#top" aria-label="A&amp;Ю" data-i18n-attr="aria-label:a11y.home">
+        <span class="logo__mark">A&amp;Ю</span>
+        <span class="logo__sub" data-i18n="logo.sub">студия красоты</span>
+      </a>
+      <nav class="nav" aria-label="Основное меню" data-i18n-attr="aria-label:a11y.nav">
+        <a href="#studio" data-i18n="nav.studio">Студия</a>
+        <a href="#prices" data-i18n="nav.prices">Услуги и цены</a>
+        <a href="#team" data-i18n="nav.team">Мастера</a>
+        <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
+      </nav>
+      <div class="header__tools">
+        <div class="lang" data-lang-switch role="group" aria-label="Язык / Language">
+          <button type="button" data-lang-set="ru">RU</button>
+          <button type="button" data-lang-set="en">EN</button>
+        </div>
+        <a class="btn btn--dark btn--sm header__cta" href="#booking" data-i18n="cta.book">Записаться</a>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Открыть меню" data-i18n-attr="aria-label:a11y.menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer" id="drawer" hidden>
+    <nav class="drawer__nav" aria-label="Мобильное меню" data-i18n-attr="aria-label:a11y.mnav">
+      <a href="#studio" data-i18n="nav.studio">Студия</a>
+      <a href="#prices" data-i18n="nav.prices">Услуги и цены</a>
+      <a href="#team" data-i18n="nav.team">Мастера</a>
+      <a href="#booking" data-i18n="nav.booking">Запись</a>
+      <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
+    </nav>
+    <div class="drawer__foot">
+      <a href="tel:+79295422434">+7 (929) 542-24-34</a>
+      <p data-i18n="drawer.info">Рязанский проспект, 2/1к5Т · ежедневно 10:00–22:00</p>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" id="top">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow hero__eyebrow"><span class="dot" aria-hidden="true"></span> <span data-i18n="hero.eyebrow">Студия красоты · Рязанский проспект</span></p>
+          <h1 class="hero__title">
+            <span class="line"><span data-i18n="hero.t1">Красота,</span></span>
+            <span class="line"><em data-i18n="hero.t2">собранная</em></span>
+            <span class="line"><span data-i18n="hero.t3">в одном месте</span></span>
+          </h1>
+          <p class="hero__lead" data-i18n="hero.lead">Стрижки и&nbsp;окрашивание, маникюр и&nbsp;педикюр, подология, брови, ресницы и&nbsp;перманентный макияж. Несколько процедур легко совместить за&nbsp;один визит — даже в&nbsp;4&nbsp;руки.</p>
+          <div class="hero__cta">
+            <a class="btn btn--dark" href="#booking" data-i18n="cta.bookOnline">Записаться онлайн</a>
+            <a class="btn btn--line" href="#prices" data-i18n="cta.prices">Смотреть цены</a>
+          </div>
+          <ul class="hero__meta">
+            <li><b>5,0</b><span class="stars" aria-hidden="true">★★★★★</span><small data-i18n="hero.rating">530 оценок на Яндекс Картах</small></li>
+            <li><b data-i18n="hero.daily">Ежедневно</b><small>10:00–22:00</small></li>
+          </ul>
+        </div>
+
+        <div class="hero__media">
+          <figure class="hero__arch">
+            <img src="images/studio.webp" srcset="images/studio-480.webp 480w, images/studio.webp 960w" sizes="(max-width: 900px) 80vw, 36vw" width="960" height="1280" alt="Светлый зал студии A&amp;Ю: мраморный пол, рабочие места мастеров и живые растения" data-i18n-attr="alt:img.studio">
+          </figure>
+          <figure class="hero__round">
+            <img src="images/manicure.webp" width="400" height="500" alt="Рабочее место мастера маникюра" data-i18n-attr="alt:img.manicure">
+          </figure>
+          <p class="hero__chip"><span class="hero__chip-icon" aria-hidden="true">✦</span><span data-i18n="hero.chip">В 4 руки — две процедуры одновременно</span></p>
+          <svg class="hero__ring" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="98"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== DIRECTIONS ============================== -->
+    <section class="directions" aria-label="Направления" data-i18n-attr="aria-label:dir.label">
+      <div class="container">
+        <ul class="directions__list" data-directions></ul>
+      </div>
+    </section>
+
+    <!-- ============================== STUDIO ============================== -->
+    <section class="section studio" id="studio">
+      <div class="container">
+        <div class="studio__head">
+          <p class="eyebrow" data-reveal data-i18n="studio.eyebrow">О студии</p>
+          <h2 class="h2" data-reveal data-i18n="studio.title">Одна студия — <em>всё для&nbsp;вас</em></h2>
+          <p class="lead" data-reveal data-i18n="studio.lead">A&amp;Ю — светлая студия на&nbsp;Рязанском проспекте. Парикмахеры-стилисты, мастера ногтевого сервиса, бровей, ресниц и&nbsp;перманентного макияжа работают в&nbsp;одном пространстве, поэтому уход за&nbsp;собой не&nbsp;превращается в&nbsp;марафон по&nbsp;городу.</p>
+        </div>
+
+        <figure class="studio__wide" data-reveal>
+          <img src="images/studio-wide.webp" width="960" height="460" loading="lazy" alt="Панорама зала: рабочие места у окон, зелень и мрамор" data-i18n-attr="alt:img.wide">
+        </figure>
+
+        <ol class="reasons">
+          <li data-reveal><span class="reasons__n">01</span><h3 data-i18n="why.1">Всё в&nbsp;одном месте</h3><p data-i18n="why.1t">Волосы, ногти, брови, ресницы и&nbsp;перманентный макияж — в&nbsp;одной студии.</p></li>
+          <li data-reveal style="--d:1"><span class="reasons__n">02</span><h3 data-i18n="why.2">В 4 руки</h3><p data-i18n="why.2t">Две процедуры одновременно — например, маникюр и&nbsp;педикюр. Экономите время.</p></li>
+          <li data-reveal style="--d:2"><span class="reasons__n">03</span><h3 data-i18n="why.3">Каждый день</h3><p data-i18n="why.3t">Без выходных, с&nbsp;10:00 до&nbsp;22:00 — удобно до&nbsp;и&nbsp;после работы.</p></li>
+          <li data-reveal style="--d:3"><span class="reasons__n">04</span><h3 data-i18n="why.4">5,0 на&nbsp;Картах</h3><p data-i18n="why.4t">530 оценок и&nbsp;355 отзывов на&nbsp;Яндекс Картах.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================== PRICES ============================== -->
+    <section class="section prices" id="prices">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-reveal data-i18n="prices.eyebrow">Услуги и цены</p>
+            <h2 class="h2" data-reveal data-i18n="prices.title">Полный прайс — <em>без мелкого шрифта</em></h2>
+          </div>
+          <p class="section-head__note" data-reveal data-i18n="prices.note">153 услуги в&nbsp;12 направлениях. Цена стрижек, окрашивания и&nbsp;ухода зависит от&nbsp;длины волос.</p>
+        </div>
+
+        <div class="prices__tools" data-reveal>
+          <label class="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <span class="sr-only" data-i18n="prices.searchLabel">Поиск по услугам</span>
+            <input type="search" placeholder="Найти услугу: например, «педикюр» или «кератин»" data-price-search data-i18n-attr="placeholder:prices.searchP">
+          </label>
+          <div class="chips" role="tablist" aria-label="Направления" data-i18n-attr="aria-label:dir.label" data-price-chips></div>
+        </div>
+
+        <div class="price-board" data-price-board aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ============================== TEAM ============================== -->
+    <section class="section team" id="team">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow" data-reveal data-i18n="team.eyebrow">Мастера</p>
+            <h2 class="h2" data-reveal data-i18n="team.title">Люди, которым <em>доверяют</em></h2>
+          </div>
+          <p class="section-head__note" data-reveal data-i18n="team.note">У&nbsp;каждого мастера — рейтинг 5,0 по&nbsp;отзывам клиентов на&nbsp;Яндекс Картах.</p>
+        </div>
+        <ul class="team__grid" data-team></ul>
+      </div>
+    </section>
+
+    <!-- ============================== BOOKING ============================== -->
+    <section class="section booking" id="booking">
+      <div class="container booking__grid">
+        <div class="booking__intro">
+          <p class="eyebrow" data-reveal data-i18n="book.eyebrow">Онлайн-запись</p>
+          <h2 class="h2" data-reveal data-i18n="book.title">Выберите время <em>для себя</em></h2>
+          <p data-reveal data-i18n="book.text">Оставьте заявку — администратор свяжется с&nbsp;вами, подтвердит время и&nbsp;подскажет, какие процедуры можно совместить.</p>
+          <figure class="booking__photo" data-reveal>
+            <img src="images/manicure.webp" width="400" height="500" loading="lazy" alt="" >
+          </figure>
+        </div>
+
+        <form class="form" id="booking-form" novalidate data-reveal>
+          <div class="form__grid">
+            <label class="field">
+              <span class="field__label" data-i18n="form.direction">Направление</span>
+              <select name="direction" data-direction-select></select>
+            </label>
+            <label class="field">
+              <span class="field__label" data-i18n="form.service">Услуга</span>
+              <select name="service" required data-service-select></select>
+              <span class="field__error" aria-live="polite"></span>
+            </label>
+            <label class="field field--wide">
+              <span class="field__label" data-i18n="form.master">Мастер</span>
+              <select name="master" data-master-select></select>
+            </label>
+            <label class="field">
+              <span class="field__label" data-i18n="form.date">Дата</span>
+              <input type="date" name="date" required>
+              <span class="field__error" aria-live="polite"></span>
+            </label>
+            <label class="field">
+              <span class="field__label" data-i18n="form.time">Время</span>
+              <select name="time" required></select>
+              <span class="field__error" aria-live="polite"></span>
+            </label>
+            <label class="field">
+              <span class="field__label" data-i18n="form.name">Имя</span>
+              <input type="text" name="name" autocomplete="name" required maxlength="60" placeholder="Ваше имя" data-i18n-attr="placeholder:form.nameP">
+              <span class="field__error" aria-live="polite"></span>
+            </label>
+            <label class="field">
+              <span class="field__label" data-i18n="form.phone">Телефон</span>
+              <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required placeholder="+7 (___) ___-__-__">
+              <span class="field__error" aria-live="polite"></span>
+            </label>
+          </div>
+
+          <div class="form__total" data-total hidden>
+            <span data-i18n="form.total">Стоимость</span>
+            <b data-total-value></b>
+          </div>
+
+          <button class="btn btn--dark btn--wide" type="submit"><span data-i18n="form.submit">Отправить заявку</span></button>
+          <p class="form__note" data-i18n="form.note">Концепт-сайт: заявка не&nbsp;отправляется в&nbsp;студию. Записаться по-настоящему можно по&nbsp;телефону +7 (929) 542-24-34.</p>
+
+          <div class="form__done" hidden tabindex="-1">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><path d="M15 24.5l6 6 12-13"/></svg>
+            <h3 data-i18n="form.doneTitle">Спасибо, заявка у нас!</h3>
+            <p data-done-text></p>
+            <button class="btn btn--line btn--sm" type="button" data-reset data-i18n="form.again">Новая заявка</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============================== CONTACTS ============================== -->
+    <section class="section contacts" id="contacts">
+      <div class="container contacts__grid">
+        <figure class="contacts__photo" data-reveal>
+          <img src="images/entrance.webp" width="506" height="675" loading="lazy" alt="Вход в студию красоты A&amp;Ю с вывеской на фасаде" data-i18n-attr="alt:img.entrance">
+        </figure>
+        <div class="contacts__body">
+          <p class="eyebrow" data-reveal data-i18n="con.eyebrow">Контакты</p>
+          <h2 class="h2" data-reveal data-i18n="con.title">Как нас <em>найти</em></h2>
+          <dl class="contacts__list">
+            <div data-reveal><dt data-i18n="con.address">Адрес</dt><dd><address data-i18n="con.addressV">Москва, Рязанский проспект, 2/1к5Т<br>м. Нижегородская</address></dd></div>
+            <div data-reveal><dt data-i18n="con.hours">Часы работы</dt><dd><span data-i18n="con.hoursV">Ежедневно, 10:00–22:00</span> <span class="status" data-status><span class="status__dot"></span><span data-status-text></span></span></dd></div>
+            <div data-reveal><dt data-i18n="con.phone">Телефон</dt><dd><a class="link" href="tel:+79295422434">+7 (929) 542-24-34</a></dd></div>
+            <div data-reveal><dt data-i18n="con.amenities">Удобства</dt><dd><ul class="tags"><li data-i18n="am.card">Оплата картой</li><li data-i18n="am.parking">Парковка</li><li>Wi-Fi</li><li data-i18n="am.gift">Подарочные сертификаты</li></ul></dd></div>
+          </dl>
+          <div class="contacts__actions" data-reveal>
+            <a class="btn btn--dark btn--sm" href="#booking" data-i18n="cta.book">Записаться</a>
+            <a class="btn btn--line btn--sm" href="tel:+79295422434" data-i18n="con.call">Позвонить</a>
+            <a class="btn btn--line btn--sm" href="https://yandex.ru/maps/?text=%D0%90%D1%8E%20%D1%81%D1%82%D1%83%D0%B4%D0%B8%D1%8F%2C%20%D0%A0%D1%8F%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%202%2F1%D0%BA5%D0%A2%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0" target="_blank" rel="noopener" data-i18n="con.route">Маршрут</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <p class="footer__mark">A&amp;Ю</p>
+        <p class="footer__tag" data-i18n="footer.tag">Студия красоты на&nbsp;Рязанском проспекте. Ежедневно 10:00–22:00.</p>
+        <div class="footer__links">
+          <a class="link" href="tel:+79295422434">+7 (929) 542-24-34</a>
+          <a class="link" href="https://aystu.ru" target="_blank" rel="noopener">aystu.ru</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p data-i18n="footer.disclaimer">Концепт-сайт для портфолио. Не&nbsp;является официальным сайтом студии; данные и&nbsp;фото взяты из&nbsp;открытых источников.</p>
+        <a class="footer__credit" href="../../index.html#projects" data-lang-link><span data-i18n="footer.credit">Дизайн и разработка —</span> <b>Mandarin</b> ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/content.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
