@@ -584,20 +584,40 @@
     }
 
     /* 12. Team ----------------------------------------------------------------- */
-    .team__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 2rem); }
-    .member:nth-child(even) { margin-top: clamp(2rem, 5vw, 5rem); }
-    .member__media { aspect-ratio: 3 / 4; }
-    .member__media img { filter: grayscale(1) var(--img-filter); }
-    .member:hover .member__media img { transform: scale(1.04); filter: var(--img-filter-hover); }
-    .member__info { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--line); }
-    .member__name { font-family: var(--serif); font-size: clamp(1.3rem, 1.8vw, 1.6rem); font-weight: 400; color: var(--text); }
-    .member__role { font-size: .72rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); text-align: right; }
-    .member__book { width: 100%; margin-top: 1rem; }
+    .team__list { border-top: 1px solid var(--text); }
+    .member {
+      display: grid; grid-template-columns: 64px 88px minmax(0, 1fr) auto auto; align-items: center; gap: 1rem 1.5rem;
+      padding: clamp(1.25rem, 2vw, 1.75rem) 0; border-bottom: 1px solid var(--line);
+    }
+    .member__num { font-size: .75rem; letter-spacing: .14em; color: var(--muted); }
+    .member__photo { width: 88px; height: 88px; border-radius: 50%; overflow: hidden; background: var(--placeholder); }
+    .member__photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.04); transition: filter .6s ease, transform 1s var(--ease); }
+    .member__name { font-family: var(--serif); font-size: clamp(1.35rem, 2.3vw, 2.2rem); font-weight: 400; line-height: 1.1; text-transform: uppercase; color: var(--text); transition: transform .7s var(--ease); }
+    .member__main { padding-left: .5rem; }
+    .member__role { margin-top: .45rem; font-size: .95rem; color: var(--muted); }
+    .member__rating { margin-right: 1rem; }
+    .member__role b { font-weight: 500; color: var(--text-2); }
+    .member__rating { display: flex; align-items: center; gap: .4rem; white-space: nowrap; font-size: .9rem; color: var(--muted); }
+    .member__rating svg { width: 14px; height: 14px; fill: var(--text); }
+    .member__rating b { font-weight: 500; color: var(--text); }
+    @media (hover: hover) {
+      .member:hover .member__photo img { filter: var(--img-filter-hover); transform: scale(1.06); }
+      .member:hover .member__name { transform: translateX(8px); }
+    }
 
-    @media (max-width: 1024px) { .team__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 480px) {
-      .member__info { flex-direction: column; gap: .2rem; }
-      .member__role { text-align: left; font-size: .64rem; }
+    @media (max-width: 1024px) {
+      .member { grid-template-columns: 88px minmax(0, 1fr) auto; grid-template-areas: "photo main book" "photo rating book"; row-gap: .5rem; }
+      .member__num { display: none; }
+      .member__photo { grid-area: photo; }
+      .member__main { grid-area: main; align-self: end; }
+      .member__rating { grid-area: rating; align-self: start; }
+      .member__book { grid-area: book; }
+    }
+    @media (max-width: 600px) {
+      .member { grid-template-columns: 72px minmax(0, 1fr); grid-template-areas: "photo main" "photo rating" "book book"; column-gap: 1.1rem; }
+      .member__photo { width: 72px; height: 72px; }
+      .member__role { font-size: .88rem; }
+      .member__book { width: 100%; margin-top: .75rem; }
     }
 
     /* 13. Booking -------------------------------------------------------------- */
@@ -734,9 +754,9 @@
       <div class="header__right">
         <nav class="nav" aria-label="Основное меню">
           <ul>
-            <li><a class="nav__link" href="#home" data-nav>Главная</a></li>
             <li><a class="nav__link" href="#services" data-nav>Услуги</a></li>
             <li><a class="nav__link" href="#about" data-nav>О студии</a></li>
+            <li><a class="nav__link" href="#team" data-nav>Мастера</a></li>
             <li><a class="nav__link" href="#gallery" data-nav>Галерея</a></li>
             <li><a class="nav__link" href="#contact" data-nav>Контакты</a></li>
           </ul>
@@ -759,8 +779,9 @@
           <li><a class="drawer__link" href="#home" style="--i:0">Главная <span>01</span></a></li>
           <li><a class="drawer__link" href="#services" style="--i:1">Услуги <span>02</span></a></li>
           <li><a class="drawer__link" href="#about" style="--i:2">О студии <span>03</span></a></li>
-          <li><a class="drawer__link" href="#gallery" style="--i:3">Галерея <span>04</span></a></li>
-          <li><a class="drawer__link" href="#contact" style="--i:4">Контакты <span>05</span></a></li>
+          <li><a class="drawer__link" href="#team" style="--i:3">Мастера <span>04</span></a></li>
+          <li><a class="drawer__link" href="#gallery" style="--i:4">Галерея <span>05</span></a></li>
+          <li><a class="drawer__link" href="#contact" style="--i:5">Контакты <span>06</span></a></li>
         </ul>
       </nav>
       <div class="drawer__foot">
@@ -932,8 +953,23 @@
       </div>
     </section>
 
+    <!-- ============================ TEAM ============================ -->
+    <section class="section" id="team" aria-labelledby="team-title">
+      <div class="container">
+        <header class="section-head">
+          <div>
+            <p class="eyebrow" data-reveal>Команда</p>
+            <h2 class="title" id="team-title" data-reveal="lines"><span class="mask"><span>Мастера</span></span></h2>
+          </div>
+          <p class="section-head__lead" data-reveal>У&nbsp;каждого мастера рейтинг 5,0 на&nbsp;Яндекс Картах. Нажмите «Записаться»&nbsp;— мастер сразу подставится в&nbsp;форму.</p>
+        </header>
+        <!-- Rendered from TEAM in the script -->
+        <ul class="team__list" id="team-list"></ul>
+      </div>
+    </section>
+
     <!-- ============================ GALLERY ============================ -->
-    <section class="section" id="gallery" aria-labelledby="gallery-title">
+    <section class="section section--alt" id="gallery" aria-labelledby="gallery-title">
       <div class="container">
         <header class="section-head">
           <div>
@@ -998,22 +1034,6 @@
       </div>
     </section>
 
-    <!-- ============================ TEAM ============================ -->
-    <!-- Появится, когда в TEAM (в скрипте) будут мастера -->
-    <section class="section section--alt" id="team" aria-labelledby="team-title" hidden>
-      <div class="container">
-        <header class="section-head">
-          <div>
-            <p class="eyebrow" data-reveal>Команда</p>
-            <h2 class="title" id="team-title" data-reveal="lines"><span class="mask"><span>Мастера</span></span></h2>
-          </div>
-          <p class="section-head__lead" data-reveal>Нажмите «Записаться» — направление мастера сразу подставится в&nbsp;форму.</p>
-        </header>
-        <!-- Rendered from TEAM in the script -->
-        <ul class="team__grid" id="team-list"></ul>
-      </div>
-    </section>
-
     <!-- ============================ BOOKING ============================ -->
     <section class="section" id="booking" aria-labelledby="booking-title">
       <div class="container booking__grid">
@@ -1049,6 +1069,13 @@
                   <option value="">Выберите направление</option>
                 </select>
                 <p class="field__error" id="f-service-error" aria-live="polite"></p>
+              </div>
+              <div class="field field--full">
+                <label class="field__label" for="f-master">Мастер</label>
+                <select class="field__input" id="f-master" name="master">
+                  <option value="">Любой мастер</option>
+                </select>
+                <p class="field__error" aria-hidden="true"></p>
               </div>
               <div class="field">
                 <label class="field__label" for="f-date">Дата</label>
@@ -1447,10 +1474,15 @@
       }
     ];
 
-    // Мастера. Пока пусто — секция «Мастера» скрыта. Пример записи:
-    // { name: 'Имя', role: 'Мастер маникюра', service: 'Маникюр', photo: 'images/team-name.webp' }
-    // service — направление из SERVICES: оно подставится в форму по кнопке «Записаться».
-    const TEAM = [];
+    // Мастера и их рейтинг на Яндекс Картах.
+    // services — направления из SERVICES: первое подставится в форму по кнопке «Записаться».
+    const TEAM = [
+      { name: 'Анна Колесникова',   level: 'Ведущий мастер', role: 'маникюр, педикюр, подология',             services: ['Маникюр', 'Педикюр', 'Подология'],                 rating: 5, votes: 162, photo: 'images/team-kolesnikova.webp' },
+      { name: 'Олеся Стрелецкая',   level: 'Ведущий мастер', role: 'маникюр, педикюр',                        services: ['Маникюр', 'Педикюр'],                              rating: 5, votes: 135, photo: 'images/team-streletskaya.webp' },
+      { name: 'Татьяна Котова',     level: 'Топ-мастер',     role: 'парикмахер-универсал, стилист',           services: ['Стрижки и укладки', 'Окрашивание', 'Уход и восстановление', 'Завивка и объём'], rating: 5, votes: 82, photo: 'images/team-kotova.webp' },
+      { name: 'Ирина Усенко',       level: 'Ведущий мастер', role: 'маникюр, педикюр, перманентный макияж',   services: ['Маникюр', 'Педикюр', 'Перманентный макияж'],       rating: 5, votes: 44,  photo: 'images/team-usenko.webp' },
+      { name: 'Саида Мустафина',    level: 'Ведущий мастер', role: 'маникюр, педикюр',                        services: ['Маникюр', 'Педикюр'],                              rating: 5, votes: 28,  photo: 'images/team-mustafina.webp' }
+    ];
 
     const HOURS = { open: 10 * 60, lastStart: 21 * 60, closedDays: [] }; // ежедневно 10:00–22:00, последняя запись в 21:00
 
@@ -1595,28 +1627,36 @@
       </li>`;
     }).join('');
 
+    const STAR = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg>';
+    const rating = r => r.toFixed(1).replace('.', ',');
+    const votes = n => `${n} ${plural(n, 'оценка', 'оценки', 'оценок')}`;
+
     const teamSection = $('#team');
     if (TEAM.length) {
-      teamSection.hidden = false;
       $('#team-list').innerHTML = TEAM.map((m, i) => `
-        <li class="member" data-reveal style="--d:${i % 4}">
-          <div class="member__media media">
-            <img src="${esc(m.photo)}" alt="${esc(m.name)}, ${esc(m.role)}" loading="lazy" decoding="async">
-          </div>
-          <div class="member__info">
+        <li class="member" data-reveal style="--d:${i % 3}">
+          <span class="member__num">${pad(i + 1)}</span>
+          <div class="member__photo"><img src="${esc(m.photo)}" alt="${esc(m.name)}" width="176" height="176" loading="lazy" decoding="async"></div>
+          <div class="member__main">
             <h3 class="member__name">${esc(m.name)}</h3>
-            <p class="member__role">${esc(m.role)}</p>
+            <p class="member__role"><b>${esc(m.level)}</b> · ${esc(m.role)}</p>
           </div>
-          ${m.service ? `<a class="btn btn--sm member__book" href="#booking" data-service="${esc(m.service)}">Записаться</a>` : ''}
+          <p class="member__rating" aria-label="Рейтинг ${rating(m.rating)} из 5, ${votes(m.votes)} на Яндекс Картах">${STAR}<b>${rating(m.rating)}</b><span>· ${votes(m.votes)}</span></p>
+          <a class="btn btn--sm member__book" href="#booking" data-master="${esc(m.name)}" aria-label="Записаться к мастеру: ${esc(m.name)}">Записаться</a>
         </li>`).join('');
     } else {
       teamSection.remove();
+      $$('a[href="#team"]').forEach(a => a.closest('li').remove());
     }
 
     const serviceSelect = $('#f-service');
     serviceSelect.insertAdjacentHTML('beforeend',
       SERVICES.map(s => `<option value="${esc(s.name)}">${esc(s.name)} — ${fromPrice(s)}</option>`).join('') +
       '<option value="Несколько услуг">Несколько услуг — подскажет администратор</option>');
+
+    const masterSelect = $('#f-master');
+    masterSelect.insertAdjacentHTML('beforeend', TEAM.map(m => `<option value="${esc(m.name)}">${esc(m.name)} — ${esc(m.role)}</option>`).join(''));
+    if (!TEAM.length) masterSelect.closest('.field').remove();
 
     /* ---------- Services: expand ---------- */
     $$('.svc__row').forEach(row => {
@@ -1695,13 +1735,21 @@
       if (!id || !document.getElementById(id)) return;
       e.preventDefault();
       if (drawerOpen) setDrawer(false);
-      if (a.dataset.service) { serviceSelect.value = a.dataset.service; serviceSelect.dispatchEvent(new Event('change')); }
+      if (a.dataset.master) {
+        const m = TEAM.find(x => x.name === a.dataset.master);
+        masterSelect.value = m.name;
+        // Keep the chosen service if this master does it, otherwise suggest their main one
+        if (!m.services.includes(serviceSelect.value)) { serviceSelect.value = m.services[0]; serviceSelect.dispatchEvent(new Event('change')); }
+      } else if (a.dataset.service) {
+        serviceSelect.value = a.dataset.service;
+        serviceSelect.dispatchEvent(new Event('change'));
+      }
       goTo(id);
     });
 
     const navLinks = $$('[data-nav]');
     if ('IntersectionObserver' in window) {
-      const alias = { intro: 'home', why: 'about', team: 'gallery', booking: 'contact' };
+      const alias = { why: 'about', booking: 'contact' };
       const spy = new IntersectionObserver(entries => entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         const id = alias[entry.target.id] || entry.target.id;
@@ -1885,7 +1933,7 @@
 
       setTimeout(() => {
         const date = parseDate(data.date).toLocaleDateString('ru-RU', { weekday: 'short', day: 'numeric', month: 'long' });
-        $('#booking-summary').innerHTML = [['Услуга', data.service], ['Дата', date], ['Время', data.time]]
+        $('#booking-summary').innerHTML = [['Услуга', data.service], ['Мастер', data.master || 'Любой'], ['Дата', date], ['Время', data.time]]
           .map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('');
         form.hidden = true;
         success.hidden = false;
