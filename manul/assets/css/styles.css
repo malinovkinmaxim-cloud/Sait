@@ -1,5 +1,5 @@
 /* ==========================================================================
-   THE GOLD — styles
+   MANUL — styles
    1. Tokens          6. Hero             11. Gallery & lightbox
    2. Base            7. Intro            12. Reservation
    3. Typography      8. Menu             13. Contact & map
@@ -21,7 +21,7 @@
   --gold-line: rgba(184, 154, 95, .4);
   --line: rgba(239, 230, 214, .12);
 
-  --serif: 'Bodoni Moda', 'Didot', 'Bodoni 72', 'Times New Roman', serif;
+  --serif: 'Playfair Display', 'Didot', 'Bodoni 72', 'Times New Roman', serif;
   --sans: 'Jost', 'Futura', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --ease: cubic-bezier(.22, 1, .36, 1);
@@ -215,7 +215,7 @@ main:focus { outline: none; }
 }
 
 .media::before {
-  content: 'THE GOLD';
+  content: 'MANUL';
   position: absolute; inset: 0;
   display: grid; place-items: center;
   font-family: var(--serif); font-size: .8rem; letter-spacing: .5em;
@@ -549,7 +549,11 @@ main:focus { outline: none; }
 .menu__panel.is-entering .dish { animation: dish-in .9s var(--ease) both; animation-delay: calc(var(--n, 0) * 70ms); }
 @keyframes dish-in { from { opacity: 0; transform: translateY(18px); } }
 
-.menu__note { margin-top: clamp(4rem, 7vw, 6rem); text-align: center; font-size: .78rem; letter-spacing: .08em; color: var(--cream-mute); }
+.menu__more { margin-top: clamp(3.5rem, 6vw, 5rem); padding-top: 2rem; border-top: 1px solid rgba(184, 154, 95, .2); text-align: center; }
+.menu__more-title { font-size: .72rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
+.menu__cats { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; max-width: 52rem; margin: 1.5rem auto 0; }
+.menu__cats li { padding: .45rem 1.1rem; border: 1px solid rgba(184, 154, 95, .3); font-size: .85rem; letter-spacing: .06em; color: var(--cream-soft); }
+.menu__note { margin-top: clamp(2.5rem, 5vw, 4rem); text-align: center; font-size: .78rem; letter-spacing: .08em; color: var(--cream-mute); }
 
 @media (max-width: 760px) {
   .tabs { justify-content: flex-start; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); }
@@ -628,6 +632,10 @@ main:focus { outline: none; }
 .about__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 3rem clamp(3rem, 7vw, 8rem); align-items: end; }
 .about__lead { font-family: var(--serif); font-size: clamp(1.35rem, 2.1vw, 1.85rem); line-height: 1.45; color: var(--white); }
 .about__text { margin-top: 1.75rem; color: var(--cream-soft); max-width: 32rem; }
+.about__facts { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2rem; max-width: 34rem; }
+.about__facts li { padding: .4rem 1rem; border: 1px solid rgba(184, 154, 95, .3); font-size: .82rem; letter-spacing: .05em; color: var(--cream-soft); }
+.intro__rating { margin-top: 2.25rem; font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; color: var(--cream-mute); }
+.intro__rating b { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; letter-spacing: 0; color: var(--gold-light); }
 .about__sign { margin-top: 2rem; font-family: var(--serif); font-style: italic; color: var(--gold-light); }
 .about__wide { margin-top: clamp(4.5rem, 9vw, 8rem); aspect-ratio: 21 / 9; }
 
@@ -1010,3 +1018,6 @@ html:not(.js) .loader { display: none; }
   }
   .hero__media img { animation: none; transform: none; }
 }
+
+/* Long Russian words («Строганина») must fit the narrow signature column */
+.signature__content .title { font-size: clamp(2.4rem, 4.6vw, 4.3rem); }

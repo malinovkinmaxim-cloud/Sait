@@ -1,5 +1,5 @@
 /* ==========================================================================
-   THE GOLD — interactions
+   MANUL — interactions
    No dependencies. Each block is self-contained and safe to remove.
    ========================================================================== */
 (() => {
@@ -55,7 +55,7 @@
     drawer.classList.toggle('is-open', open);
     drawer.inert = !open;
     burger.setAttribute('aria-expanded', String(open));
-    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
     main.inert = open;
     footer.inert = open;
     lock('drawer', open);
@@ -241,7 +241,7 @@
 
   galleryButtons.forEach((btn, i) => {
     btn.dataset.cursor = '';
-    btn.setAttribute('aria-label', `Open image: ${btn.dataset.caption}`);
+    btn.setAttribute('aria-label', `Открыть фото: ${btn.dataset.caption}`);
     btn.addEventListener('click', () => openLightbox(i));
   });
 
@@ -284,9 +284,10 @@
   const dateInput = $('#f-date');
   const timeSelect = $('#f-time');
 
-  // Last seating per weekday (0 = Sunday), in minutes from midnight
-  const LAST_SEATING = [21 * 60 + 30, 22 * 60 + 30, 22 * 60 + 30, 22 * 60 + 30, 22 * 60 + 30, 23 * 60 + 30, 23 * 60 + 30];
-  const FIRST_SEATING = 18 * 60;
+  // Opening and last seating per weekday (0 = Sunday), in minutes from midnight.
+  // Пн–Пт 14:00–00:00, Сб–Вс 12:00–00:00; последняя бронь в 23:00.
+  const OPENS = [12 * 60, 14 * 60, 14 * 60, 14 * 60, 14 * 60, 14 * 60, 12 * 60];
+  const LAST_SEATING = [23 * 60, 23 * 60, 23 * 60, 23 * 60, 23 * 60, 23 * 60, 23 * 60];
   const pad2 = n => String(n).padStart(2, '0');
   const toISO = d => `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
   const parseDate = value => {
@@ -304,40 +305,42 @@
   function fillTimes() {
     const date = parseDate(dateInput.value);
     const previous = timeSelect.value;
-    const last = LAST_SEATING[(date || today).getDay()];
+    const day = (date || today).getDay();
+    const FIRST_SEATING = OPENS[day];
+    const last = LAST_SEATING[day];
     const now = new Date();
     const isToday = date && date.getTime() === today.getTime();
     const earliest = isToday ? Math.max(FIRST_SEATING, now.getHours() * 60 + now.getMinutes() + 60) : FIRST_SEATING;
 
-    const options = ['<option value="">Select time</option>'];
+    const options = ['<option value="">Время</option>'];
     for (let m = FIRST_SEATING; m <= last; m += 30) {
       if (m < earliest) continue;
       const t = `${pad2(Math.floor(m / 60))}:${pad2(m % 60)}`;
       options.push(`<option value="${t}"${t === previous ? ' selected' : ''}>${t}</option>`);
     }
     timeSelect.innerHTML = options.join('');
-    if (options.length === 1) timeSelect.options[0].textContent = 'Fully booked for today';
+    if (options.length === 1) timeSelect.options[0].textContent = 'На сегодня мест нет';
   }
 
   fillTimes();
   dateInput.addEventListener('change', fillTimes);
 
   const rules = {
-    name: v => (v.trim().length >= 2 ? '' : 'Please enter your name.'),
+    name: v => (v.trim().length >= 2 ? '' : 'Введите имя.'),
     phone: v => {
-      if (!v.trim()) return 'Please enter your phone number.';
+      if (!v.trim()) return 'Введите номер телефона.';
       const digits = v.replace(/\D/g, '');
-      return /^[+\d\s()\-]+$/.test(v) && digits.length >= 10 && digits.length <= 15 ? '' : 'Please enter a valid phone number.';
+      return /^[+\d\s()\-]+$/.test(v) && digits.length >= 10 && digits.length <= 15 ? '' : 'Проверьте номер телефона.';
     },
     date: v => {
-      if (!v) return 'Please choose a date.';
+      if (!v) return 'Выберите дату.';
       const d = parseDate(v);
-      if (d < today) return 'Please choose a future date.';
-      if (d > maxDate) return 'We accept reservations up to 90 days ahead.';
+      if (d < today) return 'Эта дата уже прошла.';
+      if (d > maxDate) return 'Бронь открыта на 90 дней вперёд.';
       return '';
     },
-    time: v => (v ? '' : 'Please choose a time.'),
-    guests: v => (v ? '' : 'Please choose the number of guests.')
+    time: v => (v ? '' : 'Выберите время.'),
+    guests: v => (v ? '' : 'Укажите число гостей.')
   };
 
   function validateField(input) {
@@ -364,16 +367,16 @@
     const invalid = fields.filter(el => !validateField(el));
     if (invalid.length) {
       invalid[0].focus();
-      $('.form__status', form).textContent = 'Please check the highlighted fields.';
+      $('.form__status', form).textContent = 'Проверьте отмеченные поля.';
       return;
     }
 
     // No backend yet: simulate sending, then show the confirmation.
     const button = $('.form__submit', form);
     button.disabled = true;
-    $('.form__submit-text', form).textContent = 'Sending';
+    $('.form__submit-text', form).textContent = 'Отправляем';
     form.classList.add('is-sending');
-    $('.form__status', form).textContent = 'Sending your request…';
+    $('.form__status', form).textContent = 'Отправляем заявку…';
 
     setTimeout(() => {
       form.classList.add('is-done');
@@ -391,7 +394,7 @@
     $$('[aria-invalid]', form).forEach(el => el.removeAttribute('aria-invalid'));
     $$('.field__error', form).forEach(el => { el.textContent = ''; });
     $('.form__submit', form).disabled = false;
-    $('.form__submit-text', form).textContent = 'Request a reservation';
+    $('.form__submit-text', form).textContent = 'Отправить заявку';
     $('.form__status', form).textContent = '';
     fillTimes();
     success.hidden = true;
@@ -430,9 +433,11 @@
   }
 
   /* ---------- "Tonight" hours in the hero ---------- */
-  const CLOSING = ['23:00', '00:00', '00:00', '00:00', '00:00', '02:00', '02:00'];
   const tonight = $('#tonight');
-  if (tonight) tonight.textContent = `Tonight · 18:00 – ${CLOSING[new Date().getDay()]}`;
+  if (tonight) {
+    const opens = OPENS[new Date().getDay()];
+    tonight.textContent = `Сегодня · ${pad2(Math.floor(opens / 60))}:${pad2(opens % 60)}–00:00`;
+  }
 
   /* ---------- Footer year ---------- */
   $$('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });

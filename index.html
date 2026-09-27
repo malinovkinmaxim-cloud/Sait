@@ -947,7 +947,7 @@
     .mock__lines i:nth-child(2) { width: 82%; }
     .mock__lines i:nth-child(3) { width: 58%; }
 
-    /* THE GOLD — restaurant */
+    /* MANUL — restaurant */
     .mock--gold { color: #d8bb80; background: radial-gradient(70% 55% at 50% 35%, #211b12 0%, #0d0c0a 70%); }
     .mock--gold .mock__nav b { font-family: var(--serif); font-size: 1.3cqw; font-weight: 500; }
 
@@ -1764,24 +1764,24 @@
        technologies использованные технологии   (пусто — блок скрыт)
        features     основные особенности         (пусто — блок скрыт)
        link         ссылка на сайт               (пусто — кнопка скрыта)
-       image        путь к скриншоту, напр. 'images/the-gold.jpg'
+       image        путь к скриншоту, напр. 'images/manul.jpg'
                     (пусто — показывается встроенный макет-заглушка)
        theme        стиль заглушки и фона превью: 'gold' | 'light' | 'grid'
        ========================================================================== */
     const PROJECTS = [
       {
-        slug: 'the-gold',
-        title: 'THE GOLD',
+        slug: 'manul',
+        title: 'MANUL',
         category: { ru: 'Сайт ресторана', en: 'Restaurant website' },
-        summary: { ru: 'Сайт ресторана высокой кухни.', en: 'Website for a fine dining restaurant.' },
+        summary: { ru: 'Сайт ресторана сибирской кухни Manul в Москве.', en: 'Website for Manul, a Siberian cuisine restaurant in Moscow.' },
         description: {
           ru: [
-            'THE GOLD — современный ресторан высокой кухни с изысканными блюдами, премиальной атмосферой и стильным интерьером.',
-            'Сайт передаёт ощущение роскоши и приватности: сдержанная палитра чёрного, графита и приглушённого золота, редакционная типографика и медленные, уверенные анимации.'
+            'Manul — ресторан сибирской кухни премиум-класса на Охотном Ряду в Москве с рейтингом 5,0 на Яндекс Картах.',
+            'Сайт передаёт ощущение роскоши: чёрный фон, приглушённое золото, редакционная типографика и медленные, уверенные анимации. На сайте реальные блюда и цены, адрес, часы работы и бронирование стола.'
           ],
           en: [
-            'THE GOLD is a modern fine dining restaurant with exquisite dishes, a premium atmosphere and a stylish interior.',
-            'The website conveys luxury and privacy: a restrained palette of black, graphite and muted gold, editorial typography and slow, confident motion.'
+            'Manul is a premium Siberian cuisine restaurant on Okhotny Ryad in Moscow, rated 5.0 on Yandex Maps.',
+            'The website conveys luxury: a black background, muted gold, editorial typography and slow, confident motion. It shows real dishes and prices, the address, opening hours and table booking.'
           ]
         },
         technologies: ['HTML5', 'CSS3', 'JavaScript'],
@@ -1801,7 +1801,7 @@
             'Responsive layout from 375 to 1920 px, SEO and accessibility'
           ]
         },
-        link: 'the-gold/index.html',
+        link: 'manul/index.html',
         image: '',
         theme: 'gold'
       },
@@ -1970,7 +1970,7 @@
       switch (p.theme) {
         case 'gold':
           return `<div class="mock mock--gold">${nav}
-            <div class="mock__hero"><small>Fine dining</small><strong>${title}</strong><i class="mock__rule"></i><i class="mock__cta"></i></div>
+            <div class="mock__hero"><small>Siberian cuisine</small><strong>${title}</strong><i class="mock__rule"></i><i class="mock__cta"></i></div>
             <div class="mock__tiles"><i></i><i></i><i></i></div></div>`;
         case 'mono': {
           const half = side => `<div class="mock__half mock__half--${side}">
