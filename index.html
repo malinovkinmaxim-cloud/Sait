@@ -1046,6 +1046,25 @@
 
     .mock--light .mock__row i { border-radius: .4cqw; background: #dad7d0; }
 
+    /* A&Ю — half light, half dark */
+    .stage--mono { background: radial-gradient(110% 80% at 50% 0%, #3a3a38 0%, #1a1a19 50%, #0e0e0d 100%); }
+    .mock--mono { flex-direction: row; }
+    .mock--mono .mock__half { position: relative; flex: 1; display: flex; flex-direction: column; min-width: 0; }
+    .mock__half--light { color: #111; background: #fff; }
+    .mock__half--dark { color: #f4f4f2; background: #0b0b0b; }
+    .mock--mono .mock__nav b { font-family: var(--serif); font-size: 1.5cqw; font-weight: 500; letter-spacing: .04em; }
+    .mock--mono .mock__body { padding: 3cqw 3cqw 0; }
+    .mock--mono strong { display: block; font-family: var(--serif); font-size: 4.4cqw; font-weight: 400; line-height: .95; text-transform: uppercase; }
+    .mock--mono .mock__lines { width: 70%; margin: 2cqw 0; }
+    .mock--mono .mock__cta { width: 10cqw; height: 2.6cqw; background: currentColor; }
+    .mock--mono .mock__photo { flex: 1; margin: 2.5cqw 3cqw 0; background: linear-gradient(160deg, #deded9, #b9b9b4); }
+    .mock__half--dark .mock__photo { background: linear-gradient(160deg, #2c2c2b, #151515); }
+    .mock__switch {
+      position: absolute; left: 50%; top: 44%; width: 6cqw; height: 3cqw; margin-left: -3cqw;
+      border-radius: 99px; background: #0b0b0b; box-shadow: 0 0 0 1px rgba(255, 255, 255, .4);
+    }
+    .mock__switch::after { content: ''; position: absolute; top: .4cqw; right: .4cqw; width: 2.2cqw; height: 2.2cqw; border-radius: 50%; background: #f4f4f2; }
+
     /* MATTO — dark with a deep blue accent */
     .stage--blue { background: radial-gradient(110% 80% at 50% 0%, #1c2a52 0%, #111522 50%, #0b0d12 100%); }
     .mock--blue { color: #eef1f5; background: #0a0c0f; }
@@ -1823,16 +1842,40 @@
         theme: 'blue'
       },
       {
-        slug: 'project-03',
-        title: 'PROJECT 03',
-        category: { ru: '', en: '' },
-        summary: { ru: '', en: '' },
-        description: { ru: [], en: [] },
-        technologies: [],
-        features: { ru: [], en: [] },
-        link: '',
+        slug: 'ayu',
+        title: 'A&Ю',
+        category: { ru: 'Сайт салона красоты', en: 'Beauty salon website' },
+        summary: { ru: 'Сайт салона красоты со светлой и тёмной темой.', en: 'Beauty salon website with light and dark themes.' },
+        description: {
+          ru: [
+            'A&Ю — концепт сайта премиального салона красоты в Москве.',
+            'Главная особенность — две полноценные темы, белая и чёрная. Тема переключается круговой анимацией от кнопки, выбор сохраняется. Дорогой вид создают композиция, типографика и контраст, без ярких цветов.'
+          ],
+          en: [
+            'A&Ю is a concept website for a premium beauty salon in Moscow.',
+            'Its signature feature is two complete themes, white and black. The theme switches with a circular reveal from the toggle, and the choice is remembered. The premium feel comes from composition, typography and contrast, with no bright colours.'
+          ]
+        },
+        technologies: ['HTML5', 'CSS3', 'JavaScript'],
+        features: {
+          ru: [
+            'Светлая и тёмная тема на CSS-переменных с сохранением выбора',
+            'Круговая анимация смены темы (View Transitions API)',
+            'Интерактивный прайс: превью фото при наведении и раскрывающиеся детали',
+            'Асимметричная галерея с полноэкранным просмотром',
+            'Форма записи с валидацией и адаптивная вёрстка от 320 до 1920 px'
+          ],
+          en: [
+            'Light and dark themes built on CSS variables, with the choice remembered',
+            'Circular theme-switch animation (View Transitions API)',
+            'Interactive price list: photo preview on hover and expandable details',
+            'Asymmetric gallery with a fullscreen lightbox',
+            'Booking form with validation and a responsive layout from 320 to 1920 px'
+          ]
+        },
+        link: 'ayu/index.html',
         image: '',
-        theme: 'grid'
+        theme: 'mono'
       }
     ];
 
@@ -1929,6 +1972,14 @@
           return `<div class="mock mock--gold">${nav}
             <div class="mock__hero"><small>Fine dining</small><strong>${title}</strong><i class="mock__rule"></i><i class="mock__cta"></i></div>
             <div class="mock__tiles"><i></i><i></i><i></i></div></div>`;
+        case 'mono': {
+          const half = side => `<div class="mock__half mock__half--${side}">
+              <div class="mock__nav"><b>${title}</b><span><i></i><i></i></span></div>
+              <div class="mock__body"><strong>Beauty,<br>defined</strong>${lines}<i class="mock__cta"></i></div>
+              <i class="mock__photo"></i>
+            </div>`;
+          return `<div class="mock mock--mono">${half('light')}${half('dark')}<i class="mock__switch"></i></div>`;
+        }
         case 'light':
         case 'blue':
           return `<div class="mock mock--light${p.theme === 'blue' ? ' mock--blue' : ''}">${nav}
