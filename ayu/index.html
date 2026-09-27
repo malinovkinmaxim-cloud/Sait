@@ -1,17 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>A&amp;Ю — Beauty Studio in Moscow</title>
-  <meta name="description" content="A&amp;Ю is a contemporary beauty salon in Moscow: haircut and styling, color, manicure, brows and lashes, makeup and facial care. Book your appointment online.">
+  <title>A&amp;Ю — студия красоты на Рязанском проспекте, Москва</title>
+  <meta name="description" content="Студия красоты A&amp;Ю на Рязанском проспекте, 2/1к5: стрижки и окрашивание, уход за волосами, маникюр, педикюр, брови, ресницы и перманентный макияж. Ежедневно 10:00–22:00. Рейтинг 5,0 на Яндекс Картах. +7 (929) 542-24-34.">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="A&amp;Ю">
-  <meta property="og:title" content="A&amp;Ю — Beauty, defined by you.">
-  <meta property="og:description" content="A modern beauty space where style, care and individuality come together.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&h=630&q=80">
+  <meta property="og:title" content="A&amp;Ю — студия красоты">
+  <meta property="og:description" content="Волосы, ногти, брови, ресницы и перманентный макияж в одной студии. Ежедневно 10:00–22:00.">
+  <meta property="og:image" content="images/studio.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-size='24' fill='%23fff'%3EA%26%D0%AE%3C/text%3E%3C/svg%3E">
 
@@ -37,16 +38,20 @@
   {
     "@context": "https://schema.org",
     "@type": "BeautySalon",
-    "name": "A&Ю",
-    "slogan": "Beauty, defined by you.",
-    "telephone": "+7 495 000-00-00",
-    "email": "hello@aandyu.example",
-    "address": { "@type": "PostalAddress", "streetAddress": "25 Beauty Street", "addressLocality": "Moscow", "addressCountry": "RU" },
+    "name": "A&Ю — студия красоты",
+    "alternateName": "Аю студия",
+    "telephone": "+7 929 542-24-34",
+    "url": "https://aystu.ru",
+    "image": "images/studio.webp",
+    "priceRange": "150–35 200 ₽",
+    "paymentAccepted": "Банковская карта",
+    "address": { "@type": "PostalAddress", "streetAddress": "Рязанский проспект, 2/1к5Т", "addressLocality": "Москва", "addressCountry": "RU" },
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "10:00", "closes": "21:00"
-    }]
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "10:00", "closes": "22:00"
+    }],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "ratingCount": "530", "reviewCount": "355", "bestRating": "5" }
   }
   </script>
 
@@ -195,7 +200,8 @@
 
     .lead { font-size: clamp(1.05rem, 1.35vw, 1.22rem); font-weight: 300; line-height: 1.7; color: var(--text-2); }
 
-    .mask { display: block; overflow: hidden; padding-block: .04em .1em; margin-block: -.04em -.1em; }
+    /* Extra room on top keeps Й and Ё marks inside the reveal mask */
+    .mask { display: block; overflow: hidden; padding-block: .16em .1em; margin-block: -.16em -.1em; }
     .mask > span { display: block; }
 
     .section-head { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem 4rem; margin-bottom: clamp(3rem, 6vw, 5.5rem); }
@@ -366,6 +372,7 @@
       .hero__grid { grid-template-columns: 1fr; }
       .hero__media { aspect-ratio: 4 / 3.4; }
     }
+    @media (max-width: 360px) { .hero__title { font-size: 2.55rem; } .title { font-size: 2.35rem; } }
     @media (max-width: 560px) {
       .hero__actions { flex-direction: column; }
       .hero__actions .btn { width: 100%; justify-content: space-between; }
@@ -378,10 +385,12 @@
     .intro__visual { position: relative; padding: 0 clamp(2rem, 6vw, 6rem) clamp(4rem, 8vw, 7rem) 0; }
     .intro__main { aspect-ratio: 3 / 4; }
     .intro__small { position: absolute; right: 0; bottom: 0; width: 46%; aspect-ratio: 4 / 5; border: clamp(6px, .8vw, 12px) solid var(--bg); }
-    .intro__text .title { margin: 1.5rem 0 2rem; }
+    .intro__text .title { margin: 1.5rem 0 2rem; font-size: clamp(2.4rem, 5.6vw, 5rem); }
     .intro__text .lead { max-width: 30rem; }
     .intro__note { display: flex; gap: 2.5rem; margin-top: 2.5rem; padding-top: 1.75rem; border-top: 1px solid var(--line); }
-    .intro__note b { display: block; font-family: var(--serif); font-size: 1.6rem; font-weight: 400; color: var(--text); line-height: 1.1; }
+    .intro__note { flex-wrap: wrap; }
+    .intro__note b { display: flex; align-items: center; gap: .4rem; font-family: var(--serif); font-size: 1.6rem; font-weight: 400; color: var(--text); line-height: 1.1; }
+    .intro__note b svg { width: .7em; height: .7em; fill: currentColor; }
     .intro__note span { display: block; margin-top: .35rem; font-size: .8rem; letter-spacing: .08em; color: var(--muted); }
 
     @media (max-width: 900px) {
@@ -426,40 +435,43 @@
     .svc__panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .7s var(--ease); }
     .svc.is-open .svc__panel { grid-template-rows: 1fr; }
     .svc__panel-inner { overflow: hidden; }
-    .svc__details {
-      display: grid; grid-template-columns: 200px minmax(0, 1fr) auto; gap: clamp(1.5rem, 3vw, 3rem); align-items: end;
-      padding: 0 0 clamp(1.75rem, 3vw, 2.5rem) calc(64px + 1.5rem);
-    }
-    .svc__img { aspect-ratio: 4 / 5; }
-    .svc__meta dt { font-size: .68rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
-    .svc__meta dd { margin: .3rem 0 1.1rem; color: var(--text); }
-    .svc__meta ul { display: grid; gap: .25rem; }
-    .svc__meta li::before { content: '— '; color: var(--muted); }
+    .svc__details { padding: 0 0 clamp(2rem, 3.5vw, 3rem) calc(64px + 1.5rem); }
 
-    .services__note { margin-top: 2rem; font-size: .85rem; color: var(--muted); }
+    /* Price list inside an open category */
+    .prices { columns: 2; column-gap: clamp(2.5rem, 5vw, 5rem); }
+    .prices__group { break-inside: avoid-column; padding-bottom: 1.75rem; }
+    .prices__title { padding-bottom: .7rem; font-size: .68rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+    .price { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .2rem 1.5rem; padding: .8rem 0; border-top: 1px solid var(--line); break-inside: avoid; }
+    .price__name { color: var(--text); line-height: 1.45; }
+    .price__time { display: block; margin-top: .15rem; font-size: .8rem; color: var(--muted); }
+    .price__value { color: var(--text); white-space: nowrap; text-align: right; }
+    .price__vars { display: grid; gap: .15rem; }
+    .price__vars div { display: flex; justify-content: flex-end; gap: .9rem; }
+    .price__vars dt { font-size: .8rem; color: var(--muted); padding-top: .12rem; }
+    .price__vars dd { min-width: 5.2rem; }
 
-    /* Floating preview that follows the cursor (desktop only) */
-    .svc-preview { display: none; }
-    @media (hover: hover) and (pointer: fine) {
-      .svc-preview {
-        display: block; position: fixed; top: 0; left: 0; z-index: 60;
-        width: clamp(200px, 17vw, 280px); aspect-ratio: 4 / 5;
-        pointer-events: none; opacity: 0; will-change: transform;
-        transition: opacity .4s ease;
-      }
-      .svc-preview.is-visible { opacity: 1; }
-      .svc-preview .media { position: absolute; inset: 0; opacity: 0; transform: scale(1.06); transition: opacity .5s ease, transform .8s var(--ease); }
-      .svc-preview .media.is-active { opacity: 1; transform: none; }
-    }
+    .svc__foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line-2); }
+    .svc__foot p { max-width: 30rem; font-size: .85rem; color: var(--muted); }
 
+    .services__note { display: grid; gap: .35rem; max-width: 46rem; margin-top: 2rem; font-size: .85rem; color: var(--muted); }
+    .services__note b { font-weight: 500; color: var(--text); }
+
+    @media (max-width: 1024px) { .prices { columns: 1; } }
     @media (max-width: 760px) {
       .svc__row { grid-template-columns: minmax(0, 1fr) 40px; grid-template-areas: "num icon" "name icon" "price icon"; gap: .35rem 1rem; }
       .svc__num { grid-area: num; }
       .svc__main { grid-area: name; }
       .svc__price { grid-area: price; margin-top: .4rem; }
       .svc__icon { grid-area: icon; width: 40px; height: 40px; }
-      .svc__details { grid-template-columns: 110px minmax(0, 1fr); padding-left: 0; align-items: start; }
-      .svc__details .btn { grid-column: 1 / -1; }
+      .svc__name { overflow-wrap: break-word; hyphens: auto; }
+      .svc__details { padding-left: 0; }
+      .svc__foot .btn { width: 100%; }
+    }
+    @media (max-width: 360px) { .svc__name { font-size: 1.25rem; } }
+    @media (max-width: 420px) {
+      .price { grid-template-columns: 1fr; }
+      .price__value { text-align: left; }
+      .price__vars div { justify-content: space-between; }
     }
 
     /* 9. About ----------------------------------------------------------------- */
@@ -580,7 +592,7 @@
     .member__info { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--line); }
     .member__name { font-family: var(--serif); font-size: clamp(1.3rem, 1.8vw, 1.6rem); font-weight: 400; color: var(--text); }
     .member__role { font-size: .72rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); text-align: right; }
-    .team__note { margin-top: 2.5rem; font-size: .84rem; color: var(--muted); }
+    .member__book { width: 100%; margin-top: 1rem; }
 
     @media (max-width: 1024px) { .team__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 480px) {
@@ -652,6 +664,9 @@
     .contact__list > div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 1rem; padding: 1.2rem 0; border-bottom: 1px solid var(--line); }
     .contact__list dt { font-size: .68rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); padding-top: .25rem; }
     .contact__list dd { font-size: 1.05rem; color: var(--text); }
+    .contact__list small { display: block; margin-top: .2rem; font-size: .85rem; color: var(--muted); }
+    .amenities { display: flex; flex-wrap: wrap; gap: .45rem; }
+    .amenities li { padding: .3rem .8rem; border: 1px solid var(--line-2); border-radius: 999px; font-size: .85rem; line-height: 1.4; }
     .contact__actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2.25rem; }
 
     .map { position: relative; min-height: 460px; overflow: hidden; background: var(--bg-2); border: 1px solid var(--line); }
@@ -710,49 +725,49 @@
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
 
   <!-- ============================ HEADER ============================ -->
   <header class="header" id="header">
     <div class="container header__inner">
-      <a class="logo" href="#home" aria-label="A&amp;Ю — home">A&amp;Ю</a>
+      <a class="logo" href="#home" aria-label="A&amp;Ю — на главную">A&amp;Ю</a>
       <div class="header__right">
-        <nav class="nav" aria-label="Main">
+        <nav class="nav" aria-label="Основное меню">
           <ul>
-            <li><a class="nav__link" href="#home" data-nav>Home</a></li>
-            <li><a class="nav__link" href="#services" data-nav>Services</a></li>
-            <li><a class="nav__link" href="#about" data-nav>About</a></li>
-            <li><a class="nav__link" href="#gallery" data-nav>Gallery</a></li>
-            <li><a class="nav__link" href="#contact" data-nav>Contact</a></li>
+            <li><a class="nav__link" href="#home" data-nav>Главная</a></li>
+            <li><a class="nav__link" href="#services" data-nav>Услуги</a></li>
+            <li><a class="nav__link" href="#about" data-nav>О студии</a></li>
+            <li><a class="nav__link" href="#gallery" data-nav>Галерея</a></li>
+            <li><a class="nav__link" href="#contact" data-nav>Контакты</a></li>
           </ul>
         </nav>
-        <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Dark theme">
+        <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Тёмная тема">
           <span class="theme-toggle__knob" aria-hidden="true"></span>
           <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀</span>
           <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">☾</span>
         </button>
-        <a class="btn btn--solid btn--sm header__book" href="#booking">Book now</a>
-        <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span></span><span></span></button>
+        <a class="btn btn--solid btn--sm header__book" href="#booking">Записаться</a>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Открыть меню"><span></span><span></span></button>
       </div>
     </div>
   </header>
 
   <div class="drawer" id="drawer" inert>
     <div class="drawer__inner">
-      <nav aria-label="Mobile">
+      <nav aria-label="Мобильное меню">
         <ul class="drawer__list">
-          <li><a class="drawer__link" href="#home" style="--i:0">Home <span>01</span></a></li>
-          <li><a class="drawer__link" href="#services" style="--i:1">Services <span>02</span></a></li>
-          <li><a class="drawer__link" href="#about" style="--i:2">About <span>03</span></a></li>
-          <li><a class="drawer__link" href="#gallery" style="--i:3">Gallery <span>04</span></a></li>
-          <li><a class="drawer__link" href="#contact" style="--i:4">Contact <span>05</span></a></li>
+          <li><a class="drawer__link" href="#home" style="--i:0">Главная <span>01</span></a></li>
+          <li><a class="drawer__link" href="#services" style="--i:1">Услуги <span>02</span></a></li>
+          <li><a class="drawer__link" href="#about" style="--i:2">О студии <span>03</span></a></li>
+          <li><a class="drawer__link" href="#gallery" style="--i:3">Галерея <span>04</span></a></li>
+          <li><a class="drawer__link" href="#contact" style="--i:4">Контакты <span>05</span></a></li>
         </ul>
       </nav>
       <div class="drawer__foot">
-        <a class="btn btn--solid" href="#booking">Book an appointment</a>
+        <a class="btn btn--solid" href="#booking">Записаться</a>
         <div class="drawer__meta">
-          <a href="tel:+74950000000">+7 (495) 000-00-00</a>
-          <span>Mon–Sat · 10:00–21:00</span>
+          <a href="tel:+79295422434">+7 (929) 542-24-34</a>
+          <span>Ежедневно · 10:00–22:00</span>
         </div>
       </div>
     </div>
@@ -764,28 +779,28 @@
     <section class="hero" id="home" aria-labelledby="hero-title">
       <div class="container">
         <div class="hero__caption" data-intro style="--delay:.1s">
-          <span>Beauty Studio · Moscow</span>
-          <span>Hair · Makeup · Nails · Care</span>
+          <span>Студия красоты · Москва</span>
+          <span>Волосы · Ногти · Брови · Ресницы</span>
         </div>
 
         <div class="hero__grid">
           <div class="hero__text">
             <span class="hero__logo" data-intro style="--delay:.2s">A&amp;Ю</span>
             <h1 class="hero__title" id="hero-title">
-              <span class="mask"><span>Beauty,</span></span>
-              <span class="mask"><span>defined</span></span>
-              <span class="mask"><span class="soft">by you.</span></span>
-              <span class="sr-only"> — A&amp;Ю beauty studio in Moscow</span>
+              <span class="mask"><span>Красота</span></span>
+              <span class="mask"><span>по вашим</span></span>
+              <span class="mask"><span class="soft">правилам.</span></span>
+              <span class="sr-only"> — студия красоты A&amp;Ю в Москве</span>
             </h1>
 
             <div class="hero__bottom" data-intro style="--delay:.7s">
-              <p class="lead hero__sub">A modern beauty space where style, care and individuality come together.</p>
+              <p class="lead hero__sub">Стрижки и&nbsp;окрашивание, маникюр и&nbsp;педикюр, брови, ресницы и&nbsp;перманентный макияж — в&nbsp;одной студии на&nbsp;Рязанском проспекте. Ежедневно с&nbsp;10:00 до&nbsp;22:00.</p>
               <div class="hero__actions">
                 <a class="btn btn--solid" href="#booking">
-                  Book an appointment
+                  Записаться
                   <svg class="btn__arrow" viewBox="0 0 18 10" aria-hidden="true"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
                 </a>
-                <a class="btn" href="#services">Explore services</a>
+                <a class="btn" href="#services">Услуги и цены</a>
               </div>
             </div>
           </div>
@@ -793,14 +808,14 @@
           <figure class="hero__figure">
             <div class="hero__media media">
               <div class="media__inner" data-parallax="0.05">
-                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1400&q=80"
-                     srcset="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=700&q=75 700w,
-                             https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1400&q=80 1400w"
+                <img src="images/studio.webp"
+                     srcset="images/studio-480.webp 480w, images/studio.webp 960w"
                      sizes="(max-width: 1024px) 100vw, 40vw"
-                     alt="The bright, calm interior of the A&amp;Ю beauty studio" fetchpriority="high" decoding="async">
+                     width="960" height="1280"
+                     alt="Зал студии A&amp;Ю: светлые стены, мраморный пол, зона маникюра у окна и стойка администратора" fetchpriority="high" decoding="async">
               </div>
             </div>
-            <figcaption class="hero__figcaption" data-intro style="--delay:1.1s"><span>The studio</span><span>01 / 07</span></figcaption>
+            <figcaption class="hero__figcaption" data-intro style="--delay:1.1s"><span>Студия</span><span>Рязанский пр., 2/1</span></figcaption>
           </figure>
         </div>
       </div>
@@ -811,22 +826,25 @@
       <div class="container intro__grid">
         <div class="intro__visual">
           <figure class="intro__main media" data-reveal="image">
-            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80" alt="A stylist finishing a client’s hair" loading="lazy" decoding="async">
+            <img src="images/entrance.webp" width="506" height="675" alt="Вход в студию красоты A&amp;Ю на Рязанском проспекте" loading="lazy" decoding="async">
           </figure>
           <figure class="intro__small media" data-reveal="image">
-            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80" alt="Skincare and beauty products on a shelf" loading="lazy" decoding="async">
+            <img src="images/manicure.webp" width="400" height="500" alt="Зона маникюра: мягкие кресла и столы мастеров у окна" loading="lazy" decoding="async">
           </figure>
         </div>
         <div class="intro__text">
-          <p class="eyebrow" data-reveal>The studio</p>
+          <p class="eyebrow" data-reveal>Студия</p>
           <h2 class="title" id="intro-title" data-reveal="lines">
-            <span class="mask"><span>Your beauty.</span></span>
-            <span class="mask"><span class="soft">Your rules.</span></span>
+            <span class="mask"><span>Одна студия,</span></span>
+            <span class="mask"><span class="soft">всё для вас</span></span>
           </h2>
-          <p class="lead" data-reveal>A&amp;Ю is a contemporary beauty salon focused on personal style, quality and attention to detail.</p>
+          <p class="lead" data-reveal>A&amp;Ю — студия красоты на&nbsp;Рязанском проспекте. Парикмахеры-стилисты, мастера маникюра и&nbsp;педикюра, бровей, ресниц и&nbsp;перманентного макияжа работают в&nbsp;одном месте — несколько процедур легко совместить за&nbsp;один визит.</p>
           <div class="intro__note" data-reveal>
-            <div><b>6</b><span>Services</span></div>
-            <div><b>Mon–Sat</b><span>10:00–21:00</span></div>
+            <div>
+              <b>5,0 <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.5 7.7l5.9-.9z"/></svg></b>
+              <span>Яндекс Карты · 530 оценок</span>
+            </div>
+            <div><b>Ежедневно</b><span>10:00–22:00</span></div>
           </div>
         </div>
       </div>
@@ -837,17 +855,22 @@
       <div class="container">
         <header class="section-head">
           <div>
-            <p class="eyebrow" data-reveal>Menu</p>
-            <h2 class="title" id="services-title" data-reveal="lines"><span class="mask"><span>Our services</span></span></h2>
+            <p class="eyebrow" data-reveal>Прайс</p>
+            <h2 class="title" id="services-title" data-reveal="lines">
+              <span class="mask"><span>Услуги</span></span>
+              <span class="mask"><span class="soft">и цены</span></span>
+            </h2>
           </div>
-          <p class="section-head__lead" data-reveal>Open a service to see what’s included — and book it in one tap.</p>
+          <p class="section-head__lead" data-reveal>Откройте направление, чтобы увидеть все услуги и&nbsp;цены, — и&nbsp;запишитесь в&nbsp;один клик.</p>
         </header>
 
         <!-- Rendered from SERVICES in the script -->
         <ul class="services__list" id="services-list"></ul>
-        <p class="services__note" data-reveal>Prices are indicative and shown for demonstration. The final price depends on hair length and the chosen technique.</p>
+        <div class="services__note" data-reveal>
+          <p><b>Работаем в&nbsp;4&nbsp;руки:</b> две процедуры одновременно, например брови и&nbsp;маникюр, — +700&nbsp;₽.</p>
+          <p>Цены — по&nbsp;прайсу студии. Точную стоимость и&nbsp;время подскажет администратор: они зависят от&nbsp;длины и&nbsp;густоты волос и&nbsp;сложности работы.</p>
+        </div>
       </div>
-      <div class="svc-preview" id="svc-preview" aria-hidden="true"></div>
     </section>
 
     <!-- ============================ ABOUT ============================ -->
@@ -855,39 +878,36 @@
       <div class="container">
         <figure class="about__media media" data-reveal="image">
           <div class="media__inner" data-parallax="0.06">
-            <img src="https://images.unsplash.com/photo-1633681926035-ec1ac984418a?auto=format&fit=crop&w=2000&q=80"
-                 srcset="https://images.unsplash.com/photo-1633681926035-ec1ac984418a?auto=format&fit=crop&w=900&q=75 900w,
-                         https://images.unsplash.com/photo-1633681926035-ec1ac984418a?auto=format&fit=crop&w=2000&q=80 2000w"
-                 sizes="100vw" alt="The A&amp;Ю interior with styling chairs and mirrors" loading="lazy" decoding="async">
+            <img src="images/studio-wide.webp" width="960" height="460"
+                 sizes="100vw" alt="Интерьер студии A&amp;Ю: зелень, рабочие места мастеров маникюра и стойка администратора" loading="lazy" decoding="async">
           </div>
         </figure>
 
         <div class="about__grid">
           <div class="about__head">
-            <p class="eyebrow" data-reveal>About</p>
+            <p class="eyebrow" data-reveal>О студии</p>
             <h2 class="title" id="about-title" data-reveal="lines">
-              <span class="mask"><span>About</span></span>
-              <span class="mask"><span>A&amp;Ю</span></span>
+              <span class="mask"><span>Что мы</span></span>
+              <span class="mask"><span class="soft">делаем</span></span>
             </h2>
           </div>
 
-          <!-- EDIT: salon story — replace with the real texts later -->
           <div class="about__points">
             <div data-reveal>
-              <h3>Philosophy</h3>
-              <p>Beauty is personal. We don’t follow trends for their own sake — we look for what feels like you.</p>
+              <h3>Волосы</h3>
+              <p>Стрижки и&nbsp;укладки, окрашивание любой сложности — от&nbsp;тонирования до&nbsp;шатуша, AirTouch и&nbsp;выхода из&nbsp;тёмного. Уход, кератин, нанопластика и&nbsp;завивка.</p>
             </div>
             <div data-reveal style="--d:1">
-              <h3>Approach</h3>
-              <p>Every visit starts with a conversation: your routine, your time, the result you want to live with.</p>
+              <h3>Ногти</h3>
+              <p>Маникюр и&nbsp;педикюр, покрытие, наращивание и&nbsp;дизайн, SPA-уход для рук и&nbsp;ног. Подология — помощь при&nbsp;сложной стопе и&nbsp;вросшем ногте.</p>
             </div>
             <div data-reveal>
-              <h3>Quality</h3>
-              <p>Professional products, precise technique and unhurried work — details are where quality shows.</p>
+              <h3>Брови и ресницы</h3>
+              <p>Коррекция и&nbsp;архитектура бровей, окрашивание и&nbsp;осветление, долговременная укладка, ламинирование ресниц.</p>
             </div>
             <div data-reveal style="--d:1">
-              <h3>Just for you</h3>
-              <p>No templates. Colour, shape and care are chosen for your features and the way you live.</p>
+              <h3>Перманентный макияж</h3>
+              <p>Брови, в&nbsp;том числе в&nbsp;волосковой технике, губы и&nbsp;межресничка — с&nbsp;последующей коррекцией.</p>
             </div>
           </div>
         </div>
@@ -899,15 +919,15 @@
       <div class="container">
         <header class="section-head">
           <div>
-            <p class="eyebrow" data-reveal>Why us</p>
-            <h2 class="title" id="why-title" data-reveal="lines"><span class="mask"><span>Why A&amp;Ю</span></span></h2>
+            <p class="eyebrow" data-reveal>Почему мы</p>
+            <h2 class="title" id="why-title" data-reveal="lines"><span class="mask"><span>Почему A&amp;Ю</span></span></h2>
           </div>
         </header>
         <ol class="why__grid">
-          <li class="why__item" data-reveal><p class="why__num">01<span>/</span></p><h3 class="why__title">Personal approach</h3><p class="why__text">Every appointment is tailored to you.</p></li>
-          <li class="why__item" data-reveal style="--d:1"><p class="why__num">02<span>/</span></p><h3 class="why__title">Quality</h3><p class="why__text">We focus on precision, care and details.</p></li>
-          <li class="why__item" data-reveal style="--d:2"><p class="why__num">03<span>/</span></p><h3 class="why__title">Atmosphere</h3><p class="why__text">A calm space designed for your comfort.</p></li>
-          <li class="why__item" data-reveal style="--d:3"><p class="why__num">04<span>/</span></p><h3 class="why__title">Style</h3><p class="why__text">Modern beauty without unnecessary rules.</p></li>
+          <li class="why__item" data-reveal><p class="why__num">01<span>/</span></p><h3 class="why__title">Всё в одном месте</h3><p class="why__text">Волосы, ногти, брови, ресницы и&nbsp;перманентный макияж.</p></li>
+          <li class="why__item" data-reveal style="--d:1"><p class="why__num">02<span>/</span></p><h3 class="why__title">В 4 руки</h3><p class="why__text">Две процедуры одновременно — экономите время.</p></li>
+          <li class="why__item" data-reveal style="--d:2"><p class="why__num">03<span>/</span></p><h3 class="why__title">Каждый день</h3><p class="why__text">Без выходных, с&nbsp;10:00 до&nbsp;22:00.</p></li>
+          <li class="why__item" data-reveal style="--d:3"><p class="why__num">04<span>/</span></p><h3 class="why__title">5,0 на Картах</h3><p class="why__text">530 оценок и&nbsp;355 отзывов на&nbsp;Яндекс Картах.</p></li>
         </ol>
       </div>
     </section>
@@ -917,60 +937,60 @@
       <div class="container">
         <header class="section-head">
           <div>
-            <p class="eyebrow" data-reveal>Gallery</p>
-            <h2 class="title" id="gallery-title" data-reveal="lines"><span class="mask"><span>Moments</span></span></h2>
+            <p class="eyebrow" data-reveal>Галерея</p>
+            <h2 class="title" id="gallery-title" data-reveal="lines"><span class="mask"><span>Атмосфера</span></span></h2>
           </div>
-          <p class="section-head__lead" data-reveal>Hair, makeup, nails and the quiet details of the studio.</p>
+          <p class="section-head__lead" data-reveal>Светлый зал, мраморный пол, много зелени — и&nbsp;работы мастеров.</p>
         </header>
 
-        <!-- EDIT: replace with the salon’s own photos later -->
+        <!-- EDIT: фото 2, 5, 6 и 7 — временные (Unsplash). Заменить на работы мастеров студии. -->
         <ul class="gallery__grid">
           <li class="gallery__item" data-reveal>
-            <button class="gallery__btn media" type="button" data-caption="Interior" data-full="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=2000&q=80">
-              <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=80" alt="The salon interior" loading="lazy" decoding="async">
-              <span class="gallery__label">Interior</span>
+            <button class="gallery__btn media" type="button" data-caption="Зал" data-full="images/studio.webp">
+              <img src="images/studio-480.webp" srcset="images/studio-480.webp 480w, images/studio.webp 960w" sizes="(max-width: 760px) 100vw, 33vw" alt="Зал студии A&amp;Ю" loading="lazy" decoding="async">
+              <span class="gallery__label">Зал</span>
               <span class="gallery__arrow" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2 12 12 2M4 2h8v8"/></svg></span>
             </button>
           </li>
           <li class="gallery__item" data-reveal style="--d:1">
-            <button class="gallery__btn media" type="button" data-caption="Hair" data-full="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=2000&q=80">
-              <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1200&q=80" alt="A stylist working on a client’s hair" loading="lazy" decoding="async">
-              <span class="gallery__label">Hair</span>
+            <button class="gallery__btn media" type="button" data-caption="Волосы" data-full="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=2000&q=80">
+              <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1200&q=80" alt="Парикмахер работает с волосами клиентки" loading="lazy" decoding="async">
+              <span class="gallery__label">Волосы</span>
               <span class="gallery__arrow" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2 12 12 2M4 2h8v8"/></svg></span>
             </button>
           </li>
           <li class="gallery__item" data-reveal style="--d:2">
-            <button class="gallery__btn media" type="button" data-caption="Makeup" data-full="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=2000&q=80">
-              <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=600&q=80" alt="A soft, natural makeup look" loading="lazy" decoding="async">
-              <span class="gallery__label">Makeup</span>
+            <button class="gallery__btn media" type="button" data-caption="Маникюр" data-full="images/manicure.webp">
+              <img src="images/manicure.webp" alt="Рабочие места мастеров маникюра у окна" loading="lazy" decoding="async">
+              <span class="gallery__label">Маникюр</span>
               <span class="gallery__arrow" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2 12 12 2M4 2h8v8"/></svg></span>
             </button>
           </li>
           <li class="gallery__item" data-reveal>
-            <button class="gallery__btn media" type="button" data-caption="Manicure" data-full="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=2000&q=80">
-              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=600&q=80" alt="Clean, minimal manicure" loading="lazy" decoding="async">
-              <span class="gallery__label">Manicure</span>
+            <button class="gallery__btn media" type="button" data-caption="Вход" data-full="images/entrance.webp">
+              <img src="images/entrance.webp" alt="Вход в студию с вывеской «Студия красоты АЮ»" loading="lazy" decoding="async">
+              <span class="gallery__label">Вход</span>
               <span class="gallery__arrow" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2 12 12 2M4 2h8v8"/></svg></span>
             </button>
           </li>
           <li class="gallery__item" data-reveal style="--d:1">
-            <button class="gallery__btn media" type="button" data-caption="Cosmetics" data-full="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=2000&q=80">
-              <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80" alt="Beauty products arranged on a table" loading="lazy" decoding="async">
-              <span class="gallery__label">Cosmetics</span>
+            <button class="gallery__btn media" type="button" data-caption="Окрашивание" data-full="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=2000&q=80">
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80" alt="Мастер завершает окрашивание" loading="lazy" decoding="async">
+              <span class="gallery__label">Окрашивание</span>
               <span class="gallery__arrow" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2 12 12 2M4 2h8v8"/></svg></span>
             </button>
           </li>
           <li class="gallery__item" data-reveal style="--d:2">
-            <button class="gallery__btn media" type="button" data-caption="Details" data-full="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=2000&q=80">
-              <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="A facial care treatment in progress" loading="lazy" decoding="async">
-              <span class="gallery__label">Details</span>
+            <button class="gallery__btn media" type="button" data-caption="Брови и ресницы" data-full="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=2000&q=80">
+              <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=600&q=80" alt="Естественный образ: брови и ресницы" loading="lazy" decoding="async">
+              <span class="gallery__label">Брови и ресницы</span>
               <span class="gallery__arrow" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2 12 12 2M4 2h8v8"/></svg></span>
             </button>
           </li>
           <li class="gallery__item" data-reveal style="--d:3">
-            <button class="gallery__btn media" type="button" data-caption="Atmosphere" data-full="https://images.unsplash.com/photo-1633681926035-ec1ac984418a?auto=format&fit=crop&w=2000&q=80">
-              <img src="https://images.unsplash.com/photo-1633681926035-ec1ac984418a?auto=format&fit=crop&w=900&q=80" alt="The calm atmosphere of the studio" loading="lazy" decoding="async">
-              <span class="gallery__label">Atmosphere</span>
+            <button class="gallery__btn media" type="button" data-caption="Ногти" data-full="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=2000&q=80">
+              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80" alt="Аккуратный маникюр с покрытием" loading="lazy" decoding="async">
+              <span class="gallery__label">Ногти</span>
               <span class="gallery__arrow" aria-hidden="true"><svg viewBox="0 0 14 14"><path d="M2 12 12 2M4 2h8v8"/></svg></span>
             </button>
           </li>
@@ -979,18 +999,18 @@
     </section>
 
     <!-- ============================ TEAM ============================ -->
-    <section class="section section--alt" id="team" aria-labelledby="team-title">
+    <!-- Появится, когда в TEAM (в скрипте) будут мастера -->
+    <section class="section section--alt" id="team" aria-labelledby="team-title" hidden>
       <div class="container">
         <header class="section-head">
           <div>
-            <p class="eyebrow" data-reveal>People</p>
-            <h2 class="title" id="team-title" data-reveal="lines"><span class="mask"><span>Our team</span></span></h2>
+            <p class="eyebrow" data-reveal>Команда</p>
+            <h2 class="title" id="team-title" data-reveal="lines"><span class="mask"><span>Мастера</span></span></h2>
           </div>
-          <p class="section-head__lead" data-reveal>Specialists who listen first — and then create.</p>
+          <p class="section-head__lead" data-reveal>Нажмите «Записаться» — направление мастера сразу подставится в&nbsp;форму.</p>
         </header>
         <!-- Rendered from TEAM in the script -->
         <ul class="team__grid" id="team-list"></ul>
-        <p class="team__note" data-reveal>Team profiles are demonstration data and will be replaced with the real specialists.</p>
       </div>
     </section>
 
@@ -998,15 +1018,15 @@
     <section class="section" id="booking" aria-labelledby="booking-title">
       <div class="container booking__grid">
         <div class="booking__intro">
-          <p class="eyebrow" data-reveal>Booking</p>
+          <p class="eyebrow" data-reveal>Запись</p>
           <h2 class="title" id="booking-title" data-reveal="lines">
-            <span class="mask"><span>Book your</span></span>
-            <span class="mask"><span class="soft">moment</span></span>
+            <span class="mask"><span>Время</span></span>
+            <span class="mask"><span class="soft">для себя</span></span>
           </h2>
-          <p class="lead" data-reveal>Take some time for yourself.</p>
+          <p class="lead" data-reveal>Оставьте заявку — администратор перезвонит и&nbsp;подтвердит запись.</p>
           <div class="booking__info" data-reveal>
-            <p><b>Mon–Sat</b> · 10:00–21:00</p>
-            <p>Prefer to call? <a class="link" href="tel:+74950000000">+7 (495) 000-00-00</a></p>
+            <p><b>Ежедневно</b> · 10:00–22:00</p>
+            <p>Удобнее позвонить? <a class="link" href="tel:+79295422434">+7 (929) 542-24-34</a></p>
           </div>
         </div>
 
@@ -1014,51 +1034,51 @@
           <form class="form" id="booking-form" novalidate>
             <div class="form__grid">
               <div class="field">
-                <label class="field__label" for="f-name">Name</label>
-                <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name" required aria-describedby="f-name-error">
+                <label class="field__label" for="f-name">Имя</label>
+                <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" required aria-describedby="f-name-error">
                 <p class="field__error" id="f-name-error" aria-live="polite"></p>
               </div>
               <div class="field">
-                <label class="field__label" for="f-phone">Phone</label>
+                <label class="field__label" for="f-phone">Телефон</label>
                 <input class="field__input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" required aria-describedby="f-phone-error">
                 <p class="field__error" id="f-phone-error" aria-live="polite"></p>
               </div>
               <div class="field field--full">
-                <label class="field__label" for="f-service">Service</label>
+                <label class="field__label" for="f-service">Услуга</label>
                 <select class="field__input" id="f-service" name="service" required aria-describedby="f-service-error">
-                  <option value="">Choose a service</option>
+                  <option value="">Выберите направление</option>
                 </select>
                 <p class="field__error" id="f-service-error" aria-live="polite"></p>
               </div>
               <div class="field">
-                <label class="field__label" for="f-date">Date</label>
+                <label class="field__label" for="f-date">Дата</label>
                 <input class="field__input" id="f-date" name="date" type="date" required aria-describedby="f-date-error">
                 <p class="field__error" id="f-date-error" aria-live="polite"></p>
               </div>
               <div class="field">
-                <label class="field__label" for="f-time">Time</label>
+                <label class="field__label" for="f-time">Время</label>
                 <select class="field__input" id="f-time" name="time" required disabled aria-describedby="f-time-error">
-                  <option value="">Select a date first</option>
+                  <option value="">Сначала выберите дату</option>
                 </select>
                 <p class="field__error" id="f-time-error" aria-live="polite"></p>
               </div>
             </div>
 
             <button class="btn btn--solid form__submit" type="submit">
-              <span class="form__submit-text">Book appointment</span>
+              <span class="form__submit-text">Записаться</span>
               <span class="spinner" aria-hidden="true"></span>
               <svg class="btn__arrow" viewBox="0 0 18 10" aria-hidden="true"><path d="M0 5h16M12 1l4 4-4 4"/></svg>
             </button>
-            <p class="form__legal">Demo form — no data is sent anywhere.</p>
+            <p class="form__legal">Демо-форма: данные никуда не отправляются.</p>
             <p class="sr-only" id="form-status" role="status" aria-live="polite"></p>
           </form>
 
           <div class="success" id="booking-success" tabindex="-1" hidden>
             <p class="success__mark" aria-hidden="true">A&amp;Ю</p>
-            <p class="success__title">Thank you.</p>
-            <p class="success__text">Your appointment request has been received.</p>
+            <p class="success__title">Спасибо!</p>
+            <p class="success__text">Заявка принята — мы перезвоним, чтобы подтвердить запись.</p>
             <dl class="success__summary" id="booking-summary"></dl>
-            <button class="btn success__again" type="button">Book another</button>
+            <button class="btn success__again" type="button">Записаться ещё</button>
           </div>
         </div>
       </div>
@@ -1068,22 +1088,25 @@
     <section class="section section--alt" id="contact" aria-labelledby="contact-title">
       <div class="container contact__grid">
         <div class="contact__head">
-          <p class="eyebrow" data-reveal>Contact</p>
-          <h2 class="title" id="contact-title" data-reveal="lines"><span class="mask"><span>Find A&amp;Ю</span></span></h2>
-          <!-- EDIT: real address, hours and contacts -->
+          <p class="eyebrow" data-reveal>Контакты</p>
+          <h2 class="title" id="contact-title" data-reveal="lines">
+            <span class="mask"><span>Как нас</span></span>
+            <span class="mask"><span class="soft">найти</span></span>
+          </h2>
           <dl class="contact__list" data-reveal>
-            <div><dt>Address</dt><dd><address>25 Beauty Street<br>Moscow, Russia</address></dd></div>
-            <div><dt>Hours</dt><dd>Mon–Sat · 10:00–21:00</dd></div>
-            <div><dt>Phone</dt><dd><a class="link" href="tel:+74950000000">+7 (495) 000-00-00</a></dd></div>
-            <div><dt>Email</dt><dd><a class="link" href="mailto:hello@aandyu.example">hello@aandyu.example</a></dd></div>
+            <div><dt>Адрес</dt><dd><address>Рязанский проспект, 2/1к5Т<br>Москва</address></dd></div>
+            <div><dt>Часы</dt><dd>Ежедневно · 10:00–22:00<small>Без выходных</small></dd></div>
+            <div><dt>Телефон</dt><dd><a class="link" href="tel:+79295422434">+7 (929) 542-24-34</a></dd></div>
+            <div><dt>Удобства</dt><dd><ul class="amenities"><li>Оплата картой</li><li>Парковка</li><li>Wi-Fi</li><li>Подарочные сертификаты</li></ul></dd></div>
           </dl>
           <div class="contact__actions" data-reveal>
-            <a class="btn btn--solid" href="#booking">Book now</a>
-            <a class="btn" href="tel:+74950000000">Call us</a>
+            <a class="btn btn--solid" href="#booking">Записаться</a>
+            <a class="btn" href="tel:+79295422434">Позвонить</a>
+            <a class="btn" href="https://yandex.ru/maps/?text=%D0%90%D1%8E%20%D1%81%D1%82%D1%83%D0%B4%D0%B8%D1%8F%2C%20%D0%A0%D1%8F%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%202/1%D0%BA5%D0%A2%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0" target="_blank" rel="noopener">Маршрут</a>
           </div>
         </div>
 
-        <figure class="map" data-reveal aria-label="Stylised map showing A&amp;Ю at 25 Beauty Street">
+        <figure class="map" data-reveal aria-label="Схема: студия A&amp;Ю на Рязанском проспекте, 2/1к5Т">
           <svg viewBox="0 0 700 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
             <rect class="map__park" x="40" y="300" width="190" height="150"/>
             <rect class="map__block" x="40" y="40" width="170" height="110"/>
@@ -1104,12 +1127,12 @@
             <circle class="map__ring" cx="420" cy="238" r="22"/>
             <circle class="map__dot" cx="420" cy="238" r="6"/>
             <g class="map__label">
-              <rect x="331" y="148" width="178" height="62"/>
-              <text x="349" y="176" class="map__label-title">A&amp;Ю</text>
-              <text x="349" y="197" class="map__label-text">25 BEAUTY STREET</text>
+              <rect x="316" y="148" width="208" height="62"/>
+              <text x="334" y="176" class="map__label-title">A&amp;Ю</text>
+              <text x="334" y="197" class="map__label-text">РЯЗАНСКИЙ ПР., 2/1к5Т</text>
             </g>
           </svg>
-          <figcaption class="sr-only">A&amp;Ю, 25 Beauty Street, Moscow</figcaption>
+          <figcaption class="sr-only">Студия красоты A&amp;Ю: Москва, Рязанский проспект, 2/1к5Т</figcaption>
         </figure>
       </div>
     </section>
@@ -1119,12 +1142,12 @@
   <footer class="footer">
     <div class="container">
       <p class="footer__logo" aria-label="A&amp;Ю">A&amp;Ю</p>
-      <p class="footer__tagline">Beauty, defined by you.</p>
+      <p class="footer__tagline">Студия красоты · Москва</p>
       <div class="footer__row">
         <ul class="footer__links">
-          <li><a class="link" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a class="link" href="https://t.me/" target="_blank" rel="noopener">Telegram</a></li>
-          <li><a class="link" href="#contact">Contact</a></li>
+          <li><a class="link" href="tel:+79295422434">+7 (929) 542-24-34</a></li>
+          <li><a class="link" href="https://yandex.ru/maps/?text=%D0%90%D1%8E%20%D1%81%D1%82%D1%83%D0%B4%D0%B8%D1%8F%2C%20%D0%A0%D1%8F%D0%B7%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%202/1%D0%BA5%D0%A2%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0" target="_blank" rel="noopener">Яндекс Карты</a></li>
+          <li><a class="link" href="#booking">Записаться</a></li>
         </ul>
         <p class="footer__copy">© <span data-year>2026</span> A&amp;Ю</p>
       </div>
@@ -1132,14 +1155,14 @@
   </footer>
 
   <!-- ============================ LIGHTBOX ============================ -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image" inert>
-    <button class="lightbox__close" type="button" aria-label="Close"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2l12 12M14 2 2 14"/></svg></button>
-    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous image"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M15 8H1M6 3 1 8l5 5"/></svg></button>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Фото из галереи" inert>
+    <button class="lightbox__close" type="button" aria-label="Закрыть"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2l12 12M14 2 2 14"/></svg></button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Предыдущее фото"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M15 8H1M6 3 1 8l5 5"/></svg></button>
     <figure class="lightbox__figure">
       <img class="lightbox__img" alt="">
       <figcaption class="lightbox__caption"><span class="lightbox__label"></span><span class="lightbox__count"></span></figcaption>
     </figure>
-    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next image"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h14M10 3l5 5-5 5"/></svg></button>
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Следующее фото"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h14M10 3l5 5-5 5"/></svg></button>
   </div>
 
   <script>
@@ -1147,39 +1170,310 @@
     'use strict';
 
     /* ==========================================================================
-       CONTENT — services, prices and team. Edit here; the list, previews
-       and booking options are generated from this data.
+       CONTENT — услуги, цены и мастера. Правьте здесь: прайс, список
+       направлений и варианты в форме записи строятся из этих данных.
+
+       Пункт прайса: [название, минуты, цена]
+         минуты — число, [от, до] или null (не указано);
+         цена   — число, [от, до] или варианты [[вариант, цена, минуты?], …]
        ========================================================================== */
-    const IMG = id => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=700&q=80`;
+    const S = 'Короткие', M = 'Средние', L = 'Длинные', XL = 'Очень длинные';
 
     const SERVICES = [
-      { name: 'Haircut & Styling', desc: 'Professional haircut and styling tailored to your look.', price: 'from 3 500 ₽', duration: '60–90 min', includes: ['Consultation', 'Wash and care', 'Cut and styling'], image: IMG('1562322140-8baeececf3df') },
-      { name: 'Color', desc: 'Modern coloring techniques and personalized shades.', price: 'from 6 000 ₽', duration: '2–4 hours', includes: ['Shade consultation', 'Coloring', 'Toning and care'], image: IMG('1522337360788-8b13dee7a37e') },
-      { name: 'Manicure', desc: 'Clean, precise and elegant nail care.', price: 'from 2 500 ₽', duration: '60–90 min', includes: ['Shaping', 'Cuticle care', 'Coating of your choice'], image: IMG('1604654894610-df63bc536371') },
-      { name: 'Brows & Lashes', desc: 'Natural and refined brow and lash styling.', price: 'from 2 000 ₽', duration: '45–60 min', includes: ['Shape correction', 'Tinting', 'Lamination on request'], image: IMG('1487412947147-5cebf100ffc2') },
-      { name: 'Makeup', desc: 'Professional makeup for everyday looks and special occasions.', price: 'from 4 000 ₽', duration: '60 min', includes: ['Skin preparation', 'Day or evening look', 'Long-wear finish'], image: IMG('1596462502278-27bfdc403348') },
-      { name: 'Facial Care', desc: 'Personalized skincare treatments.', price: 'from 4 500 ₽', duration: '60–75 min', includes: ['Skin analysis', 'Cleansing', 'Personalized treatment'], image: IMG('1570172619644-dfd03ed5d881') }
+      {
+        name: 'Стрижки и укладки',
+        desc: 'Женские, мужские и детские стрижки, укладки на каждый день и на праздник.',
+        groups: [
+          { title: 'Стрижки', items: [
+            ['Женская стрижка', 60, [[S, 2400], [M, 2700], [L, 3200]]],
+            ['Мужская стрижка', 60, 1900],
+            ['Детская стрижка (до 9 лет)', 60, 1500],
+            ['Стрижка одним срезом (на чистые волосы)', 45, 1500],
+            ['Первичная стрижка чёлки', 30, 1000],
+            ['Коррекция чёлки', 30, 600]
+          ] },
+          { title: 'Укладки', items: [
+            ['Укладка феном', null, [[S, 1900, 30], [M, 2300, 60], [L, 2600, 60]]],
+            ['Лёгкая укладка (сушка феном)', 60, [[S, 1900], [L, 2600]]],
+            ['Укладка: плойка, утюжок, гофре, локоны, кудри', null, [[S, 2000, 60], [M, 2800, 90], [L, 3200, 120]]],
+            ['Коктейльная укладка', 120, 7000],
+            ['Укладка «Афрокудри»', 270, 7000],
+            ['Мытьё головы и сушка феном', 45, 1500]
+          ] }
+        ]
+      },
+      {
+        name: 'Окрашивание',
+        desc: 'Корни и окрашивание в один тон, блонд, шатуш, омбре, AirTouch и выход из тёмного.',
+        groups: [
+          { title: 'Окрашивание', items: [
+            ['Окрашивание корней', null, [[S, 4100, 105], [M, 5200, 120], [L, 6500, 135]]],
+            ['Окрашивание в один тон или тонирование', null, [[S, 4500, 105], [M, 5800, 120], [L, 8400, 135]]],
+            ['Контурное окрашивание', null, [[S, 6700, 120], [M, 8700, 150], [L, 10700, 180]]]
+          ] },
+          { title: 'Блонд и сложные техники', items: [
+            ['Тотальное обесцвечивание + тонирование', null, [[S, 8900, 180], [M, 12900, 180], [L, 16900, 300]]],
+            ['Шатуш, омбре, AirTouch (техника + тонирование)', null, [[M, 17800, 240], [L, 20800, 360]]],
+            ['Выход из чёрного или тёмного (всё включено)', 480, 35200],
+            ['Хелатное мытьё и кислотная смывка', 90, 7200]
+          ] },
+          { title: 'Окрашивание + уход', items: [
+            ['Окрашивание + ампульный уход', [135, 165], [6200, 11200]],
+            ['Окрашивание + аминокислотный уход', [195, 225], [8100, 10100]]
+          ] }
+        ]
+      },
+      {
+        name: 'Уход и восстановление',
+        desc: 'Ампульный и аминокислотный уход, холодное восстановление, ботокс, кератин и нанопластика.',
+        groups: [
+          { title: 'Уход', items: [
+            ['Уход для волос', null, [[M, 3400, 75], [L, 3700, 90], [XL, 3900, 105]]],
+            ['Аминокислотный уход', 120, 6100],
+            ['Пилинг кожи головы', 60, 2500]
+          ] },
+          { title: 'Восстановление и выпрямление', items: [
+            ['Холодное восстановление', null, [[M, 4900, 120], [L, 6900, 150], [XL, 8900, 165]]],
+            ['Холодный ботокс', null, [[M, 3400, 120], [L, 4400, 135], [XL, 5400, 150]]],
+            ['Кератин, ботокс или нанопластика', null, [[M, 8900, 240], [L, 12900, 285], [XL, 17400, 315]]]
+          ] },
+          { title: 'Уход + стрижка', items: [
+            ['Аминокислотный уход + стрижка', null, [[M, 5700, 180], [L, 6100, 180], [XL, 6400, 240]]],
+            ['Ампульный уход + стрижка', null, [[M, 5700, 75], [L, 5600, 90], [XL, 6000, 105]]]
+          ] }
+        ]
+      },
+      {
+        name: 'Завивка и объём',
+        desc: 'Биозавивка и спиральная завивка, прикорневой объём и антизавивка.',
+        items: [
+          ['Биозавивка', 360, 20500],
+          ['Спиральная завивка', 480, 25500],
+          ['Коррекция химической завивки', 360, 20500],
+          ['Антизавивка', 180, 7500],
+          ['Прикорневой объём', 180, 6500],
+          ['Снятие прикорневого объёма (Boost Up)', 180, 4000]
+        ]
+      },
+      {
+        name: 'Маникюр',
+        desc: 'Гигиенический, европейский и японский маникюр, мужской и детский, покрытие и укрепление.',
+        groups: [
+          { title: 'Маникюр', items: [
+            ['Гигиенический маникюр', 60, 1900],
+            ['Европейский маникюр (кутикула удаляется ремувером)', 60, 1500],
+            ['Японский маникюр без обработки кутикулы', 60, 2200],
+            ['Японский маникюр с обработкой кутикулы', 90, 2700],
+            ['Экспресс-маникюр: форма и обработка', 60, 1100],
+            ['Мужской маникюр', 60, 2000],
+            ['Детский маникюр (до 10 лет)', 60, 900]
+          ] },
+          { title: 'Маникюр с покрытием', items: [
+            ['Гигиенический маникюр + лак', 120, 2900],
+            ['Гигиенический маникюр + гель-лак', 120, 3900],
+            ['Гигиенический маникюр + дип-система', null, 3500],
+            ['Снятие + гигиенический маникюр', 90, 2400],
+            ['Снятие + маникюр + база и топ', 150, 3000],
+            ['Снятие + маникюр + лак', 120, 3100],
+            ['Комплекс MINI: снятие, маникюр, гель-лак', 120, 3600],
+            ['Комплекс MAX: снятие гель-лака, маникюр, покрытие', 120, 4300],
+            ['Снятие + маникюр + гель-лак и френч', null, 4900],
+            ['Снятие дип-системы + маникюр + дип-система', 120, 3800]
+          ] },
+          { title: 'Покрытие и укрепление', items: [
+            ['Покрытие гель-лаком (руки или ноги)', 60, 1600],
+            ['Покрытие лаком (руки или ноги)', 60, 1000],
+            ['Покрытие база + топ', null, 750],
+            ['Прозрачный или лечебный лак', 30, 700],
+            ['Детское покрытие лаком (до 10 лет)', 60, 600],
+            ['Гель-лак, 1 палец', 15, 150],
+            ['Укрепление ногтей гелем', 30, 700],
+            ['Архитектура и укрепление гелем', 30, 900],
+            ['Акриловая пудра: кончики', 10, 375],
+            ['Акриловая пудра: все пальцы', 10, 650],
+            ['Придание формы ногтям', 30, 300],
+            ['Полировка пилкой', 15, 400]
+          ] },
+          { title: 'Снятие', items: [
+            ['Снятие гель-лака', 30, 500],
+            ['Снятие лака', 15, 500],
+            ['Снятие гель-лака, 1 палец', 10, 150],
+            ['Снятие нарощенных ногтей', 30, 800],
+            ['Снятие акрила, все пальцы', 30, 1000]
+          ] }
+        ]
+      },
+      {
+        name: 'Педикюр',
+        desc: 'Гигиенический и смарт-педикюр, обработка стоп и пальчиков, сложная стопа, покрытие.',
+        groups: [
+          { title: 'Педикюр', items: [
+            ['Педикюр', null, 3200],
+            ['Педикюр: только пальчики', 60, 2100],
+            ['Педикюр: только стопы', 60, 1700],
+            ['Мужской педикюр', 60, 3800],
+            ['Сложная стопа: трещины, мозоли, натоптыши', 60, 3600],
+            ['Сложная стопа, мужской педикюр', 60, 4200],
+            ['Детский педикюр, пальчики (до 10 лет)', 60, 1000]
+          ] },
+          { title: 'Снятие и педикюр', items: [
+            ['Снятие + педикюр с обработкой пальчиков', 120, 2600],
+            ['Снятие + педикюр смарт-дисками', null, 3700],
+            ['Снятие + педикюр «Смарт-ревитализация»', null, 4500],
+            ['Снятие лака', 15, 500],
+            ['Снятие гель-лака', 15, 500]
+          ] },
+          { title: 'Педикюр с покрытием', items: [
+            ['Педикюр с обработкой пальчиков + гель-лак', null, 3500],
+            ['Снятие + педикюр с обработкой пальчиков + гель-лак', 120, 3700],
+            ['Педикюр смарт-дисками + лак', null, 4100],
+            ['Педикюр смарт-дисками + гель-лак', 120, 4700],
+            ['Снятие + педикюр + лак', 90, 4400],
+            ['Снятие + педикюр + гель-лак', null, 4900],
+            ['«Смарт-ревитализация»: снятие, педикюр, лак', null, 5000],
+            ['«Смарт-ревитализация»: снятие, педикюр, гель-лак', null, 5500]
+          ] }
+        ]
+      },
+      {
+        name: 'Наращивание и дизайн',
+        desc: 'Наращивание и коррекция, ремонт ногтей, френч, дизайн и роспись.',
+        groups: [
+          { title: 'Наращивание', items: [
+            ['Наращивание ногтей, длина 1–2', 180, 6500],
+            ['Наращивание ногтей, длина 2–4', 180, 7500],
+            ['Экстремальная длина (свободный край от 2,5 см)', 240, 5800],
+            ['Коррекция наращивания', 180, 7500],
+            ['Коррекция нарощенного ногтя, 1 шт.', 15, 500]
+          ] },
+          { title: 'Ремонт', items: [
+            ['Ремонт натурального ногтя', 30, 300],
+            ['Ремонт искусственного ногтя', 30, 500],
+            ['Ремонт работы другого мастера', 30, 700]
+          ] },
+          { title: 'Дизайн', items: [
+            ['Френч гель-лаком, все пальцы (руки или ноги)', 30, 1000],
+            ['Лёгкий дизайн, все пальцы', 30, 1000],
+            ['Простой дизайн, все пальцы', 30, 1000],
+            ['Кошачий глаз', 15, 500],
+            ['Дизайн I сложности, 1 палец', 30, 150],
+            ['Дизайн II сложности: два дизайна на одном ногте', 30, 250],
+            ['Дизайн III сложности: инкрустация всего ногтя', 30, 650],
+            ['Роспись акварелью, простая', 30, 300],
+            ['Роспись акварелью, сложная', 30, 500]
+          ] }
+        ]
+      },
+      {
+        name: 'SPA-уход',
+        desc: 'SPA для рук и ног, парафин, маски и пилинги.',
+        items: [
+          ['SPA на час: руки', 60, 1300],
+          ['SPA на час: ноги', 60, 1500],
+          ['SPA на час: руки и ноги', 60, 2500],
+          ['SPA-уход с парафином', 15, 650],
+          ['Маска для рук', 15, 400],
+          ['Маска для ног', 15, 500],
+          ['Пилинг рук', 15, 350],
+          ['Пилинг ног', 15, 350]
+        ]
+      },
+      {
+        name: 'Подология',
+        desc: 'Помощь при сложной стопе: вросший ноготь, мозоли и натоптыши, онихолизис, микоз.',
+        items: [
+          ['Педикюр при микозе (первичный приём)', 120, 4600],
+          ['Коррекционная система: титановая нить или Light System', 60, 2600],
+          ['Снятие коррекционной системы', 60, 600],
+          ['Обработка мозоли, трещины, натоптыша или вросшего ногтя', 15, 500],
+          ['Разгрузка мозолей и натоптышей', 60, 600],
+          ['Обработка мозоли + разгрузка', 60, 1100],
+          ['Частичный педикюр: обработка трещин', 60, 1100],
+          ['Частичный педикюр: обработка ногтевых пластин', 60, 1600],
+          ['Ногтевая пластина с ониходистрофией, 1 ноготь', null, 400],
+          ['Зачистка онихолизиса (1–2 зоны)', 60, 1100],
+          ['Протезирование ногтя, 1 шт.', 60, 800],
+          ['Тейпирование, 1 зона', 60, 400],
+          ['Окклюзионная повязка', 60, 600],
+          ['Установка тампонады', 60, 300],
+          ['Забор материала', 60, 500]
+        ]
+      },
+      {
+        name: 'Брови',
+        desc: 'Коррекция и архитектура, окрашивание и осветление, долговременная укладка.',
+        items: [
+          ['Коррекция бровей', 30, 1400],
+          ['Прореживание бровей', 30, 800],
+          ['Окрашивание бровей', 30, 1500],
+          ['Осветление бровей', 30, 1500],
+          ['Архитектура бровей: коррекция + окрашивание', 60, 2700],
+          ['Архитектура бровей: расширенный комплекс', 60, 3300],
+          ['Осветление + архитектура бровей', 90, 3400],
+          ['«Счастье для бровей» — восстанавливающая процедура', 30, 1100],
+          ['«Счастье для бровей» + архитектура', 60, 3300],
+          ['Долговременная укладка без окрашивания', 60, 3200],
+          ['Долговременная укладка с коррекцией и окрашиванием', 60, 3500],
+          ['Уход для бровей и ресниц', 15, 500]
+        ]
+      },
+      {
+        name: 'Ресницы',
+        desc: 'Ламинирование с окрашиванием и без, окрашивание и снятие нарощенных ресниц.',
+        items: [
+          ['Ламинирование ресниц без окрашивания', 90, 3000],
+          ['Ламинирование ресниц с окрашиванием', 90, 3300],
+          ['Коррекция ламинирования ресниц', 90, 3700],
+          ['Окрашивание ресниц', 30, 800],
+          ['Снятие нарощенных ресниц', 45, 600]
+        ]
+      },
+      {
+        name: 'Перманентный макияж',
+        desc: 'Брови, в том числе в волосковой технике, губы и межресничка — и коррекция.',
+        groups: [
+          { title: 'Перманентный макияж', items: [
+            ['Брови', 150, 8000],
+            ['Брови в волосковой технике', 180, 8500],
+            ['Губы', 180, 9500],
+            ['Межресничка', 120, 7500]
+          ] },
+          { title: 'Коррекция', items: [
+            ['Коррекция бровей', 180, 5000],
+            ['Коррекция губ', 180, 6000],
+            ['Коррекция межреснички', 180, 4500]
+          ] }
+        ]
+      }
     ];
 
-    // Demonstration profiles — replace with the real specialists
-    const TEAM = [
-      { name: 'Анна',  role: 'Hair Artist',       photo: IMG('1494790108377-be9c29b29330') },
-      { name: 'Юлия',  role: 'Makeup Artist',     photo: IMG('1438761681033-6461ffad8d80') },
-      { name: 'Мария', role: 'Nail Artist',       photo: IMG('1544005313-94ddf0286df2') },
-      { name: 'Елена', role: 'Beauty Specialist', photo: IMG('1534528741775-53994a69daeb') }
-    ];
+    // Мастера. Пока пусто — секция «Мастера» скрыта. Пример записи:
+    // { name: 'Имя', role: 'Мастер маникюра', service: 'Маникюр', photo: 'images/team-name.webp' }
+    // service — направление из SERVICES: оно подставится в форму по кнопке «Записаться».
+    const TEAM = [];
 
-    const HOURS = { open: 10 * 60, lastStart: 20 * 60, closedDays: [0] }; // Mon–Sat 10:00–21:00; 0 = Sunday
+    const HOURS = { open: 10 * 60, lastStart: 21 * 60, closedDays: [] }; // ежедневно 10:00–22:00, последняя запись в 21:00
 
     /* ---------- Helpers ---------- */
     const $ = (s, c = document) => c.querySelector(s);
     const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
     const root = document.documentElement;
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
     const pad = n => String(n).padStart(2, '0');
     const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+    const plural = (n, one, few, many) => {
+      const d = n % 10, dd = n % 100;
+      return d === 1 && dd !== 11 ? one : d >= 2 && d <= 4 && (dd < 12 || dd > 14) ? few : many;
+    };
+    const num = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    const rub = n => `${num(n)} ₽`;
+    const dur = m => {
+      if (m == null) return '';
+      if (Array.isArray(m)) return m[0] === m[1] ? dur(m[0]) : `от ${dur(m[0])}`;
+      const h = Math.floor(m / 60), mm = m % 60;
+      return [h ? `${h} ч` : '', mm ? `${mm} мин` : ''].filter(Boolean).join(' ');
+    };
     const header = $('#header');
     const main = $('#main');
     const footer = $('.footer');
@@ -1197,7 +1491,7 @@
     function syncThemeUi() {
       const dark = root.dataset.theme === 'dark';
       toggle.setAttribute('aria-checked', String(dark));
-      toggle.title = dark ? 'Switch to light theme' : 'Switch to dark theme';
+      toggle.title = dark ? 'Включить светлую тему' : 'Включить тёмную тему';
       themeMeta.setAttribute('content', dark ? '#0b0b0b' : '#ffffff');
     }
 
@@ -1243,87 +1537,97 @@
     });
 
     /* ==========================================================================
-       Render services & team
+       Render services, price list & team
        ========================================================================== */
-    $('#services-list').innerHTML = SERVICES.map((s, i) => `
+    const groupsOf = s => s.groups || [{ title: '', items: s.items }];
+    const isVariants = p => Array.isArray(p) && Array.isArray(p[0]);
+    const lowest = p => (isVariants(p) ? Math.min(...p.map(v => v[1])) : Array.isArray(p) ? p[0] : p);
+    const itemsOf = s => groupsOf(s).flatMap(g => g.items);
+    // «от» — по основным услугам направления (первая группа), без мелких доп. услуг
+    const fromPrice = s => `от ${rub(Math.min(...groupsOf(s)[0].items.map(item => lowest(item[2]))))}`;
+
+    function priceItem([name, minutes, price]) {
+      let time = minutes;
+      if (time == null && isVariants(price)) {
+        const list = price.map(v => v[2]).filter(Boolean);
+        if (list.length) time = [Math.min(...list), Math.max(...list)];
+      }
+      const value = isVariants(price)
+        ? `<dl class="price__vars">${price.map(([label, p]) => `<div><dt>${esc(label)}</dt><dd>${rub(p)}</dd></div>`).join('')}</dl>`
+        : Array.isArray(price) ? `${num(price[0])}–${rub(price[1])}` : rub(price);
+      const t = dur(time);
+      return `<li class="price">
+          <div class="price__name">${esc(name)}${t ? `<span class="price__time">${t}</span>` : ''}</div>
+          <div class="price__value">${value}</div>
+        </li>`;
+    }
+
+    $('#services-list').innerHTML = SERVICES.map((s, i) => {
+      const count = itemsOf(s).length;
+      return `
       <li class="svc" data-reveal style="--d:${i % 3}">
-        <button class="svc__row" type="button" aria-expanded="false" aria-controls="svc-${i}" data-index="${i}">
+        <button class="svc__row" type="button" aria-expanded="false" aria-controls="svc-${i}">
           <span class="svc__num">${pad(i + 1)}</span>
           <span class="svc__main">
             <span class="svc__name">${esc(s.name)}</span>
             <span class="svc__desc">${esc(s.desc)}</span>
           </span>
-          <span class="svc__price">${esc(s.price)}</span>
+          <span class="svc__price">${fromPrice(s)}</span>
           <span class="svc__icon" aria-hidden="true"></span>
         </button>
-        <div class="svc__panel" id="svc-${i}" role="region" aria-label="${esc(s.name)} details">
+        <div class="svc__panel" id="svc-${i}" role="region" inert aria-label="${esc(s.name)}: цены">
           <div class="svc__panel-inner">
             <div class="svc__details">
-              <div class="svc__img media"><img src="${esc(s.image)}" alt="${esc(s.name)}" loading="lazy" decoding="async"></div>
-              <dl class="svc__meta">
-                <dt>Duration</dt><dd>${esc(s.duration)}</dd>
-                <dt>Includes</dt><dd><ul>${s.includes.map(x => `<li>${esc(x)}</li>`).join('')}</ul></dd>
-              </dl>
-              <a class="btn btn--sm" href="#booking" data-service="${esc(s.name)}">Book ${esc(s.name)}</a>
+              <div class="prices">
+                ${groupsOf(s).map(g => `
+                  <section class="prices__group">
+                    ${g.title ? `<h3 class="prices__title">${esc(g.title)}</h3>` : ''}
+                    <ul>${g.items.map(priceItem).join('')}</ul>
+                  </section>`).join('')}
+              </div>
+              <div class="svc__foot">
+                <p>${count} ${plural(count, 'услуга', 'услуги', 'услуг')} в разделе. Время указано ориентировочно.</p>
+                <a class="btn btn--sm" href="#booking" data-service="${esc(s.name)}">Записаться</a>
+              </div>
             </div>
           </div>
         </div>
-      </li>`).join('');
+      </li>`;
+    }).join('');
 
-    $('#team-list').innerHTML = TEAM.map((m, i) => `
-      <li class="member" data-reveal style="--d:${i}">
-        <div class="member__media media">
-          <img src="${esc(m.photo)}" alt="${esc(m.name)}, ${esc(m.role)} (demo profile)" loading="lazy" decoding="async">
-        </div>
-        <div class="member__info">
-          <h3 class="member__name" lang="ru">${esc(m.name)}</h3>
-          <p class="member__role">${esc(m.role)}</p>
-        </div>
-      </li>`).join('');
+    const teamSection = $('#team');
+    if (TEAM.length) {
+      teamSection.hidden = false;
+      $('#team-list').innerHTML = TEAM.map((m, i) => `
+        <li class="member" data-reveal style="--d:${i % 4}">
+          <div class="member__media media">
+            <img src="${esc(m.photo)}" alt="${esc(m.name)}, ${esc(m.role)}" loading="lazy" decoding="async">
+          </div>
+          <div class="member__info">
+            <h3 class="member__name">${esc(m.name)}</h3>
+            <p class="member__role">${esc(m.role)}</p>
+          </div>
+          ${m.service ? `<a class="btn btn--sm member__book" href="#booking" data-service="${esc(m.service)}">Записаться</a>` : ''}
+        </li>`).join('');
+    } else {
+      teamSection.remove();
+    }
 
     const serviceSelect = $('#f-service');
-    serviceSelect.insertAdjacentHTML('beforeend', SERVICES.map(s => `<option value="${esc(s.name)}">${esc(s.name)} — ${esc(s.price)}</option>`).join(''));
+    serviceSelect.insertAdjacentHTML('beforeend',
+      SERVICES.map(s => `<option value="${esc(s.name)}">${esc(s.name)} — ${fromPrice(s)}</option>`).join('') +
+      '<option value="Несколько услуг">Несколько услуг — подскажет администратор</option>');
 
-    // Floating preview images (desktop)
-    const preview = $('#svc-preview');
-    preview.innerHTML = SERVICES.map(s => `<div class="media"><img src="${esc(s.image)}" alt="" decoding="async"></div>`).join('');
-
-    /* ---------- Services: expand, hover preview ---------- */
+    /* ---------- Services: expand ---------- */
     $$('.svc__row').forEach(row => {
       row.addEventListener('click', () => {
         const item = row.closest('.svc');
         const open = !item.classList.contains('is-open');
         item.classList.toggle('is-open', open);
         row.setAttribute('aria-expanded', String(open));
+        $('.svc__panel', item).inert = !open;
       });
     });
-
-    if (finePointer && !reduceMotion) {
-      const frames = $$('.media', preview);
-      let tx = 0, ty = 0, x = 0, y = 0, running = false, seen = false;
-      const frame = () => {
-        x += (tx - x) * .14;
-        y += (ty - y) * .14;
-        preview.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0) rotate(${clamp((tx - x) * .04, -6, 6).toFixed(2)}deg)`;
-        running = Math.abs(tx - x) > .2 || Math.abs(ty - y) > .2;
-        if (running) requestAnimationFrame(frame);
-      };
-      const list = $('#services-list');
-      list.addEventListener('pointermove', e => {
-        const w = preview.offsetWidth, h = preview.offsetHeight;
-        tx = clamp(e.clientX + 40, 0, innerWidth - w - 16);
-        ty = clamp(e.clientY - h / 2, 16, innerHeight - h - 16);
-        if (!seen) { x = tx; y = ty; seen = true; }
-        if (!running) { running = true; requestAnimationFrame(frame); }
-      });
-      $$('.svc__row').forEach(row => {
-        row.addEventListener('pointerenter', () => {
-          frames.forEach((f, i) => f.classList.toggle('is-active', i === Number(row.dataset.index)));
-          preview.classList.add('is-visible');
-        });
-      });
-      list.addEventListener('pointerleave', () => { preview.classList.remove('is-visible'); seen = false; });
-    }
 
     /* ---------- Images: quiet placeholder if a photo fails ---------- */
     $$('.media img').forEach(img => {
@@ -1367,7 +1671,7 @@
       drawer.classList.toggle('is-open', open);
       drawer.inert = !open;
       burger.setAttribute('aria-expanded', String(open));
-      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
       main.inert = open;
       footer.inert = open;
       if (open) header.classList.add('is-scrolled'); else onScroll();
@@ -1463,7 +1767,7 @@
     }
 
     shots.forEach((btn, i) => {
-      btn.setAttribute('aria-label', `Open image: ${btn.dataset.caption}`);
+      btn.setAttribute('aria-label', `Открыть фото: ${btn.dataset.caption}`);
       btn.addEventListener('click', () => openLightbox(i));
     });
     $('.lightbox__close', lightbox).addEventListener('click', closeLightbox);
@@ -1514,7 +1818,7 @@
       const date = parseDate(dateInput.value);
       const previous = timeSelect.value;
       if (!date || date < today || HOURS.closedDays.includes(date.getDay())) {
-        timeSelect.innerHTML = `<option value="">${date ? 'No appointments on this day' : 'Select a date first'}</option>`;
+        timeSelect.innerHTML = `<option value="">${date ? 'В этот день запись закрыта' : 'Сначала выберите дату'}</option>`;
         timeSelect.disabled = true;
         return;
       }
@@ -1523,29 +1827,29 @@
       const slots = [];
       for (let m = HOURS.open; m <= HOURS.lastStart; m += 30) if (m >= earliest) slots.push(time(m));
       timeSelect.innerHTML = slots.length
-        ? '<option value="">Choose a time</option>' + slots.map(t => `<option value="${t}"${t === previous ? ' selected' : ''}>${t}</option>`).join('')
-        : '<option value="">No times left today</option>';
+        ? '<option value="">Выберите время</option>' + slots.map(t => `<option value="${t}"${t === previous ? ' selected' : ''}>${t}</option>`).join('')
+        : '<option value="">На сегодня свободного времени нет</option>';
       timeSelect.disabled = !slots.length;
     }
     dateInput.addEventListener('change', fillTimes);
 
     const rules = {
-      name: v => (v.trim().length >= 2 ? '' : 'Please enter your name.'),
+      name: v => (v.trim().length >= 2 ? '' : 'Введите имя.'),
       phone: v => {
-        if (!v.trim()) return 'Please enter your phone number.';
+        if (!v.trim()) return 'Введите номер телефона.';
         const digits = v.replace(/\D/g, '').length;
-        return /^[+\d\s()\-]+$/.test(v) && digits >= 10 && digits <= 15 ? '' : 'Please enter a valid phone number.';
+        return /^[+\d\s()\-]+$/.test(v) && digits >= 10 && digits <= 15 ? '' : 'Проверьте номер телефона.';
       },
-      service: v => (v ? '' : 'Please choose a service.'),
+      service: v => (v ? '' : 'Выберите услугу.'),
       date: v => {
         const d = parseDate(v);
-        if (!d) return 'Please choose a date.';
-        if (d < today) return 'Please choose a future date.';
-        if (d > maxDate) return 'Bookings are open 60 days ahead.';
-        if (HOURS.closedDays.includes(d.getDay())) return 'We are closed on Sundays.';
+        if (!d) return 'Выберите дату.';
+        if (d < today) return 'Эта дата уже прошла.';
+        if (d > maxDate) return 'Запись открыта на 60 дней вперёд.';
+        if (HOURS.closedDays.includes(d.getDay())) return 'В этот день студия не работает.';
         return '';
       },
-      time: v => (v ? '' : 'Please choose a time.')
+      time: v => (v ? '' : 'Выберите время.')
     };
 
     const fields = $$('[name]', form).filter(el => rules[el.name]);
@@ -1568,7 +1872,7 @@
       const invalid = fields.filter(el => !validate(el));
       if (invalid.length) {
         (invalid[0].disabled ? dateInput : invalid[0]).focus();
-        status.textContent = 'Please check the highlighted fields.';
+        status.textContent = 'Проверьте отмеченные поля.';
         return;
       }
 
@@ -1576,17 +1880,17 @@
       const data = Object.fromEntries(new FormData(form));
       form.classList.add('is-sending');
       $('.form__submit', form).disabled = true;
-      $('.form__submit-text', form).textContent = 'Sending…';
-      status.textContent = 'Sending your request…';
+      $('.form__submit-text', form).textContent = 'Отправляем…';
+      status.textContent = 'Отправляем заявку…';
 
       setTimeout(() => {
-        const date = parseDate(data.date).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'long' });
-        $('#booking-summary').innerHTML = [['Service', data.service], ['Date', date], ['Time', data.time]]
+        const date = parseDate(data.date).toLocaleDateString('ru-RU', { weekday: 'short', day: 'numeric', month: 'long' });
+        $('#booking-summary').innerHTML = [['Услуга', data.service], ['Дата', date], ['Время', data.time]]
           .map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('');
         form.hidden = true;
         success.hidden = false;
         success.focus({ preventScroll: true });
-        status.textContent = 'Thank you. Your appointment request has been received.';
+        status.textContent = 'Спасибо! Заявка принята — мы перезвоним, чтобы подтвердить запись.';
       }, reduceMotion ? 200 : 1500);
     });
 
@@ -1595,7 +1899,7 @@
       form.classList.remove('is-sending');
       fields.forEach(el => { el.removeAttribute('aria-invalid'); $(`#${el.id}-error`).textContent = ''; });
       $('.form__submit', form).disabled = false;
-      $('.form__submit-text', form).textContent = 'Book appointment';
+      $('.form__submit-text', form).textContent = 'Записаться';
       fillTimes();
       success.hidden = true;
       form.hidden = false;
