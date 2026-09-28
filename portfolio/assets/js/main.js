@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Mandarin — portfolio interactions
+   Максим · Mandarin — portfolio interactions
    ========================================================================== */
 (function () {
   'use strict';
@@ -20,6 +20,8 @@
   var burger = $('.burger');
   var drawer = $('#drawer');
   var bar = $('[data-progress]');
+  var fab = $('[data-fab]');
+  var contactInView = false;
   var lastY = window.scrollY;
 
   function onScroll() {
@@ -29,6 +31,8 @@
     header.classList.toggle('is-hidden', y > lastY && y > 600 && !drawer.classList.contains('is-open'));
     lastY = y;
     bar.style.transform = 'scaleX(' + (max > 0 ? y / max : 0).toFixed(4) + ')';
+    // Mobile CTA: after the hero, hidden while the contact block is on screen
+    fab.classList.toggle('is-visible', y > window.innerHeight * .8 && !contactInView && !drawer.classList.contains('is-open'));
     lightWords();
   }
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -39,6 +43,7 @@
     root.classList.toggle('is-locked', open);
     if (open) { drawer.hidden = false; requestAnimationFrame(function () { drawer.classList.add('is-open'); }); }
     else { drawer.classList.remove('is-open'); setTimeout(function () { if (!drawer.classList.contains('is-open')) drawer.hidden = true; }, 800); }
+    onScroll();
   }
   burger.addEventListener('click', function () { setDrawer(burger.getAttribute('aria-expanded') !== 'true'); });
   drawer.addEventListener('click', function (e) { if (e.target.closest('a')) setDrawer(false); });
@@ -61,6 +66,45 @@
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  /* ---------- Mobile CTA hides while another contact button is on screen ---------- */
+  if ('IntersectionObserver' in window) {
+    var ctaBlocks = new Set();
+    var ctaIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) ctaBlocks.add(en.target); else ctaBlocks.delete(en.target); });
+      contactInView = ctaBlocks.size > 0;
+      onScroll();
+    }, { threshold: 0 });
+    $$('#contact, .projects__cta').forEach(function (el) { ctaIO.observe(el); });
+  }
+
+  /* ---------- Project previews ---------- */
+  // Desktop: the screenshot scrolls on hover (CSS). Touch screens have no hover,
+  // so each preview plays the scroll once when it comes into view.
+  if (!finePointer && !reduceMotion && 'IntersectionObserver' in window) {
+    var peekIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting && !en.target.classList.contains('is-peeking')) en.target.classList.add('is-peeking');
+      });
+    }, { threshold: .6 });
+    $$('.case__media').forEach(function (m) {
+      peekIO.observe(m);
+      m.addEventListener('animationend', function () { m.classList.remove('is-peeking'); peekIO.unobserve(m); });
+    });
+  }
+
+  /* ---------- Magnetic main CTA ---------- */
+  if (finePointer && !reduceMotion) {
+    $$('[data-magnetic]').forEach(function (btn) {
+      btn.addEventListener('pointermove', function (e) {
+        var r = btn.getBoundingClientRect();
+        var x = (e.clientX - r.left - r.width / 2) / r.width;
+        var y = (e.clientY - r.top - r.height / 2) / r.height;
+        btn.style.transform = 'translate(' + (x * 18).toFixed(1) + 'px,' + (y * 12).toFixed(1) + 'px)';
+      });
+      btn.addEventListener('pointerleave', function () { btn.style.transform = ''; });
+    });
   }
 
   /* ---------- Statement: words light up while scrolling ---------- */
